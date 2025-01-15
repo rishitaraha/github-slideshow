@@ -1,0 +1,195 @@
+.aus-pill-container {
+    padding: 0;
+    height: 2rem;
+    gap: 1rem;
+  
+    order: 2;
+    flex-grow: 0;
+    z-index: 2;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  
+  .aus-pill-series {
+    display: flex;
+    flex-direction: row;
+    background-color: $neutral-100;
+    border-radius: 4px;
+    height: 2.1rem;
+    color: $primary-700;
+    padding: 0.2rem 0.6rem;
+    font-size: $body-txt-5;
+  
+    &:hover {
+      cursor: default;
+    }
+  
+    &-container {
+      @include flex-center-y;
+      flex-wrap: wrap;
+    }
+  
+    &--error {
+      background-color: $red-100;
+      color: $red-500;
+      justify-content: center;
+      align-items: center;
+      height: 2rem;
+      position: relative;
+      border-radius: 4px;
+      font-size: 1.25rem;
+      font-weight: 400;
+      padding: 0.2rem 0.8rem;
+    }
+  
+    &--unique,
+    &--active {
+      @include flex-center-y;
+      justify-content: space-between;
+      background-color: $primary-200;
+      border: 1px solid $primary-200;
+      height: 2.1rem;
+      min-width: 7.5rem;
+      text-align: center;
+      padding: 0.4rem 0.8rem;
+      font-family: Roboto Mono;
+      font-size: 1.2rem;
+      font-style: normal;
+      letter-spacing: 0px;
+      color: $neutral-300;
+    }
+  
+    &--active {
+      border: 1px solid $accent-success-500;
+    }
+  
+    &--green {
+      background-color: $accent-success-400;
+      color: white;
+      justify-content: center;
+      align-items: center;
+      height: 2rem;
+      position: relative;
+      border-radius: 4px;
+      font-size: 1.25rem;
+      font-weight: 400;
+      padding: 0.2rem 0.8rem;
+    }
+  
+    &--neutral {
+      background-color: $neutral-200;
+      color: white;
+      justify-content: center;
+      align-items: center;
+      height: 2rem;
+      position: relative;
+      border-radius: 4px;
+      font-size: 1.25rem;
+      font-weight: 400;
+      padding: 0.2rem 0.8rem;
+    }
+    &--success {
+      justify-content: center;
+      align-items: center;
+      color: $accent-success-500;
+      height: 2rem;
+      position: relative;
+      background: $accent-success-100;
+      border-radius: 4px;
+      font-size: 1.25rem;
+      font-weight: 400;
+      padding: 0.2rem 0.8rem;
+    }
+  
+    &--teal {
+      background-color: #e1f9f9;
+      color: $color-bar-7;
+      justify-content: center;
+      align-items: center;
+      height: 2rem;
+      position: relative;
+      border-radius: 4px;
+      font-size: 1.25rem;
+      font-weight: 400;
+      padding: 0.2rem 0.8rem;
+    }
+  
+    &--primary {
+      background-color: $primary-200;
+      color: $primary-500;
+      justify-content: center;
+      align-items: center;
+      height: 2rem;
+      position: relative;
+      border-radius: 4px;
+      font-size: 1.25rem;
+      font-weight: 400;
+      padding: 0.2rem 0.8rem;
+    }
+  
+    &--name {
+      background-color: $primary-200;
+      color: $primary-500;
+      justify-content: center;
+      align-items: center;
+      height: 2rem;
+      position: relative;
+      border-radius: 4px;
+      font-size: 1.25rem;
+      font-weight: 400;
+      padding: 0.2rem 0.8rem;
+    }
+  }
+  
+  .aus-pill-series--name:first-child::after {
+    display: inline-flex;
+    content: '';
+    border-top: 2px solid $primary-300;
+    width: 3rem;
+    position: absolute;
+    left: 100%;
+    height: 0.1rem;
+    background-color: $primary-300;
+    color: $primary-300;
+  }
+  
+  .aus-pill-series--success:not(:last-child)::after {
+    display: inline-flex;
+    content: '';
+    border-top: 2px solid $accent-success-200;
+    width: 3rem;
+    position: absolute;
+    left: 100%;
+    height: 0.1rem;
+    background: $accent-success-200;
+    color: $accent-success-200;
+  }
+  
+  @include response(tab-land) {
+    .aus-pill-series--name:first-child::after {
+      display: inline-flex;
+      content: '';
+      border-top: 2px solid $primary-300;
+      width: 0.1rem;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      height: 3rem;
+      background-color: $primary-300;
+      color: $primary-300;
+    }
+  
+    .aus-pill-series--success:not(:last-child)::after {
+      display: inline-flex;
+      content: '';
+      border-top: 2px solid $accent-success-200;
+      width: 0.1rem;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      height: 3rem;
+      background: $accent-success-200;
+      color: $accent-success-200;
+    }
+  }
+  

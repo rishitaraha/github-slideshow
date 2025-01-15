@@ -1,0 +1,18 @@
+.aus-dropdown-button {
+  .dropdown-toggle {
+    &::after,
+    &::before {
+      display: none;
+    }
+  }
+
+  .dropdown-menu {
+    font-size: $body-txt-3;
+  }
+
+  .aus-dropdown-card {
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 0.4rem;
+  }
+}

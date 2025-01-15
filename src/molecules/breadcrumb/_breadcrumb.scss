@@ -1,0 +1,41 @@
+.aus-breadcrumb {
+  @include flex-row-center-x;
+  width: 100%;
+  color: $neutral-300;
+  padding: 0.4rem 0.8rem;
+  border-bottom: 1px solid $neutral-100;
+
+  &__back-btn.aus-icon-btn.btn-outline {
+    border: none;
+    width: 3rem;
+    height: 2.4rem;
+    color: $neutral-300;
+
+    &:hover,
+    &:focus {
+      background: transparent;
+      box-shadow: none;
+    }
+  }
+
+  &__item {
+    @include text-ellipses;
+    display: block;
+    font-size: $body-txt-4;
+    max-width: 29rem;
+    width: auto;
+
+    &:not(.aus-breadcrumb__item--clickable) {
+      flex: 1 0.5;
+    }
+
+    &--clickable {
+      cursor: pointer;
+      max-width: 9rem;
+    }
+  }
+
+  &__tooltip-container {
+    text-align: left;
+  }
+}

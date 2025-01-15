@@ -1,0 +1,81 @@
+@keyframes animate-visibility {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes animate-height {
+  0% {
+    max-height: 0;
+  }
+
+  100% {
+    max-height: 100vh;
+  }
+}
+
+.indented-tree {
+  &-container {
+    @include flex-col-end-x;
+    transform: translateY(-0.3rem);
+    overflow-y: hidden;
+
+    &--visible {
+      animation-name: animate-visibility, animate-height;
+      animation-duration: 500ms, 500ms;
+      animation-timing-function: ease-in-out;
+      animation-direction: normal;
+    }
+
+    // Add position relative to all list items.
+    & > * {
+      position: relative;
+
+      &::before {
+        content: ' ';
+        position: absolute;
+        border-left: 1px solid $neutral-25;
+        border-bottom: 1px solid $neutral-25;
+        border-bottom-left-radius: 0.4rem;
+        height: 100%;
+        width: 100%;
+        left: -1.5rem;
+        top: -50%;
+        z-index: $z-index-neg;
+      }
+
+      &::after {
+        content: ' ';
+        position: absolute;
+        border-left: 1px solid $neutral-25;
+        border-bottom: none;
+        height: 100%;
+        width: 1.6rem;
+        left: -1.5rem;
+      }
+
+      &:last-child {
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__item {
+    @include flex-center-y;
+    width: 100%;
+
+    &__icon {
+      margin-right: 0.8rem;
+    }
+
+    &__content {
+      width: 100%;
+    }
+  }
+}

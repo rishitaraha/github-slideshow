@@ -1,0 +1,28 @@
+@mixin line() {
+  content: '';
+  height: 0.1rem;
+  background-color: $neutral-50;
+  flex-grow: 1;
+  margin: 0 1rem;
+}
+
+.divider {
+  @include flex-center-y;
+  margin: 1.4rem 0;
+  color: $neutral-250;
+  font-weight: $bold-txt-2;
+  font-size: $body-txt-2;
+
+  &--start::after {
+    @include line;
+  }
+
+  &--middle::before,
+  &--middle::after {
+    @include line;
+  }
+
+  &--end:before {
+    @include line;
+  }
+}

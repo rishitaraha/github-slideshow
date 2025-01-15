@@ -1,0 +1,7 @@
+.radio-toggle-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  overflow: none;
+  gap: 0.8rem;
+  justify-items: stretch;
+}

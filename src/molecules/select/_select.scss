@@ -1,0 +1,61 @@
+.aus-select {
+  font-size: $body-txt-3;
+
+  &__input-container {
+    padding: 0 !important;
+    font-size: $body-txt-3;
+  }
+  &__value-container {
+    width: 3.9rem;
+  }
+  &__input {
+    height: 1.9rem;
+  }
+  &__placeholder {
+    color: $neutral-200 !important;
+    font-size: $body-txt-3 !important;
+    position: absolute;
+  }
+
+  &__single-value {
+    color: $neutral-400 !important;
+    font-size: $body-txt-3 !important;
+    position: absolute;
+  }
+
+  &__menu-list {
+    max-height: 18.7rem !important;
+    min-height: 5rem;
+  }
+
+  &__dropdown-indicator {
+    .chevron-small-down {
+      color: $neutral-200;
+    }
+
+    .aus-icon {
+      font-size: 1.6rem;
+    }
+  }
+
+  &__control {
+    &.aus-select__control {
+      &--menu-is-open {
+        box-shadow: none;
+        -webkit-box-shadow: 0;
+      }
+      &--is-disabled {
+        background-color: $neutral-25;
+        border-color: $neutral-100;
+
+        &:hover {
+          cursor: not-allowed;
+        }
+
+        .aus-select__single-value {
+          color: $neutral-200 !important;
+        }
+      }
+    }
+  }
+}

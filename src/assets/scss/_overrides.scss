@@ -1,0 +1,148 @@
+// Modal
+.modal {
+  &-dialog {
+    @include flex-center;
+    max-width: 100rem;
+  }
+  &-content {
+    margin: 2rem;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0px 16px 48px rgba(0, 0, 0, 0.176);
+  }
+  &-footer {
+    padding: 1rem 2rem;
+  }
+  &-header {
+    padding: 1.7rem 2.4rem;
+    font-size: 2rem;
+    font-weight: $bold-txt-2;
+    color: $primary-700;
+    @include flex-center-y;
+
+    .btn-close {
+      font-size: $body-txt-2;
+    }
+  }
+
+  &-body {
+    padding: 2rem;
+
+    @include response(phone) {
+      padding: 1.8rem;
+    }
+  }
+}
+
+// Input Checkbox.
+.form-check-input[type='checkbox'] {
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 3px;
+
+  cursor: pointer;
+  &:checked {
+    background-image: url(../images/icons/tick-mark.svg);
+    background-size: 8.16px 6.5px;
+    background-color: white;
+    border: 1px solid $neutral-400;
+  }
+  &:focus {
+    box-shadow: none;
+    border: 1px solid $neutral-400;
+  }
+}
+
+// Toast.
+.Toastify__toast-container {
+  @include response(phone) {
+    width: 50%;
+  }
+  &--top-right {
+    top: 0;
+    right: 0;
+    left: unset;
+    transform: translateX(0);
+  }
+}
+
+.Toastify__toast {
+  @include response(phone) {
+    margin-bottom: 1rem;
+    border-radius: 4px;
+  }
+}
+
+// Popover
+.popover {
+  max-width: 60rem;
+  &-header {
+    font-size: $body-txt-2;
+  }
+  font-size: $body-txt-3;
+}
+
+//Table
+.aus-table-container {
+  .aus-table {
+    &__options {
+      justify-content: end !important;
+      padding: 2rem 2.5rem !important;
+    }
+  }
+
+  .react-bootstrap-table {
+    overflow: hidden;
+    //removes extra height and width from .react-bootstrap-table
+    &::-webkit-scrollbar {
+      width: 2;
+      height: 0;
+    }
+    .aus-table__row {
+      cursor: default;
+    }
+  }
+}
+td {
+  &.react-bs-table-no-data {
+    @include response(tab-port) {
+      padding: 41.6rem 0;
+    }
+    @include response(phone) {
+      padding: 37.2rem 0;
+    }
+    padding: 31rem 0;
+  }
+}
+
+// Sidecard
+.offcanvas {
+  &-body {
+    padding: 0.8rem;
+  }
+  &.offcanvas-start,
+  &.offcanvas-end {
+    top: 5rem;
+  }
+  .offcanvas-title {
+    font-weight: bold;
+    font-size: 2rem;
+    padding: 1rem 0 0 1rem;
+    color: $primary-600;
+  }
+
+  .sidecard__divider {
+    color: $neutral-200;
+    border: 0.08rem solid $neutral-200;
+  }
+
+  &-backdrop {
+    top: 5rem;
+  }
+
+  .btn-close {
+    color: $primary-600 !important;
+    font-size: 1.6rem;
+    padding-right: 2rem;
+  }
+}

@@ -1,0 +1,47 @@
+.filters-container {
+  z-index: 200;
+  background-color: white;
+  margin-top: 1rem;
+  min-width: 53.6rem;
+  min-height: 10.9rem;
+  padding: 0 3.1rem;
+  .aus-btn {
+    margin-bottom: 3rem;
+    &.btn-secondary {
+      color: $neutral-200;
+    }
+  }
+  @include response(phone) {
+    min-width: 46.2rem;
+  }
+}
+
+.filter {
+  @include flex-center-y;
+  justify-content: space-around;
+  font-size: $body-txt-3;
+  margin: 2.4rem 0;
+
+  .aus-select {
+    width: 14.8rem;
+    cursor: pointer;
+  }
+
+  &__remove-icon:last-of-type {
+    min-width: 1.15rem;
+    font-size: $body-txt-4;
+    color: $red-500;
+    cursor: pointer;
+  }
+  &__actions-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__add-btn {
+    margin-top: 1rem;
+  }
+  &__apply-btn {
+    margin-top: 1rem;
+    color: white;
+  }
+}

@@ -1,0 +1,69 @@
+.aus-radio-toggle {
+  @include flex-row-center-x;
+  border: 1px solid $neutral-200;
+  padding: 1rem 1.4rem;
+  border-radius: 4px;
+  height: 3.9rem;
+  gap: 1.5rem;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &.checked {
+    background-color: $primary-200;
+    border-color: $primary-500;
+  }
+
+  &.disabled {
+    background-color: $neutral-25;
+    color: $neutral-300;
+    cursor: not-allowed;
+  }
+
+  & .form-check-input {
+    float: none;
+    margin: 0;
+    border: none;
+    &:checked[type='radio'] {
+      background-image: none;
+      background-color: $primary-500;
+      transform: scale(0.8);
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  & .form-check-input:checked {
+    background-color: $primary-500;
+  }
+
+  &__radio {
+    &-container {
+      @include flex-center;
+      width: 1.6rem;
+      height: 1.6rem;
+      border-radius: 100%;
+      border: 1px solid $neutral-200;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    display: block;
+    width: 0.8rem;
+    height: 0.8rem;
+  }
+
+  &__label {
+    font-size: $body-txt-3;
+    user-select: none;
+  }
+}
+
+@import './radio-toggle-group/radio-toggle-group';

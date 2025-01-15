@@ -1,0 +1,32 @@
+.aus-tooltip-text {
+  cursor: default;
+  transition: 0.8s ease-out;
+}
+
+.tooltip {
+  &-inner {
+    background-color: $primary-600;
+    color: #ffffff;
+    font-family: $font-family-nunito;
+    font-size: $body-txt-4;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    // Bootstrap reduces this width to - 260px
+    max-width: 32.5rem;
+  }
+  &.bs-tooltip-top .tooltip-arrow::before {
+    border-top-color: $primary-600;
+  }
+
+  &.bs-tooltip-bottom .tooltip-arrow::before {
+    border-bottom-color: $primary-600;
+  }
+
+  &.bs-tooltip-start .tooltip-arrow::before {
+    border-left-color: $primary-600;
+  }
+
+  &.bs-tooltip-end .tooltip-arrow::before {
+    border-right-color: $primary-600;
+  }
+}

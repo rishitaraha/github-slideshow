@@ -1,0 +1,89 @@
+.checkbox {
+  cursor: pointer;
+
+  &.disabled {
+    cursor: not-allowed;
+  }
+
+  .form-check-input {
+    margin-top: 0;
+    border-color: $neutral-200;
+    flex-shrink: 0;
+    width: 1.4rem;
+
+    &:checked {
+      background-image: url(../../assets/images/icons/tick-mark-white.svg);
+      background-color: $primary-500;
+      border: none;
+    }
+  }
+
+  &__txt-box {
+    @include flex-row-center-x;
+    &__inner {
+      @include flex-row-center-x;
+      flex-shrink: 0;
+      flex-grow: 1;
+
+      span {
+        font-size: $body-txt-3;
+      }
+    }
+
+    .spinner-border {
+      height: 1.3rem;
+      width: 1.3rem;
+      border-width: 0.2rem;
+      color: $neutral-200;
+    }
+
+    &.card {
+      @include text-ellipses;
+      border: 1px solid $neutral-200;
+      box-sizing: border-box;
+      border-radius: 0.4rem;
+      padding: 1rem 1.4rem;
+      box-shadow: none;
+    }
+
+    &.active {
+      border-color: $primary-500;
+      background-color: $primary-200;
+    }
+
+    &.disabled {
+      pointer-events: none;
+
+      &.card {
+        background-color: $neutral-100;
+      }
+
+      .form-check-input {
+        background-color: $neutral-100;
+      }
+
+      span {
+        color: $neutral-250;
+      }
+    }
+
+    &.align-left {
+      .form-check-input {
+        margin-right: 1rem;
+      }
+    }
+
+    &.align-right {
+      @include flex-row-reverse-x;
+
+      .checkbox__txt-box__inner {
+        @include flex-row-reverse-x;
+        justify-content: space-between;
+      }
+
+      .spinner-border {
+        margin-right: 1rem;
+      }
+    }
+  }
+}

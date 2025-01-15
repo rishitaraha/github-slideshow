@@ -1,0 +1,39 @@
+.aus-sidebar {
+  width: 6rem;
+  height: 100%;
+  padding: 1rem;
+  position: absolute;
+  left: 0;
+  z-index: 5;
+  @include flex-center-rev-x;
+  background-color: $neutral-100;
+  border-right: 1px solid rgba(176, 190, 197, 0.5);
+
+  &-item {
+    margin: 0.5rem 0rem;
+    &__icon {
+      @include flex-row-center-xy;
+      color: $neutral-300;
+      width: 4rem;
+      height: 4rem;
+
+      &:hover {
+        background: #d9d9d9;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+      &.active {
+        background: $primary-600;
+        border-radius: 8px;
+        color: white;
+      }
+      &.hidden {
+        background: $gray-600;
+        border-radius: 8px;
+        color: white;
+      }
+    }
+  }
+}
+
+@import './components/sidebar-card';

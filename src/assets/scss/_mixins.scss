@@ -1,0 +1,192 @@
+// MEDIA QUERY MANAGER
+
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+$breakpoint arguments choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+ORDER: Base + typography > general layout + grid > page layout > components
+1em = 16px
+*/
+
+@mixin response($breakpoint) {
+  @if $breakpoint==phone {
+    @media only screen and (max-width: 37.5em) {
+      @content;
+    } //600px
+  }
+
+  @if $breakpoint==phone-land {
+    @media only screen and (max-width: 43.75em) {
+      @content;
+    }
+  } //700px
+
+  @if $breakpoint==tab-port {
+    @media only screen and (max-width: 56.25em) {
+      @content;
+    } //900px
+  }
+
+  @if $breakpoint==tab-land {
+    @media only screen and (max-width: 81.25em) {
+      @content;
+    } //1200px
+  }
+
+  @if $breakpoint==big-desktop {
+    @media only screen and (min-width: 100em) {
+      @content;
+    } //1600
+  }
+}
+
+@mixin flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-col-grow {
+  @include flex-col;
+  flex-grow: 1;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-center-rev {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-center-rev-x {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin flex-center-rev-y {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@mixin flex-center-x {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin flex-center-y {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-row-center-x {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+@mixin flex-row-center-xy {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-row-start-x {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+@mixin flex-end-x {
+  display: flex;
+  justify-content: end;
+}
+
+@mixin flex-start-x {
+  display: flex;
+  justify-content: start;
+}
+
+@mixin flex-space-between-x {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+@mixin flex-space-between-y {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+@mixin position-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin square($size) {
+  width: #{$size}rem;
+  height: #{$size}rem;
+}
+
+@mixin card-shadow() {
+  box-shadow: 0px 0px 5px $shadow-color;
+}
+
+@mixin card-shadow-bottom() {
+  box-shadow: 0 8px 6px -6px $shadow-color;
+}
+
+@mixin text-ellipses() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin flex-col-start-x {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+@mixin flex-col-end-x {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+@mixin flex-row-reverse-x {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+@mixin highlight-btn($color, $opacity: 0.3) {
+  color: $color;
+  background-color: rgba($color, 0);
+
+  &:hover:not(&:disabled) {
+    background-color: rgba($color, $opacity);
+  }
+
+  &:focus:not(&:disabled),
+  &.is-active {
+    background-color: rgba($color, $opacity);
+    color: $color;
+  }
+}

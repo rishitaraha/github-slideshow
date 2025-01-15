@@ -1,0 +1,129 @@
+.chevron-left.accordion .accordion {
+  // Overriding bootstrap accordion css.
+  &-item {
+    border-bottom: 1px solid $neutral-25;
+    background-color: $white;
+  }
+
+  &-header {
+    height: 4rem;
+    user-select: none;
+    &__checkbox {
+      position: absolute;
+      right: 0;
+    }
+  }
+
+  &-button {
+    font-weight: $bold-txt-2;
+    font-size: $body-txt-3;
+    color: $black;
+
+    &::before {
+      width: 1.6rem;
+      height: 1.6rem;
+      color: $neutral-200;
+      content: '';
+      background-image: url(../images/icons/chevron-small-right.svg);
+      background-repeat: no-repeat;
+      margin: -0.25rem 1rem 0 0;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    &::after {
+      display: none;
+    }
+
+    &:not(.collapsed) {
+      color: unset;
+      background-color: unset;
+      box-shadow: none;
+
+      &::before {
+        transform: rotate(90deg);
+      }
+    }
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  &-body {
+    padding-left: 4rem;
+  }
+}
+
+.accordion.chevron-right {
+  border-bottom: 1px solid $neutral-100;
+
+  .accordion {
+    &-header {
+      @include flex-center-y;
+      height: fit-content;
+      padding: 1rem 1.6rem;
+
+      &__checkbox {
+        position: absolute;
+        left: -2.5rem;
+      }
+    }
+
+    &-button {
+      @include flex-center-y;
+      justify-content: space-between;
+      color: $neutral-300;
+      font-size: $body-txt-3;
+      font-weight: $bold-txt-2;
+      padding: 0;
+      width: 100%;
+
+      &::before {
+        display: none;
+      }
+
+      &::after {
+        content: url(../images/icons/chevron-small-right.svg);
+        background-image: none;
+        margin: 0;
+        transition: transform 0.2s ease-in-out;
+        transform-origin: 50% 50%;
+        display: block;
+        height: 1.6rem;
+        width: 1.6rem;
+      }
+
+      &:not(.collapsed) {
+        background-color: unset;
+        box-shadow: none;
+
+        &::after {
+          background-image: none;
+          transform: rotate(90deg);
+        }
+      }
+
+      &:focus {
+        box-shadow: none;
+      }
+    }
+
+    &-body {
+      padding: 0 1.6rem;
+      font-size: $body-txt-3;
+    }
+
+    &__group {
+      padding-bottom: 1.2rem;
+
+      &--separated {
+        padding-top: 1.2rem;
+        border-top: 1px solid $neutral-25;
+      }
+
+      &__content {
+        color: $neutral-300;
+      }
+    }
+  }
+}

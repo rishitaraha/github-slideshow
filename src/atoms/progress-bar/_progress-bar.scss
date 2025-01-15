@@ -1,0 +1,25 @@
+.aus-progress-bar {
+  height: 2.2rem;
+  border-radius: 4px;
+
+  font-size: $body-txt-4;
+  font-weight: $bold-txt-2;
+  color: $white;
+
+  .progress-bar {
+    background-color: $primary-500;
+    &.bg-completed {
+      background-color: $accent-success-400 !important;
+    }
+    &.bg-error {
+      background-color: $accent-error-500 !important;
+    }
+    &.bg-validating {
+      background-color: $accent-warning-500 !important;
+    }
+
+    &-striped {
+      background-size: 1rem 1rem;
+    }
+  }
+}

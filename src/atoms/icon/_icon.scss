@@ -1,0 +1,17 @@
+i {
+  font-size: $default-icon-size;
+}
+
+.aus-icon {
+  &.bi-x-lg {
+    @include flex-center;
+
+    width: 14px;
+    height: 14px;
+  }
+
+  &.is-disabled {
+    background-color: #323232;
+    cursor: not-allowed;
+  }
+}

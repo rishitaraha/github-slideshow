@@ -1,0 +1,47 @@
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.flex-center {
+  @include flex-center;
+}
+.flex-center-rev {
+  @include flex-center-rev;
+}
+
+.border-bottom-hide {
+  border-bottom-color: transparent;
+}
+
+.card {
+  @include card-shadow;
+}
+
+// Width.
+@for $var from 0 to 20 {
+  .w-#{calc($var * 5)} {
+    width: calc($var * 5%);
+  }
+}
+
+.text-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.br-line {
+  width: 100%;
+  height: 0.1rem;
+  background-color: $neutral-100;
+
+  &-2 {
+    margin-top: 2rem;
+  }
+}
+
+.iframe-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}

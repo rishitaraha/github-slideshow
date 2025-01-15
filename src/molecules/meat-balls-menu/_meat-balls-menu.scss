@@ -1,0 +1,91 @@
+.aus-meat-balls-menu {
+  &__button > &.show {
+    background-color: $neutral-50;
+    border: 1px solid transparent;
+  }
+
+  &__button {
+    @include flex-center-rev;
+    cursor: pointer;
+    gap: 0.1rem;
+    background-color: transparent;
+    border: none;
+
+    // Size variants.
+    &.sm {
+      width: 1.8rem;
+      height: 1.8rem;
+      border-radius: 0.4rem;
+    }
+
+    &.lg {
+      width: 3.4rem;
+      height: 3.4rem;
+      border-radius: 0.6rem;
+    }
+
+    &.body-txt-3:active {
+      background-color: $neutral-25;
+    }
+    &:disabled {
+      background-color: $neutral-25;
+      border: 1px solid transparent;
+      cursor: not-allowed;
+    }
+
+    &:hover {
+      background-color: $neutral-25;
+      border: none;
+    }
+
+    &.show {
+      background-color: $neutral-25;
+      border: none;
+    }
+  }
+
+  &__dot {
+    position: relative;
+
+    &::after {
+      display: block;
+      content: '\A';
+      font-size: 0.2rem;
+      position: relative;
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: $neutral-300;
+    }
+  }
+
+  .dropdown-item.active,
+  .dropdown-item:active {
+    background-color: $primary-500;
+  }
+
+  .dropdown-item {
+    @include flex-center-y;
+    gap: 0.8rem;
+    padding: 0.8rem 1.6rem;
+
+    .spinner-border {
+      height: 1.4rem;
+      width: 1.4rem;
+      border-width: 2px;
+    }
+  }
+
+  .dropdown-menu.show {
+    box-shadow: 0px 4px 16px $shadow-color;
+    border-radius: 6px;
+    border: none;
+    padding: 0.6rem 0;
+  }
+  .dropdown-toggle {
+    &::after,
+    &::before {
+      display: none;
+    }
+  }
+}

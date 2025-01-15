@@ -1,0 +1,58 @@
+.switch-card {
+  @include flex-row-center-x;
+  padding: 1rem 1.4rem;
+  width: fit-content;
+  height: 3.9rem;
+  border-radius: 6px;
+  border: 1px solid $neutral-200;
+  background-color: $white;
+  transition: all 0.3s ease-out 0.15s;
+  cursor: pointer;
+  user-select: none;
+
+  &__title {
+    font-size: $body-txt-3;
+    margin-right: 1rem;
+  }
+
+  &__toggle {
+    margin-left: auto;
+  }
+
+  &.primary {
+    &.active {
+      background-color: $primary-200;
+      border-color: $primary-500;
+    }
+
+    &.disabled {
+      color: $neutral-250;
+      border-color: $btn-disabled-color;
+      cursor: not-allowed;
+      pointer-events: initial;
+    }
+  }
+
+  &.danger {
+    .switch-card__title {
+      color: $red-500;
+    }
+
+    .switch-inner::before {
+      background-color: $red-500;
+    }
+
+    &.active {
+      background-color: $red-100;
+      border-color: $red-500;
+    }
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+
+    .switch-card__title {
+      color: $neutral-250;
+    }
+  }
+}

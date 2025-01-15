@@ -1,0 +1,156 @@
+.sidecard {
+  &-container {
+    width: $sidecard-width;
+    max-width: 100%;
+    position: fixed;
+    z-index: calc($zindex-offcanvas - 1);
+    transition: transform $offcanvas-transition-duration ease-in-out;
+
+    &.end,
+    &.start {
+      top: 0;
+      height: 100%;
+
+      &.show {
+        .sidecard__toggle-sidecard-button .aus-icon {
+          transform: rotate(180deg);
+        }
+      }
+
+      .sidecard__toggle-sidecard-button {
+        position: absolute;
+        padding: 0;
+        top: 50%;
+        left: 0;
+        border: 1px solid $white;
+        background-color: $primary-600;
+        width: 2.2rem;
+        height: 5.1rem;
+        transition: all $offcanvas-transition-duration ease-in-out;
+
+        .aus-icon {
+          transition: transform calc($offcanvas-transition-duration + 150ms)
+            ease-in-out;
+          transform: rotate(0);
+        }
+
+        &:focus {
+          border: 1px solid $white;
+          box-shadow: none;
+        }
+      }
+    }
+
+    &.end {
+      right: 0;
+      transform: translateX(100%);
+
+      &.show {
+        transform: none;
+      }
+
+      &.sidecard__toggle-sidecard-button {
+        border-radius: 0.4rem 0 0 0.4rem;
+        transform: translate(-100%, -50%);
+      }
+    }
+
+    &.start {
+      transform: translateX(-100%);
+
+      &.show {
+        transform: none;
+      }
+
+      &.sidecard__toggle-sidecard-button {
+        border-radius: 0 0.4rem 0.4rem 0;
+        transform: translate(100%, -50%);
+        left: unset;
+        right: 0;
+      }
+    }
+  }
+
+  &.offcanvas {
+    width: $sidecard-width;
+    border: none;
+
+    &.offcanvas-end {
+      width: $sidecard-width;
+    }
+    &-body {
+      padding: $sidecard-padding;
+    }
+  }
+
+  &__header {
+    &.offcanvas-header {
+      @include flex-center-y;
+      height: 5.8rem;
+      padding: 1.2rem 1.6rem;
+      gap: 0.8rem;
+      justify-content: unset;
+      border-bottom: 1px solid $neutral-100;
+    }
+
+    .offcanvas-title {
+      @include flex-center-y;
+      margin: 0;
+      padding: 0;
+      color: $primary-600;
+      font-size: $header-txt-5;
+      font-weight: $bold-txt-2;
+      line-height: $header-txt-5;
+
+      span {
+        @include text-ellipses;
+        display: inline-block;
+        max-width: 20rem;
+      }
+    }
+
+    &__tooltip {
+      margin-left: 0.4rem;
+    }
+
+    &__children {
+      display: flex;
+      flex: 1;
+      margin: 0 0.4rem;
+    }
+
+    &__icon {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__footer {
+    @include flex-row-center-x;
+    height: 5.8rem;
+    padding: 1.2rem 1.6rem;
+    gap: 0.8rem;
+    border-top: 1px solid $neutral-100;
+  }
+}
+
+// Utils.
+.sidecard-with-tabs {
+  .offcanvas-body {
+    padding: 0;
+  }
+
+  .rc-tabs {
+    height: 100%;
+
+    &-tabpane {
+      height: 100%;
+    }
+
+    &-content {
+      padding: $sidecard-padding;
+      height: 100%;
+    }
+  }
+}

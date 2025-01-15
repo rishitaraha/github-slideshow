@@ -1,0 +1,26 @@
+.aus-spinner {
+  width: 5rem;
+  height: 5rem;
+  border-width: 0.6rem;
+  border-right-color: transparent !important;
+  border-bottom-color: transparent !important;
+
+  &-container {
+    width: 100%;
+    height: 100%;
+    @include flex-center;
+    padding-bottom: 2rem;
+  }
+
+  &.primary {
+    border-color: $primary-500;
+  }
+
+  &.warning {
+    border-color: $accent-warning-500;
+  }
+
+  &.danger {
+    border-color: $accent-error-500;
+  }
+}

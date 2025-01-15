@@ -1,0 +1,125 @@
+// Variables.
+$btn-disabled-color: $neutral-250;
+$btn-primary-focus-color: $primary-500;
+$btn-primary-hover-color: $primary-600;
+
+$btn-secondary-focus-color: $primary-300;
+$btn-secondary-hover-color: $neutral-25;
+$btn-secondary-active-color: $neutral-50;
+
+$btn-outline-border-color: $primary-500;
+$btn-outline-hover-color: $neutral-25;
+$btn-outline-active-color: $neutral-50;
+
+$btn-border-radius: 0.4rem;
+$btn-spinner-radius: 1.5rem;
+
+.aus-icon-btn {
+  @include flex-center;
+  font-size: $body-txt-3;
+
+  border: none;
+  height: 2.9rem;
+  width: 2.9rem;
+  border-radius: $btn-border-radius;
+
+  &:active,
+  &:focus {
+    border-color: transparent;
+  }
+
+  i {
+    @include flex-center-y;
+    font-size: 2rem;
+  }
+
+  i.spinner-border {
+    height: $btn-spinner-radius;
+    width: $btn-spinner-radius;
+    font-size: 0.75rem;
+  }
+
+  &.btn-primary {
+    background-color: $btn-primary-focus-color;
+
+    &:focus {
+      box-shadow: 0 0 0 0.25rem rgba($btn-primary-focus-color, 50%);
+    }
+
+    &:active {
+      background-color: $btn-primary-hover-color;
+      box-shadow: 0 0 0 0.25rem rgba($btn-primary-hover-color, 50%);
+    }
+
+    &:hover {
+      background-color: $btn-primary-hover-color;
+    }
+  }
+
+  &.btn-secondary {
+    color: $btn-primary-focus-color;
+    background-color: $white;
+
+    &:focus {
+      background-color: $btn-secondary-hover-color;
+      box-shadow: 0 0 0 0.25rem rgba($btn-secondary-focus-color, 50%);
+    }
+
+    &:active {
+      background-color: $btn-secondary-active-color;
+      box-shadow: 0 0 0 0.25rem rgba($btn-secondary-focus-color, 50%);
+    }
+
+    &:hover {
+      background-color: $btn-secondary-hover-color;
+    }
+
+    &:disabled {
+      background-color: $white;
+      color: $btn-disabled-color;
+    }
+  }
+
+  &.btn-outline {
+    color: $btn-primary-focus-color;
+    border: 1px solid $btn-outline-border-color;
+    background-color: $white;
+
+    &:focus {
+      background-color: $btn-outline-hover-color;
+      box-shadow: 0 0 0 0.25rem rgba($btn-outline-active-color, 50%);
+    }
+
+    &:active {
+      background-color: $btn-outline-active-color;
+      box-shadow: 0 0 0 0.25rem rgba($btn-outline-active-color, 50%);
+    }
+
+    &:hover {
+      background-color: $btn-outline-hover-color;
+    }
+
+    &:disabled {
+      background-color: $white;
+      color: $btn-disabled-color;
+    }
+  }
+
+  &:disabled {
+    background-color: $btn-disabled-color;
+    border-color: $btn-disabled-color;
+    cursor: not-allowed;
+    pointer-events: initial;
+  }
+
+  &.btn-lg {
+    height: 4rem;
+    width: 4rem;
+    padding: 0 0;
+  }
+
+  &.btn-sm {
+    padding: 0 0;
+    border-radius: 0.2rem;
+  }
+}

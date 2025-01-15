@@ -1,0 +1,19 @@
+.state-icon-container {
+    @include flex-center;
+    position: relative;
+    width: 2.4rem;
+    height: 2.4rem;
+
+    .overlay-icon {
+      border-width: 20px;
+      border-radius: 40px;
+    }
+    .overlay-state {
+      position: absolute;
+      background-color: $primary-200;
+      bottom: 2%;
+      right: 5%;
+      border-radius: 40px;
+    }
+  }
+  

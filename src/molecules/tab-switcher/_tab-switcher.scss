@@ -1,0 +1,64 @@
+.rc {
+  &-tabs {
+    width: 100%;
+    border: none;
+
+    &-nav {
+      &-operations {
+        display: none;
+      }
+      &-wrap {
+        @include flex-row-center-xy;
+      }
+      &-list {
+        background: $white;
+        width: 100%;
+        @include flex-row-center-xy;
+        border-bottom: 0.2rem solid $gray-350;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+    &-tab {
+      width: 100%;
+      font-weight: $bold-txt-1;
+
+      &-btn {
+        @include flex-row-center-xy;
+        font-size: 1.4rem;
+        width: 100%;
+        height: 3.9rem;
+        line-height: 2.5rem;
+      }
+      &.rc-tabs-tab-disabled {
+        cursor: not-allowed;
+        color: $neutral-200;
+      }
+      &-active {
+        color: $primary-500;
+        font-weight: $bold-txt-2;
+      }
+    }
+    &-ink-bar {
+      background: $primary-500;
+      .rc-tabs-top & {
+        bottom: -0.2rem;
+        height: 0.2rem;
+      }
+    }
+  }
+}
+
+// Utils.
+.disable-tab-switching {
+  .rc-tabs-tab {
+    cursor: not-allowed;
+    color: $neutral-200;
+
+    &-active {
+      cursor: pointer;
+      color: $primary-500;
+    }
+  }
+}

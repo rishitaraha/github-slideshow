@@ -1,0 +1,159 @@
+.aus-table {
+  border-radius: 6px;
+  width: 100%;
+  max-height: calc(100% - 5.8rem);
+  overflow: auto;
+  overflow-x: hidden;
+
+  &-container {
+    @include flex-col;
+    flex-grow: 1;
+    border-radius: 6px;
+    border: 1px solid $neutral-50;
+    overflow: auto;
+    position: relative;
+    &::-webkit-scrollbar-track {
+      background-color: $neutral-50;
+    }
+  }
+
+  &__header-options {
+    @include flex-row-center-xy;
+    margin-bottom: 1.6rem;
+    .aus-btn {
+      margin-left: auto;
+    }
+  }
+
+  &__thead {
+    background-color: $neutral-25;
+    height: 4.8rem;
+    position: sticky;
+    top: 0;
+    z-index: $z-index-10;
+  }
+
+  &__th {
+    padding: 1.6rem;
+    font-size: $body-txt-4;
+    text-transform: uppercase;
+    color: $neutral-300;
+  }
+
+  &__tr {
+    height: 5.1rem;
+    border-bottom: 1px solid $neutral-50;
+  }
+
+  &__tbody {
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+    .aus-spinner-container {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .empty-list {
+      width: initial;
+      height: initial;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__td {
+    font-size: $body-txt-3;
+    padding-left: 1.6rem;
+  }
+
+  &__pagination {
+    @include flex-center-y;
+    position: sticky;
+    bottom: 0;
+    background-color: white;
+    border-top: 1px solid $neutral-50;
+    justify-content: space-between;
+    height: 5.8rem;
+    padding: 1.2rem 0.9rem;
+    margin-top: auto;
+    z-index: $z-index-10;
+
+    & > * {
+      @include flex-center-y;
+    }
+
+    &__text {
+      margin: 0rem 1rem;
+      font-size: $body-txt-3;
+      color: $neutral-300;
+    }
+
+    &-page-size {
+      .aus-select {
+        width: 7.4rem;
+        &__indicator {
+          transform: rotate(180deg);
+          margin-right: 0.8rem;
+          padding: 0;
+        }
+        &__dropdown-indicator .chevron-small-down {
+          color: $neutral-250;
+        }
+      }
+    }
+
+    &-pages {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      .aus-btn {
+        color: $neutral-400;
+        border-color: $neutral-200;
+        &:hover {
+          border-color: $neutral-200;
+        }
+      }
+
+      &__text {
+        margin: 0rem 1rem;
+        font-size: $body-txt-3;
+        color: $neutral-300;
+      }
+    }
+
+    &-goto {
+      .aus-input__number {
+        width: 5.8rem;
+        text-align: center;
+      }
+    }
+
+    .aus-btn {
+      border-radius: 6px;
+    }
+
+    .aus-input {
+      border-radius: 6px;
+    }
+  }
+
+  &__empty-search {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.aus-table__action__header {
+  text-align: right;
+}
+
+.aus-table__action__buttons {
+  @include flex-row-center-x;
+  justify-content: end;
+  padding-right: 3rem;
+}

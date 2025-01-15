@@ -1,0 +1,18 @@
+.copy-uid-pill {
+  display: inline-flex;
+  align-items: baseline;
+  :hover {
+    cursor: pointer;
+  }
+
+  &__icon {
+    margin-bottom: 0.2rem;
+  }
+  .aus-pill {
+    &__label {
+      padding: 0.4rem 0.8rem;
+      background-color: $primary-200;
+      gap: 0.5rem;
+    }
+  }
+}

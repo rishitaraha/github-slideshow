@@ -1,0 +1,111 @@
+.aus-pill-button {
+    display: flex;
+    flex-direction: row;
+    background-color: $neutral-25;
+    border-radius: 20px;
+    height: 2.4rem;
+    color: $primary-700;
+    padding: 4px 10px 4px 6px;
+    font-size: 12px;
+    line-height: 16px;
+    border: 1px solid transparent;
+    &:active,
+    &:focus {
+      border-color: transparent;
+    }
+    @include flex-center-y;
+    gap: 0.4rem;
+    &:hover {
+      cursor: inherit;
+    }
+  
+    &--error {
+      background-color: $red-100;
+      color: $accent-error-500;
+      &:hover {
+        background-color: $red-100;
+        color: $accent-error-500;
+        border: 1px solid $red-500;
+      }
+      &:focus {
+        background-color: $red-100;
+        color: $accent-error-500;
+        box-shadow: 0 0 0 3px #ed9696 !important;
+      }
+      &:active {
+        background-color: $red-100;
+        color: $accent-error-500;
+        border: 1px solid $red-500;
+      }
+    }
+  
+    &--primary {
+      background-color: $neutral-25;
+      color: $primary-500;
+      &:disabled {
+        background-color: $neutral-25;
+        color: $primary-500;
+        border: 1px solid transparent;
+        opacity: 1;
+        &:hover {
+          cursor: inherit;
+        }
+      }
+      &:hover {
+        color: $primary-500;
+        background-color: $neutral-25;
+        border: 1px solid $primary-500;
+      }
+      &:focus {
+        color: $primary-500;
+        background-color: $neutral-25;
+        box-shadow: 0 0 0 3px #a5ceef !important;
+      }
+      &:active {
+        color: $primary-500;
+        background-color: $neutral-25;
+        border: 1px solid $primary-500;
+      }
+    }
+  
+    &--warning {
+      background-color: $accent-warning-100;
+      color: $accent-warning-500;
+      &:hover {
+        color: $accent-warning-500;
+        background-color: $accent-warning-100;
+        border: 1px solid $accent-warning-500;
+      }
+      &:focus {
+        color: $accent-warning-500;
+        background-color: $accent-warning-100;
+        box-shadow: 0 0 0 3px #ffd48a !important;
+      }
+      &:active {
+        background-color: $accent-warning-100;
+        color: $accent-warning-500;
+        border: 1px solid $accent-warning-500;
+      }
+    }
+  
+    &--success {
+      background-color: $accent-success-100;
+      color: $accent-success-500;
+      &:hover {
+        background-color: $accent-success-100;
+        color: $accent-success-500;
+        border: 1px solid $accent-success-500;
+      }
+      &:focus {
+        background-color: $accent-success-100;
+        color: $accent-success-500;
+        box-shadow: 0 0 0 3px #8be4b1 !important;
+      }
+      &:active {
+        background-color: $accent-success-100;
+        color: $accent-success-500;
+        border: 1px solid $accent-success-500;
+      }
+    }
+  }
+  

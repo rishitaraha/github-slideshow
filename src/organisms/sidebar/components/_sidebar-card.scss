@@ -1,0 +1,39 @@
+.sidebar-card {
+  height: 100%;
+  width: 35rem;
+  background: $white;
+  top: 0;
+  left: 6rem;
+  position: absolute;
+  border-right: 1px solid $neutral-25;
+  display: none;
+
+  &__header {
+    @include flex-center-y;
+    justify-content: space-between;
+    font-size: 2rem;
+    border-bottom: 1px solid $neutral-25;
+    height: 5.7rem;
+    padding: 0 2rem;
+    &-icon {
+      color: $neutral-250;
+      cursor: pointer;
+    }
+    &-title {
+      color: $primary-600;
+      font-weight: $bold-txt-2;
+    }
+  }
+
+  &__body {
+    height: calc(100% - 8.2rem);
+    overflow: auto;
+    &::-webkit-scrollbar {
+      width: 0.5rem;
+    }
+  }
+
+  &.active {
+    display: block;
+  }
+}

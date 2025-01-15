@@ -1,0 +1,32 @@
+.form-message {
+  width: 100%;
+  padding: 0.4rem 0.8rem;
+  font-size: $body-txt-4;
+  border-radius: 5px;
+  @include flex-center-y;
+
+  &__icon {
+    margin-right: 0.4rem;
+  }
+
+  &.error {
+    background-color: $red-100;
+    color: $red-500;
+  }
+  &.info {
+    background-color: $primary-200;
+    color: $primary-500;
+  }
+  &.warning {
+    background-color: $accent-warning-200;
+    color: $accent-warning-500;
+  }
+  &.success {
+    background-color: $accent-success-100;
+    color: $accent-success-500;
+  }
+  &.default {
+    background-color: $neutral-100;
+    color: $neutral-300;
+  }
+}

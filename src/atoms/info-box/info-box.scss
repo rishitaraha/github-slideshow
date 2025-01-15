@@ -1,0 +1,42 @@
+.aus-box {
+  height: fit-content;
+  width: fit-content;
+  min-width: 8rem;
+  border: 1px solid $neutral-100;
+  border-radius: 0.8rem;
+  text-align: left;
+  padding: 1rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &-header {
+    color: $neutral-200;
+    letter-spacing: 0.1rem;
+    font-family:  $font-family-nunito;
+    font-weight: $font-weight-900;
+    line-height: 1.6rem;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    -webkit-font-smoothing: antialiased;
+    @include response(phone-land) {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  &__text {
+    display: none;
+    text-transform: capitalize;
+    font-size: 1.4rem;
+    text-overflow: ellipsis;
+    margin-bottom: 0;
+
+    &-link {
+      margin-bottom: 0;
+      text-decoration: none;
+      text-transform: capitalize;
+      color: $primary-500;
+      cursor: pointer;
+    }
+  }
+}
