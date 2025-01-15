@@ -1,0 +1,17 @@
+services:
+  app:
+    build: .
+    volumes:
+      - ./src:/code/src
+      - ./files:/code/files
+      - ./files/inputs:/code/files/inputs
+      - ./files/results:/code/files/results
+      - ./temp:/tmp
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./requirements.txt:/code/requirements.txt
+    command: python -m src.main
+    env_file:
+      - path: env_files/.env.local
+        required: true
+      - path: env_files/.env.mine_analytics
+        required: true
