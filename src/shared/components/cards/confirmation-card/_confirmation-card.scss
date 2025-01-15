@@ -1,0 +1,24 @@
+.confirmation-card {
+  border-radius: 10px;
+  border: 2px solid $neutral-100;
+  box-shadow: none !important;
+  margin-top: 1rem;
+  font-size: 1.4rem;
+  &__title {
+    color: $primary-700;
+    font-weight: $bold-txt-2;
+    background: none;
+  }
+  .aus-btn {
+    &:nth-of-type(2) {
+      background-color: $error;
+      margin-left: 1rem;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    float: right;
+    margin-top: 1rem;
+  }
+}

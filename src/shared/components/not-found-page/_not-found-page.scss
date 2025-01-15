@@ -1,0 +1,95 @@
+.not-found-page {
+  &__man {
+    width: 59.2rem;
+    height: 50.5rem;
+    background-image: url(../images/not-found/man.svg);
+    background-size: cover;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    @include response(phone) {
+      width: 50.2rem;
+      height: 47.5rem;
+    }
+  }
+
+  &__tree {
+    width: 35rem;
+    height: 51.8rem;
+    background-image: url(../images/not-found/tree.svg);
+    background-size: cover;
+
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    @include response(phone) {
+      display: none;
+    }
+  }
+
+  &__drone {
+    width: 11.4rem;
+    height: 4.6rem;
+    background-image: url(../images/not-found/drone.svg);
+    background-size: cover;
+
+    position: fixed;
+    top: 8%;
+    right: 28%;
+  }
+  &__txt-box {
+    width: 55.6rem;
+    height: 42.2rem;
+
+    position: fixed;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    text-align: center;
+    z-index: $z-index-1;
+
+    @include flex-center-rev-x;
+
+    @include response(phone) {
+      top: 30%;
+    }
+  }
+
+  &__txt {
+    &-heading-1 {
+      height: fit-content;
+      font-size: 240px;
+      letter-spacing: 2rem;
+      font-weight: 800;
+
+      @include response(phone) {
+        font-size: 120px;
+      }
+    }
+    &-heading-2 {
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 28px;
+      line-height: 38px;
+      letter-spacing: 0.3em;
+      max-lines: 1;
+
+      height: fit-content;
+      margin-top: -3rem;
+
+      @include response(phone) {
+        font-size: 16px;
+      }
+    }
+
+    &-body {
+      font-size: $body-txt-1;
+      color: $neutral-300;
+      margin-top: 2rem;
+    }
+    &-btn {
+      margin-top: 5rem;
+    }
+  }
+}

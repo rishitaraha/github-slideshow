@@ -1,0 +1,51 @@
+@import 'react-quill/dist/quill.snow.css';
+
+.text-editor {
+  width: 100%;
+
+  .ql-toolbar {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-color: $neutral-200;
+
+    .ql-formats {
+      margin-right: 1rem !important;
+
+      &:last-child {
+        margin-right: 0 !important;
+      }
+    }
+  }
+
+  .ql-container {
+    border-color: $neutral-200 !important;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+
+    .ql-editor {
+      min-height: 10rem;
+    }
+  }
+
+  .ql-tooltip {
+    left: 0 !important;
+  }
+
+  &.error {
+    .ql-container {
+      border-color: $error !important;
+    }
+    .ql-toolbar {
+      border-bottom-color: $error;
+    }
+  }
+
+  &.disabled {
+    .ql-container,
+    .ql-toolbar {
+      background-color: $neutral-25;
+      color: $neutral-200;
+      pointer-events: none;
+    }
+  }
+}

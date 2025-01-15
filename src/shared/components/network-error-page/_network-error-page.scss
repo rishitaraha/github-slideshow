@@ -1,0 +1,80 @@
+.network-error-page {
+  &__network-man {
+    width: 46.4rem;
+    height: 65rem;
+    background-image: url(../images/network-error/network-man.svg);
+    background-size: cover;
+
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    @include response(phone) {
+      display: none;
+    }
+  }
+
+  &__dog-server {
+    width: 55rem;
+    height: 43.7rem;
+    background-image: url(../images/network-error/dog-server.svg);
+    background-size: cover;
+
+    position: fixed;
+    left: 5%;
+    bottom: 10%;
+
+    @include response(phone) {
+      width: 41rem;
+      height: 32.7rem;
+    }
+  }
+
+  &__txt-box {
+    width: 55.6rem;
+    height: 42.2rem;
+
+    position: fixed;
+    top: 33%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    text-align: center;
+    z-index: $z-index-1;
+
+    @include flex-center-rev-x;
+
+    @include response(phone) {
+      top: 40%;
+    }
+  }
+
+  &__txt {
+    &-heading-2 {
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 28px;
+      line-height: 38px;
+      letter-spacing: 0.3em;
+      max-lines: 1;
+
+      height: fit-content;
+
+      @include response(phone) {
+        font-size: 16px;
+      }
+    }
+
+    &-body {
+      font-size: $body-txt-1;
+      color: $neutral-300;
+      margin-top: 2rem;
+    }
+
+    &-btn-box {
+      margin-top: 5rem;
+      @include flex-center-y;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+  }
+}

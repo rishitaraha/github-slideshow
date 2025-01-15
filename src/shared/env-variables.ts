@@ -1,0 +1,15 @@
+export const EnvVariables = {
+  backendUrl: import.meta.env.VITE_BACKEND_URL?.toString(),
+  logServerUrl: import.meta.env.VITE_LOG_SERVICE_URL?.toString(),
+  mapBoxAccessToken: import.meta.env.VITE_MAPBOX_ACCESS_TOKEN?.toString(),
+  mapBoxUsername: import.meta.env.VITE_MAPBOX_USERNAME?.toString(),
+  rasterServerUrl: import.meta.env.VITE_RASTER_SERVER_URL?.toString(),
+  cesiumAccessToken: import.meta.env.VITE_CESIUM_ACCESS_TOKEN?.toString(),
+  terrainServerUrl: import.meta.env.VITE_TERRAIN_SERVER_URL?.toString(),
+  sentryDSN: import.meta.env.VITE_SENTRY_DSN?.toString(),
+  environment: import.meta.env.MODE?.toString(),
+  processingUrl: import.meta.env.VITE_PROCESSING_URL?.toString(),
+  vectorServerUrl: import.meta.env.VITE_VECTOR_SERVER_URL?.toString(),
+  tileServerUrl: import.meta.env.VITE_TILE_SERVER_URL?.toString(),
+  googleTagManagerId: import.meta.env.VITE_GOOGLE_TAG_MANAGER_ID?.toString(),
+};

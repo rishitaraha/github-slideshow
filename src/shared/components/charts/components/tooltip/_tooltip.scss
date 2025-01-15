@@ -1,0 +1,45 @@
+.elc-tooltip {
+  width: 21rem;
+  background: $gray-900;
+  border-radius: 0.4rem;
+  color: $white;
+  opacity: 1;
+  pointer-events: none;
+  position: absolute;
+  font-size: $body-txt-4;
+  opacity: 0;
+
+  &-header {
+    @include flex-center-y;
+    gap: 0.6rem;
+    padding: 0.6rem;
+    border-bottom: 1px solid $gray-500;
+    font-weight: $bold-txt-2;
+
+    &__color-block {
+      width: 1.4rem;
+      height: 1.4rem;
+      border-radius: 0.2rem;
+      flex-grow: 0;
+    }
+
+    &__text {
+      @include text-ellipses;
+      font-weight: $bold-txt-2;
+      padding-top: 0.2rem;
+    }
+  }
+
+  &-body {
+    padding: 0.4rem 0.6rem;
+
+    &__element {
+      @include flex-center-y;
+      justify-content: space-between;
+    }
+
+    &__value {
+      font-weight: $bold-txt-2;
+    }
+  }
+}

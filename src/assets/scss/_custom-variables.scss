@@ -1,0 +1,56 @@
+// Header and footer height.
+$header-height: 5rem;
+$footer-height: 3.6rem;
+$terrain-footer-height: 3.5rem;
+
+$default-icon-size: 2rem;
+$scroll-bar-size: 8px;
+$input-height: 3.4rem;
+
+// Typography.
+$body-txt-1: 1.8rem;
+$body-txt-2: 1.6rem;
+$body-txt-3: 1.4rem;
+$body-txt-4: 1.2rem;
+$body-txt-5: 1rem;
+$body-txt-6: 0.9rem;
+
+$header-txt-1: 2.8rem;
+$header-txt-2: 2.6rem;
+$header-txt-3: 2.4rem;
+$header-txt-4: 2.2rem;
+$header-txt-5: 2rem;
+
+$font-weight-500: 500;
+$font-weight-300: 300;
+$bold-txt-1: 400;
+$bold-txt-2: 700;
+
+$font-family-nunito: 'Nunito', sans-serif;
+
+// zIndex.
+$z-index-neg-1: -10;
+$z-index-neg: -1;
+$z-index-base: 1;
+$z-index-1: 10;
+$z-index-2: 20;
+$z-index-3: 30;
+$z-index-4: 40;
+$z-index-5: 50;
+$z-index-6: 60;
+$z-index-7: 70;
+$z-index-8: 80;
+$z-index-9: 90;
+$z-index-10: 100;
+$z-index-11: 1999;
+$z-index-100: 10000;
+
+// Transition.
+$sidecard-transition: 0.25s ease-in-out;
+
+// Components.
+$sidecard-padding: 0.8rem 1.6rem;
+$sidecard-padding-left-right: 0rem 1.6rem;
+$sidecard-padding-top-bottom: 0.8rem 0rem;
+$sidecard-width: 35rem;
+$form-gap: 1.2rem;

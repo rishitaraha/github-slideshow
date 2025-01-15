@@ -1,0 +1,31 @@
+.opacity-slider {
+  @include flex-row-center-x;
+
+  &__input-container {
+    width: 7.4rem;
+    position: relative;
+    .aus-input {
+      input {
+        color: $neutral-200;
+        // Removed number increase/decrease arrows.
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+      }
+    }
+    &::after {
+      content: '%';
+      font-size: $body-txt-3;
+      color: $neutral-200;
+      position: absolute;
+      right: 0.9rem;
+      top: 0.7rem;
+    }
+  }
+
+  .rc-slider {
+    margin-right: 1.4rem;
+  }
+}

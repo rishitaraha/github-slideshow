@@ -1,0 +1,32 @@
+.confirmation-modal {
+  .modal {
+    &-header {
+      color: $primary-600;
+      height: 5.8rem;
+      padding: 1.7rem 1.6rem;
+    }
+
+    &-content {
+      margin: 0;
+      border-radius: 6px;
+      width: 41rem;
+    }
+
+    &-body {
+      font-size: $body-txt-3;
+      .form-message {
+        margin-top: 1.2rem;
+      }
+    }
+
+    &-footer {
+      @include flex-center-y;
+      height: 5.8rem;
+      gap: 0.8rem;
+      padding: 1.2rem 1.6rem;
+      .aus-btn.danger {
+        background-color: $red-500;
+      }
+    }
+  }
+}
