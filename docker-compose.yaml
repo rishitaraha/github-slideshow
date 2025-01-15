@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  app:
+    platform: linux/x86_64
+    build: .
+    volumes:
+      - "./files:/app/files"
+    command: "python3 main.py"
+    env_file:
+      - ".env.local"
