@@ -1,0 +1,68 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgis/postgis:14-master
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "pg_isready -U postgres -d postgres && (echo 'SELECT PostGIS_full_version();' | psql -U postgres -d postgres -t | grep -q POSTGIS)",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+
+  redis:
+    image: redis:alpine3.17
+
+  api:
+    image: ${API_ENGINE_IMAGE}:latest
+    command: /bin/sh -c "python manage.py shell -c 'from setup_db import setup; setup();' && uvicorn rainbow.asgi:application --host 0.0.0.0 --port 80 --reload --log-config log_config.json"
+    volumes:
+      - ./setup_db:/code/setup_db
+    depends_on:
+      db:
+        condition: service_healthy
+    env_file: "./env-files/.env.api"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/ping"]
+      interval: 30s
+      timeout: 5s
+      start_period: 60s
+      retries: 5
+
+  tile-server:
+    image: ${TILE_SERVER_IMAGE}:latest
+    command: uvicorn src.main:app --host 0.0.0.0 --reload --log-config log_config.json
+    env_file: "./env-files/.env.tile"
+    depends_on:
+      - redis
+
+  ui:
+    image: ${UI_IMAGE}:latest
+    depends_on:
+      api:
+        condition: service_healthy
+      db:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  e2e:
+    image: mcr.microsoft.com/playwright:v1.40.0-jammy
+    volumes:
+      - "./e2e:/tests"
+    command: bash -c "cd /tests && npm ci && npm test"
+    environment:
+      - CI=${CI}
+    depends_on:
+      ui:
+        condition: service_healthy

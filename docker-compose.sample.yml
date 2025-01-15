@@ -1,0 +1,71 @@
+version: "3.9"
+
+services:
+  db:
+    container_name: e2e-db-sample
+    image: postgis/postgis:14-master
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "pg_isready -U postgres -d postgres && (echo 'SELECT PostGIS_full_version();' | psql -U postgres -d postgres -t | grep -q POSTGIS)",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+
+  redis:
+    container_name: e2e-redis-sample
+    image: redis:alpine3.17
+    ports:
+      - "6378:6379"
+
+  api:
+    container_name: e2e-api-sample
+    image: api-engine-test:latest
+    command: /bin/sh -c "python manage.py shell -c 'from setup_db import setup; setup();' && uvicorn rainbow.asgi:application --host 0.0.0.0 --port 80 --reload --log-config log_config.json"
+    volumes:
+      - ./setup_db:/code/setup_db
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "81:80"
+    env_file: ".env.api.local"
+
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/ping"]
+      interval: 30s
+      timeout: 5s
+      start_period: 60s
+      retries: 5
+
+  tile_server:
+    container_name: e2e-tile-server-sample
+    image: tile-server:latest
+    command: uvicorn src.main:app --host 0.0.0.0 --reload --log-config log_config.json
+    ports:
+      - "8000:8000"
+    env_file: ".env.tile.local"
+    depends_on:
+      - redis
+
+  ui:
+    container_name: e2e-ui-sample
+    image: ui-test:latest
+    depends_on:
+      api:
+        condition: service_healthy
+      db:
+        condition: service_healthy
+    ports:
+      - "3001:80"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
