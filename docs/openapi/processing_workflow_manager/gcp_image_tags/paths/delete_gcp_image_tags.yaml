@@ -1,0 +1,23 @@
+delete:
+  operationId: delete_gcp_image_tags
+  description: "Deletes gcp images tags."
+  parameters:
+    gcp:
+      type: string
+      format: uuid
+      description: ID to identify GCP for image tags to be deleted.
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: "../../shared/schemas/response_metadata_accepted.yaml"
+              data:
+                type: object
+
+      description: ""
+  tags:
+    - processing_workflow

@@ -1,0 +1,14 @@
+get:
+  operationId: get_geotag_image_presigned_url
+  description: "Fetches a single geotag images presigned url"
+  parameters:
+    - $ref: "../../../shared/parameters/object_id.yaml"
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/response/geotag_image_presigned_url.yaml"
+      description: ""
+  tags:
+    - processing_workflow

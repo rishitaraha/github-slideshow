@@ -1,0 +1,24 @@
+post:
+  summary: Create a SmartDetect object
+  description: Accepts data to create a SmartDetect object.
+  operationId: createSmartDetect
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: "../schemas/request/create_smart_detect.yaml"
+  responses:
+    "202":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: "../../shared/schemas/response_metadata_accepted.yaml"
+              data:
+                type: object
+      description: ""
+  tags:
+    - workspace

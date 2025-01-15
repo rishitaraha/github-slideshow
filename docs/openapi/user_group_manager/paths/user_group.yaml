@@ -1,0 +1,68 @@
+get:
+  operationId: retrieve_user_group
+  description: "Org admin can get the details of a user group."
+  parameters:
+    - $ref: "../../shared/parameters/object_id.yaml"
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: "../../shared/schemas/response_metadata_get.yaml"
+              data:
+                $ref: "../schemas/user_group.yaml"
+      description: ""
+  tags:
+    - user-groups
+patch:
+  operationId: partial_update_user
+  description: "Update personal details: first & last name. Org admin can also update type to \"member\" or \"org_admin\"."
+  parameters:
+    - $ref: "../../shared/parameters/object_id.yaml"
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: "../schemas/user_group.yaml"
+      application/x-www-form-urlencoded:
+        schema:
+          $ref: "../schemas/user_group.yaml"
+      multipart/form-data:
+        schema:
+          $ref: "../schemas/user_group.yaml"
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: "../../shared/schemas/response_metadata_get.yaml"
+              data:
+                $ref: "../schemas/user_group.yaml"
+      description: ""
+  tags:
+    - user-groups
+delete:
+  operationId: destroy_user_group
+  description: "Delete a user group."
+  parameters:
+    - $ref: "../../shared/parameters/object_id.yaml"
+  responses:
+    "204":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: "../../shared/schemas/response_metadata_delete.yaml"
+              data:
+                type: object
+      description: "No Content"
+  tags:
+    - user-groups

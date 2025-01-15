@@ -1,0 +1,101 @@
+type: object
+properties:
+  location_wgs84:
+    type: object
+    nullable: true
+    properties:
+      type:
+        type: string
+        example: "Point"
+      coordinates:
+        type: array
+        items:
+          type: number
+  x_coordinate:
+    type: decimal
+  y_coordinate:
+    type: decimal
+  z_coordinate:
+    type: decimal
+  filename:
+    type: string
+  is_image_available:
+    type: boolean
+    example: true
+  is_geotag_disabled:
+    type: boolean
+    example: false
+  is_image_disabled:
+    type: boolean
+    example: false
+  x_accuracy:
+    type: number
+    format: decimal
+    nullable: true
+    example: 0.005
+  y_accuracy:
+    type: number
+    format: decimal
+    nullable: true
+    example: 0.005
+  horizontal_accuracy:
+    type: number
+    format: decimal
+    nullable: true
+    example: 0.010
+  vertical_accuracy:
+    type: number
+    format: decimal
+    nullable: true
+    example: 0.010
+  omega:
+    type: number
+    format: decimal
+    nullable: true
+  omega_accuracy:
+    type: number
+    format: decimal
+    nullable: true
+  phi:
+    type: number
+    format: decimal
+    nullable: true
+  phi_accuracy:
+    type: number
+    format: decimal
+    nullable: true
+  kappa:
+    type: number
+    format: decimal
+    nullable: true
+  kappa_accuracy:
+    type: number
+    format: decimal
+    nullable: true
+  yaw:
+    type: number
+    format: decimal
+    nullable: true
+  yaw_accuracy:
+    type: number
+    format: decimal
+    nullable: true
+  pitch:
+    type: number
+    format: decimal
+    nullable: true
+  pitch_accuracy:
+    type: number
+    format: decimal
+    nullable: true
+  roll:
+    type: number
+    format: decimal
+    nullable: true
+  roll_accuracy:
+    type: number
+    format: decimal
+    nullable: true
+  image_orientation:
+    type: string
+    nullable: true

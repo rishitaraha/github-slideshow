@@ -1,0 +1,24 @@
+post:
+  operationId: delete_gcps
+  description: "Bulk deletes gcpss."
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: "../schemas/request/delete_gcps.yaml"
+  responses:
+    "204":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: "../../../shared/schemas/response_metadata_delete.yaml"
+              data:
+                type: object
+      description: "No Content"
+
+
+  tags:
+    - processing_workflow

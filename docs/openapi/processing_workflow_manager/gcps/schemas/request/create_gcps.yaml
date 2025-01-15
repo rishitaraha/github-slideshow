@@ -1,0 +1,21 @@
+
+type: object
+properties:
+  merged_dataset:
+    type: string
+    format: uuid
+    description: ID of the merged dataset.
+  iteration_dataset:
+    type: string
+    format: uuid
+    description: ID of the iteration dataset.
+  gcp_horizontal_crs:
+    $ref: "../../../processing_workflow_constants.yaml#/HorizontalCRS"
+  gcp_vertical_crs:
+    $ref: "../../../processing_workflow_constants.yaml#/VerticalCRS"
+  gcp_rotation_angle:
+    $ref: "../../../processing_workflow_constants.yaml#/RotationAngle"
+  gcp_file:
+    type: string
+    format: binary
+    description: file containing gcps.

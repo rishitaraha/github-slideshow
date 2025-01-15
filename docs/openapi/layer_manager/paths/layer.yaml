@@ -1,0 +1,70 @@
+get:
+  operationId: retrieve_layer
+  description: "Get details of an layer."
+  parameters:
+    - $ref: "../../shared/parameters/object_id.yaml"
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: "../../shared/schemas/response_metadata_get.yaml"
+              data:
+                $ref: "../schemas/response/get_layer.yaml"
+      description: ""
+  tags:
+    - layers
+
+patch:
+  operationId: partial_update_layer
+  description: "Update details of a layer partially."
+  parameters:
+    - $ref: "../../shared/parameters/object_id.yaml"
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: "../schemas/layer.yaml"
+      application/x-www-form-urlencoded:
+        schema:
+          $ref: "../schemas/layer.yaml"
+      multipart/form-data:
+        schema:
+          $ref: "../schemas/layer.yaml"
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: "../../shared/schemas/response_metadata_patch.yaml"
+              data:
+                $ref: "../schemas/layer.yaml"
+      description: ""
+  tags:
+    - layers
+
+delete:
+  operationId: destroy_layer
+  description: "Delete an layer object."
+  parameters:
+    - $ref: "../../shared/parameters/object_id.yaml"
+  responses:
+    "204":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: "../../shared/schemas/response_metadata_delete.yaml"
+              data:
+                type: object
+      description: "No Content"
+  tags:
+    - layers

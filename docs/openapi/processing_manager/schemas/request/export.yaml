@@ -1,0 +1,19 @@
+type: object
+properties:
+  dsm:
+    type: object
+    properties:
+      key:
+        type: string
+      bucket:
+        type: string
+  orthomosaic:
+    type: object
+    properties:
+      key:
+        type: string
+      bucket:
+        type: string
+  iteration_id:
+    type: string
+    format: uuid

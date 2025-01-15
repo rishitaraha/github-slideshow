@@ -1,0 +1,39 @@
+type: object
+properties:
+  id:
+    type: string
+    format: uuid
+    readOnly: true
+  email:
+    type: string
+    maxLength: 50
+  password:
+    type: string
+    maxLength: 128
+    writeOnly: true
+  first_name:
+    type: string
+    maxLength: 50
+  last_name:
+    type: string
+    maxLength: 50
+  org:
+    type: string
+    format: uuid
+    readOnly: true
+  type:
+    type: string
+    maxLength: 20
+  is_active:
+    type: boolean
+    readOnly: true
+  last_login:
+    type: string
+    format: date-time
+    readOnly: true
+  features:
+    type: object
+    readOnly: true
+required:
+  - first_name
+  - email

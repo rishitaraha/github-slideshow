@@ -1,0 +1,17 @@
+type: object
+properties:
+  project:
+    type: string
+    format: uuid
+    readOnly: true
+  user_group:
+    type: string
+    format: uuid
+  can_view:
+    type: boolean
+  can_manage_sites:
+    type: boolean
+required:
+- user_group
+- can_view
+- can_manage_sites

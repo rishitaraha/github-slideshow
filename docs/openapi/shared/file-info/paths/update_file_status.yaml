@@ -1,0 +1,30 @@
+patch:
+  operationId: completed_upload
+  description: "File upload is completed."
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            status:
+              type: string
+
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: "../../schemas/response_metadata_patch.yaml"
+              data:
+                schema:
+                  type: object
+                  properties:
+                    status:
+                      type: string
+      description: ""
+  tags:
+    - files

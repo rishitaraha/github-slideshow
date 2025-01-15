@@ -1,0 +1,18 @@
+type: array
+items:
+  type: object
+  properties:
+    id:
+      type: string
+      format: string
+    name:
+      type: string
+    geometry:
+      type: string
+    properties:
+      type: object
+    type:
+      type: string
+    layer:
+      type: string
+      format: uuid

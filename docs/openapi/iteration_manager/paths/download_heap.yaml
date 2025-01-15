@@ -1,0 +1,17 @@
+get:
+  summary: Downloads the heap geojson file.
+  responses:
+    "200":
+      description: Heap geojson file
+      content:
+        application/geojson:
+          schema:
+            type: string
+            format: binary
+      headers:
+        Content-Disposition:
+          schema:
+            type: string
+            example: attachment; filename="heap_name.geojson"
+  tags:
+    - heap-boundary

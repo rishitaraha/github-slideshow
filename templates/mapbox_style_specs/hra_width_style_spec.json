@@ -1,0 +1,66 @@
+{% load math_tags %}
+
+{
+  "version": 8,
+  "glyphs": "{{map_fonts_base_url}}{fontstack}/{range}.pbf",
+  "sources": {
+    "hra_width": {
+      "type": "vector"
+    }
+  },
+  "layers": [
+    {
+      "id": "line-highlight",
+      "type": "line",
+      "source": "hra_width",
+      "source-layer": "default",
+      "paint": {
+        "line-color": [
+          "case",
+          {% for risk_range in hra_risk_ranges %}
+
+            {% if risk_range.min_value|is_inf %}
+                ["<", ["to-number", ["get", "chain_width"]], {{risk_range.max_value}}],
+            {% elif risk_range.max_value|is_inf %}
+                [">=", ["to-number", ["get", "chain_width"]], {{risk_range.min_value}}],
+            {% else %}
+              [
+                "all",
+                [">=", ["to-number", ["get", "chain_width"]], {{risk_range.min_value}}],
+                ["<", ["to-number", ["get", "chain_width"]], {{risk_range.max_value}}]
+              ],
+            {% endif %}
+
+            "{{risk_range.color}}",
+          {% endfor %}
+          "#000000"
+        ],
+        "line-width": 3
+      }
+    },
+    {
+      "id": "label",
+      "type": "symbol",
+      "source": "hra_width",
+      "source-layer": "default",
+      "minzoom": 12,
+      "layout": {
+        "text-field": "{chain_width} m",
+        "text-font": ["Open Sans Bold"],
+        "text-size": 10,
+        "text-anchor": "center",
+        "text-justify": "center",
+        "text-allow-overlap": false,
+        "symbol-placement": "line",
+        "symbol-spacing": 100000,
+        "symbol-avoid-edges": true
+      },
+      "paint": {
+        "text-color": "#ffffff",
+        "text-halo-color": "#000000",
+        "text-halo-width": 1,
+        "text-halo-blur": 1
+      }
+    }
+  ]
+}

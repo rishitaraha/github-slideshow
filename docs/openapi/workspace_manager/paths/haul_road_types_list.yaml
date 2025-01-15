@@ -1,0 +1,11 @@
+get:
+  operationId: retrieve_haul_road_types_details
+  description: "Retrieve a list of all haul road types."
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/response/get_haul_road_types_list.yaml"
+  tags:
+    - workspace

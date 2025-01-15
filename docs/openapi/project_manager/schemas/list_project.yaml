@@ -1,0 +1,21 @@
+type: object
+properties:
+  id:
+    type: string
+    format: uuid
+    readOnly: true
+  name:
+    type: string
+    maxLength: 255
+  org:
+    type: string
+    format: uuid
+    readOnly: true
+  total_sites:
+    type: number
+  created_at:
+    type: string
+    format: date-time
+    readOnly: true
+required:
+- name

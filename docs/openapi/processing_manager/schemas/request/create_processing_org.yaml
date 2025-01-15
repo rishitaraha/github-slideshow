@@ -1,0 +1,8 @@
+type: object
+properties:
+  processing_org_name:
+    type: string
+    maxLength: 500
+
+required:
+  - processing_org_name

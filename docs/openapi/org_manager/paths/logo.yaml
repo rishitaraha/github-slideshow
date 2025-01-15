@@ -1,0 +1,25 @@
+post:
+  operationId: upload_logo
+  description: "Upload logo of organisation."
+  requestBody:
+    content:
+      multipart/form-data:
+        schema:
+          type: object
+          properties:
+            logo:
+              type: image/jpeg
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: "../../shared/schemas/response_metadata_get.yaml"
+              data:
+                $ref: "../schemas/get_my_org.yaml"
+      description: ""
+  tags:
+    - organisations

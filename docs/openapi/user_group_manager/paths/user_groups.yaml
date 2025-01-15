@@ -1,0 +1,53 @@
+get:
+  operationId: list_user_groups
+  description: "Org Admin can list all the User Groups in its Org."
+  parameters:
+    $ref: "../../shared/parameters/search.yaml"
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: "../../shared/schemas/response_metadata_get.yaml"
+              data:
+                type: array
+                items:
+                  $ref: "../schemas/user_groups_list.yaml"
+              total:
+                type: number
+                default: 1
+      description: ""
+  tags:
+  - user-groups
+post:
+  operationId: create_user_group
+  description: "Org Admin can create a new user group in its org. While creating, atleast one user is required"
+  parameters: []
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: "../schemas/user_group.yaml"
+      application/x-www-form-urlencoded:
+        schema:
+          $ref: "../schemas/user_group.yaml"
+      multipart/form-data:
+        schema:
+          $ref: "../schemas/user_group.yaml"
+  responses:
+    "201":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: "../../shared/schemas/response_metadata_post.yaml"
+              data:
+                $ref: "../schemas/user_group.yaml"
+      description: ""
+  tags:
+  - user-groups

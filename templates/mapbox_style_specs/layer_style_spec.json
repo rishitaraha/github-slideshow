@@ -1,0 +1,108 @@
+{
+  "version": 8,
+  "glyphs": "{{map_fonts_base_url}}{fontstack}/{range}.pbf",
+  "sources": {
+    "vector": {
+      "type": "vector"
+    }
+  },
+  "layers": [
+    {
+      "id": "points",
+      "type": "circle",
+      "source": "vector",
+      "source-layer": "default",
+      "paint": {
+        "circle-color": "{{point.color}}",
+        "circle-radius": 5,
+        "circle-stroke-width": 1,
+        "circle-stroke-color": "#F9CC34"
+      },
+       "filter": ["==", "type", "Point"]
+    },
+    {
+      "id": "lines",
+      "source": "vector",
+      "source-layer": "default",
+      "type": "line",
+      "paint": {
+        "line-color": "{{line.strokeColor}}",
+        "line-width": {{line.strokeThickness}}
+      },
+      "filter": ["==", "type", "LineString"]
+    },
+    {
+      "id": "polygons",
+      "type": "fill",
+      "source": "vector",
+      "source-layer": "default",
+      "paint": {
+        "fill-color": "{{polygon.fillColor}}",
+        "fill-opacity": {{polygon.fillOpacity}}
+      },
+      "filter": ["==", "type", "Polygon"]
+    },
+    {
+      "id": "polygon-boundary",
+      "source": "vector",
+      "source-layer": "default",
+      "type": "line",
+      "paint": {
+        "line-color": "{{polygon.strokeColor}}",
+        "line-width": {{polygon.strokeThickness}}
+      },
+      "filter": ["==", "type", "Polygon"]
+    },
+    {
+      "id": "label",
+      "type": "symbol",
+      "source": "vector",
+      "source-layer": "default",
+      "minzoom": 12,
+      "layout": {
+        "text-field": [
+          "case",
+          ["==", ["get", "type"], "Point"],
+          "{{point.label}}",
+          ["==", ["get", "type"], "LineString"],
+          "{{line.label}}",
+          ["==", ["get", "type"], "Polygon"],
+          "{{polygon.label}}",
+          ["==", ["get", "type"], "TextBox"],
+          ["get", "textbox_text"],
+          ""
+        ],
+        "text-font": ["Open Sans Bold"],
+        "text-size": [
+          "case",
+          ["==", ["get", "type"], "TextBox"],
+          {{textbox.fontSize}},
+          16
+        ],
+        "text-anchor": "center",
+        "text-justify": "center",
+        "text-rotation-alignment": "viewport",
+        "text-offset": [
+          "case",
+          ["==", ["get", "type"], "Point"],
+          ["literal", [0, -1]],
+          ["literal", [0, 0]]
+        ],
+        "text-allow-overlap": false,
+        "symbol-placement": "point",
+        "symbol-avoid-edges": true
+      },
+      "paint": {
+        "text-color": [
+          "case",
+          ["==", ["get", "type"], "TextBox"],
+          "{{textbox.fontColor}}",
+          "#000000"
+        ],
+        "text-halo-color": "#F9CC34",
+        "text-halo-width": 1,
+        "text-halo-blur": 1
+      }
+    }
+  ]
+}

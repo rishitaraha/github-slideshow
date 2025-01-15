@@ -1,0 +1,68 @@
+get:
+  operationId: list_layers
+  description: "Returns list of layers."
+  parameters:
+    $ref: "../../shared/parameters/search.yaml"
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: "../../shared/schemas/response_metadata_get.yaml"
+              data:
+                type: object
+                properties:
+                  layers:
+                    type: array
+                    items:
+                      $ref: "../schemas/response/get_layers.yaml"
+                  can_manage_layers:
+                    type: boolean
+                  access_type:
+                    type: string
+                    enum:
+                      - advance
+                      - basic
+                  iteration:
+                    type: string
+                  total:
+                    type: number
+      description: ""
+  tags:
+    - layers
+post:
+  operationId: create_layer
+  description: Create new layers. layer type can be --> "mapbox_street_layer",
+    "mapbox",
+    "cesium",
+    "vector",
+    "orthomosaic",
+    "mbtiles",
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: "../schemas/layer.yaml"
+      application/x-www-form-urlencoded:
+        schema:
+          $ref: "../schemas/layer.yaml"
+      multipart/form-data:
+        schema:
+          $ref: "../schemas/layer.yaml"
+  responses:
+    "201":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: "../../shared/schemas/response_metadata_post.yaml"
+              data:
+                $ref: "../schemas/layer.yaml"
+      description: ""
+  tags:
+    - layers

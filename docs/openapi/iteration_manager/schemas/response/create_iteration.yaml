@@ -1,0 +1,29 @@
+type: object
+properties:
+  id:
+    type: string
+    format: uuid
+    readOnly: true
+  name:
+    type: string
+    maxLength: 200
+  site:
+    type: string
+    format: uuid
+    readOnly: true
+  date:
+    type: string
+    format: date
+  info:
+    type: string
+  terrain_tiles:
+    type: string
+    enum:
+      - null
+  orthomosaic_cog:
+    type: string
+    enum:
+      - null
+required:
+  - name
+  - date

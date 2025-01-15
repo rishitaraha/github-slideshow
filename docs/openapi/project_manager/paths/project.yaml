@@ -1,0 +1,49 @@
+get:
+  operationId: retrieve_project
+  description: 'Get details of an project.'
+  parameters:
+     - $ref: "../../shared/parameters/object_id.yaml"
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: "../../shared/schemas/response_metadata_get.yaml"
+              data:
+                $ref: "../schemas/get_project.yaml"
+      description: ''
+  tags:
+    - projects
+patch:
+  operationId: partial_update_project
+  description: "Update the details of an project."
+  parameters:
+     - $ref: "../../shared/parameters/object_id.yaml"
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: "../schemas/project.yaml"
+      application/x-www-form-urlencoded:
+        schema:
+          $ref: "../schemas/project.yaml"
+      multipart/form-data:
+        schema:
+          $ref: "../schemas/project.yaml"
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: "../../shared/schemas/response_metadata_patch.yaml"
+              data:
+                $ref: "../schemas/project.yaml"
+      description: ''
+  tags:
+    - projects

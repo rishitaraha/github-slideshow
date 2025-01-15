@@ -1,0 +1,23 @@
+get:
+  operationId: fetch_gcp_images_list
+  description: "Fetch geotag images data list for a GCP."
+  parameters:
+    - in: path
+      name: gcp
+      type: uuid
+      description: ID of the GCP.
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              images:
+                type: array
+                items:
+                  $ref: "../../../shared/schemas/response/gcp_image_tag_data.yaml"
+
+      description: ""
+  tags:
+    - processing_workflow

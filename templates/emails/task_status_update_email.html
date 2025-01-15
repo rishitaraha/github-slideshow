@@ -1,0 +1,26 @@
+<html>
+
+<body>
+    <p>Hi,<br /><br />Details of the following task:
+    <ul>
+        <li>Project: <strong>{{project_name}}</strong> </li>
+        <li>Site: <strong><a href="{{site_link}}">{{site_name}}</a></strong></li>
+        {% if iteration_name %}
+            <li>Iteration: <strong>{{iteration_name}}</strong></li>
+        {% endif %}
+        {% if merged_dataset_name %}
+            <li>Merged Dataset: <strong>{{merged_dataset_name}}</strong></li>
+        {% endif %}
+        <li>Task: <strong>{{task_name}}</strong></li>
+        <li>Date & Time: <strong>{{task_created_at | date:'Y-m-d H:i'}} IST</strong></li>
+        <li>Time Taken: <strong>{{time_taken}}</strong></li>
+        <li>End Stage: <strong>{{stage}}</strong></li>
+        <li>Processing was started by: <strong>{{task_created_by}}</strong></li>
+    </ul>
+    </p>
+    <p>
+        Regards,<br /><br />Aereo Cloud Team
+    </p>
+</body>
+
+</html>

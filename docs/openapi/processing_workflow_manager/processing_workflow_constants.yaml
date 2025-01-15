@@ -1,0 +1,122 @@
+HorizontalCRS:
+  type: string
+  enum:
+    - WGS_84
+    - WGS_84_UTM_ZONE_42
+    - WGS_84_UTM_ZONE_43
+    - WGS_84_UTM_ZONE_44
+    - WGS_84_UTM_ZONE_45
+    - WGS_84_UTM_ZONE_46
+
+HorizontalCRSSRID:
+  type: number
+  enum:
+    - 4326
+    - 32642
+    - 32644
+    - 32645
+    - 32646
+
+VerticalCRS:
+  type: string
+  enum:
+    - ELLIPSOIDAL
+    - EGM96
+    - EGM2008
+
+RotationAngle:
+  type: string
+  enum:
+    - omega_phi_kappa
+    - yaw_pitch_roll
+
+InstanceName:
+  type: string
+  enum:
+    - g4dn.xLarge
+    - g4dn.4xLarge
+    - g4dn.8xLarge
+    - g4dn.12xLarge
+    - g4dn.16xLarge
+    - metal
+
+InstanceType:
+  type: string
+  enum:
+    - EC2
+
+AlignmentMethod:
+  type: string
+  enum:
+    - point_based
+    - marker_based
+    - camera_based
+
+DatasetAssetType:
+  type: string
+  enum:
+    - orthomosaic
+    - dem
+    - dense_cloud
+    - tie_points
+
+GCPType:
+  type: string
+  enum:
+    - controlpoint
+    - checkpoint
+
+Status:
+  type: string
+  enum:
+    - pending
+    - processing
+    - cancelled
+    - error
+    - completed
+
+CroppingRegionBehaviour:
+  type: string
+  enum:
+    - include
+    - exclude
+
+TaskStages:
+  type: string
+  enum:
+    - Stage 1
+    - Stage 2
+    - Stage 3
+
+MergedDatasetInputType:
+  type: string
+  enum:
+    - merged_dataset
+    - iteration
+    - task
+
+GCPFileUploadAction:
+  type: string
+  enum:
+    - append
+    - replace
+
+ImageOrientationType:
+  type: string
+  enum:
+    - "horizontal_normal"
+    - "mirrored_horizontal"
+    - "rotated_180"
+    - "mirrored_vertical"
+    - "mirrored_horizontal_then_rotated_90_ccw"
+    - "rotated_90_cw"
+    - "mirrored_horizontal_then_rotated_90_cw"
+    - "rotated_90_ccw"
+
+ContinuedFromDatasetType:
+  type: string
+  enum:
+    - "task"
+    - "iteration"
+    - "parent_merged_dataset_input"
+    - "parent_merged_dataset_output"

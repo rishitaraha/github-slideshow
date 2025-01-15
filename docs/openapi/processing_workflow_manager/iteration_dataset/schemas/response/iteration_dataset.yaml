@@ -1,0 +1,52 @@
+type: object
+properties:
+  meta:
+    $ref: "../../../../shared/schemas/response_metadata_get.yaml"
+  data:
+    type: object
+    properties:
+      id:
+        type: string
+        format: uuid
+      iteration:
+        type: string
+        format: uuid
+      is_archived:
+        type: boolean
+        default: false
+      geotag_column_order:
+        type: array
+        items:
+          type: string
+      are_geotags_present:
+        type: boolean
+        default: false
+      are_gcps_present:
+        type: boolean
+        default: false
+      is_gcp_tagged:
+        type: boolean
+        default: false
+      geotag_horizontal_crs:
+        $ref: "../../../processing_workflow_constants.yaml#/HorizontalCRS"
+      geotag_vertical_crs:
+        $ref: "../../../processing_workflow_constants.yaml#/VerticalCRS"
+      gcp_horizontal_crs:
+        $ref: "../../../processing_workflow_constants.yaml#/HorizontalCRS"
+      gcp_vertical_crs:
+        $ref: "../../../processing_workflow_constants.yaml#/VerticalCRS"
+      is_preparing_geotags:
+        type: boolean
+        default: false
+      rotation_angle_type:
+        $ref: "../../../processing_workflow_constants.yaml#/RotationAngle"
+      number_of_images:
+        type: number
+      number_of_images_enabled:
+        type: number
+      created_at:
+        type: string
+        format: date-time
+      updated_at:
+        type: string
+        format: date-time

@@ -1,0 +1,28 @@
+post:
+  operationId: login_user
+  description: "Login user and get access tokens."
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: "../schemas/user_login.yaml"
+      application/x-www-form-urlencoded:
+        schema:
+          $ref: "../schemas/user_login.yaml"
+      multipart/form-data:
+        schema:
+          $ref: "../schemas/user_login.yaml"
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: "../../shared/schemas/response_metadata_get.yaml"
+              data:
+                $ref: "../schemas/user_login_response.yaml"
+      description: ""
+  tags:
+    - users

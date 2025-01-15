@@ -1,0 +1,25 @@
+get:
+  operationId: list_organisations
+  description: "Returns List of Organisations."
+  parameters:
+    $ref: "../../shared/parameters/search.yaml"
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: "../../shared/schemas/response_metadata_get.yaml"
+              data:
+                type: object
+                properties:
+                  organisations:
+                    $ref: "../schemas/org.yaml"
+                  total:
+                    type: number
+
+      description: ""
+  tags:
+    - organisations

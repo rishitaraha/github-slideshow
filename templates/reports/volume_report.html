@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+{% load static %} {% load string_tags %}
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/reports/volume_report.css' %}"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <title>Volume Report</title>
+  </head>
+  <body>
+    <div class="heading">
+      <h1 class="title">Volume Report</h1>
+      <img class="logo" alt="{{ organisation_name }}" src="{{ organisation_logo }}" />
+    </div>
+
+    <div class="heap-info">
+      <div class="row">
+        <label>Project Name&nbsp;<span>:</span></label>
+        <span>{{project_name}}</span>
+      </div>
+
+      <div class="row">
+        <label>Site Name&nbsp;<span>:</span></label> <span>{{site_name}}</span>
+      </div>
+
+      <div class="row">
+        <label>Iteration Name&nbsp;<span>:</span> </label>
+        <span>{{iteration_name}}</span>
+      </div>
+    </div>
+
+    <br />
+    <ol>
+      {% for heap in heaps %}
+      <li>
+        <p><b>Heap Name:</b> {{heap.name}}</p>
+
+        {% if heap.remarks %}
+        <p><b>Heap Description:</b> {{heap.remarks}}</p>
+        {% endif %}
+
+        <!-- Ref: https://docs.djangoproject.com/en/4.1/ref/templates/builtins/ -->
+        {% if heap.bulk_density %}
+        <p><b>Bulk Density (gm/cm<sup>3</sup>):</b> {{heap.bulk_density}}</p>
+        {% endif %}
+
+        <p><b>Base Reference:</b> {{heap.base_reference.title | deslugify}}</p>
+
+        {% if heap.base_iteration %}
+        <p><b>Base Iteration Name:</b> {{heap.base_iteration.name}}</p>
+        {% endif %}
+
+        <br />
+        <table class="report-table">
+          <tr>
+            <th></th>
+            <th>Cut</th>
+            <th>Fill</th>
+            <th>Net</th>
+          </tr>
+          <tr>
+            <th>Volume (m<sup>3</sup>)</th>
+            <th>{{heap.cut_volume | floatformat:2}}</th>
+            <th>{{heap.fill_volume | floatformat:2}}</th>
+            <th>{{heap.net_volume | floatformat:2}}</th>
+          </tr>
+
+          {% if heap.bulk_density %}
+          <tr>
+            <th>Weight (tonnes)</th>
+            <th>{{heap.cut_weight | floatformat:2}}</th>
+            <th>{{heap.fill_weight | floatformat:2}}</th>
+            <th>{{heap.net_weight | floatformat:2}}</th>
+          </tr>
+          {% endif %}
+        </table>
+        <br />
+        <br />
+      </li>
+      {% endfor %}
+    </ol>
+
+    <div class="footer">
+      <div class="container">
+        Report powered by <img class="logo" src="{% static 'images/aereo_cloud_logo.svg' %}" />
+      </div>
+    </div>
+  </body>
+</html>

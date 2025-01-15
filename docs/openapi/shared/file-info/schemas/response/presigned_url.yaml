@@ -1,0 +1,9 @@
+type: object
+properties:
+  file_info:
+    type: string
+    format: uuid
+    readOnly: true
+  url:
+    type: string
+    format: url

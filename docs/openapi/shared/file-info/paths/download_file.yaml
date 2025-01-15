@@ -1,0 +1,19 @@
+get:
+  operationId: download_file
+  description: "Get download url of a file."
+  parameters:
+    $ref: "../../parameters/search.yaml"
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: "../../schemas/response_metadata_get.yaml"
+              data:
+                $ref: "../schemas/response/download_file.yaml"
+      description: ""
+  tags:
+    - files

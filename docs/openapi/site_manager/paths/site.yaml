@@ -1,0 +1,103 @@
+get:
+  operationId: retrieve_site
+  description: "Get details of an Site."
+  parameters:
+    - $ref: "../../shared/parameters/object_id.yaml"
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: "../../shared/schemas/response_metadata_get.yaml"
+              data:
+                $ref: "../schemas/site_with_permission.yaml"
+      description: ""
+  tags:
+    - sites
+put:
+  operationId: update_site
+  description: "Update the details of a site."
+  parameters:
+    - $ref: "../../shared/parameters/object_id.yaml"
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: "../schemas/site.yaml"
+      application/x-www-form-urlencoded:
+        schema:
+          $ref: "../schemas/site.yaml"
+      multipart/form-data:
+        schema:
+          $ref: "../schemas/site.yaml"
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: "../../shared/schemas/response_metadata_get.yaml"
+              data:
+                $ref: "../schemas/site.yaml"
+      description: ""
+  tags:
+    - sites
+patch:
+  operationId: partial_update_site
+  description: "Update few details of a site."
+  parameters:
+    - $ref: "../../shared/parameters/object_id.yaml"
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: "../schemas/site.yaml"
+      application/x-www-form-urlencoded:
+        schema:
+          $ref: "../schemas/site.yaml"
+      multipart/form-data:
+        schema:
+          $ref: "../schemas/site.yaml"
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: "../../shared/schemas/response_metadata_get.yaml"
+              data:
+                $ref: "../schemas/site.yaml"
+      description: ""
+  tags:
+    - sites
+delete:
+  operationId: destroy_site
+  description: "Delete a site object."
+  parameters:
+    - name: id
+      in: path
+      required: true
+      description: A UUID string identifying this site.
+      schema:
+        type: string
+  responses:
+    "204":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: "../../shared/schemas/response_metadata_delete.yaml"
+              data:
+                type: object
+      description: "No Content"
+  tags:
+    - sites

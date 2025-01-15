@@ -1,0 +1,26 @@
+
+type: object
+properties:
+  merged_dataset:
+    type: integer
+    format: uuid
+    description: ID of the merged dataset.
+  iteration_dataset:
+    type: integer
+    format: uuid
+    description: ID of the iteration dataset.
+  geotag_horizontal_crs:
+    $ref: "../../../processing_workflow_constants.yaml#/HorizontalCRS"
+  geotag_vertical_crs:
+    $ref: "../../../processing_workflow_constants.yaml#/VerticalCRS"
+  geotag_rotation_angle:
+    $ref: "../../../processing_workflow_constants.yaml#/RotationAngle"
+  column_order:
+    type: array
+    items:
+      type: string
+    description: Order of columns in the CSV file.
+  geotag_image_file:
+    type: string
+    format: binary
+    description: file containing geotags.

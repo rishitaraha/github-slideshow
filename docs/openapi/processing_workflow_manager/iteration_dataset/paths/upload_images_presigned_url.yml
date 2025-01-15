@@ -1,0 +1,36 @@
+post:
+  operationId: upload_image_presigned_url
+  description: "Responds with List of presigned Urls to upload images from frontend."
+  parameters:
+    - $ref: "../../../shared/parameters/object_id.yaml"
+      description: "UUID of Iteration dataset."
+
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            filenames:
+              type: Array
+              items:
+                type: string
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: "../../../shared/schemas/response_metadata_get.yaml"
+              data:
+                type: object
+                properties:
+                  presigned_urls:
+                    type: Array
+                    items:
+                      type: string
+
+  tags:
+    - processing_workflow

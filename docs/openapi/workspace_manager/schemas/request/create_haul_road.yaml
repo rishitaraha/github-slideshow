@@ -1,0 +1,32 @@
+type: object
+properties:
+  iteration:
+    type: string
+    description: "The iteration ID associated with the haul road."
+    example: "123e4567-e89b-12d3-a456-426614174000"
+  name:
+    type: string
+    description: "The name of the haul road analytics to generate."
+  type:
+    type: string
+    description: "Type of the haul road (e.g., main, secondary)."
+    example: "Main Haul Road"
+  vehicle_width:
+    type: number
+    description: "Width of the road in meters."
+    example: 7.0
+  chainage_interval:
+    type: number
+    description: "Chainage interval."
+    example: 7.0
+  smart_line_wkt:
+    type: string
+    description: "WKT representing the smart line (optional)."
+  layer_id:
+    type: string
+    description: "Layer ID from the workspace (optional)."
+    example: "123e4567-e89b-12d3-a456-426614174001"
+required:
+  - iteration
+  - type
+  - name

@@ -1,0 +1,26 @@
+get:
+  operationId: get_task_details
+  description: "Returns details of the tasl"
+  parameters:
+    - name: id
+      in: path
+      required: true
+      description: A UUID string identifying the task.
+      schema:
+        type: string
+
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: "../../../shared/schemas/response_metadata_get.yaml"
+              data:
+                $ref: "../schemas/response/task.yaml"
+
+
+tags:
+    - processing_workflow

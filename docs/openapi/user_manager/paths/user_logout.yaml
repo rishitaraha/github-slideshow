@@ -1,0 +1,37 @@
+post:
+  operationId: logout_user
+  description: "Logout the user."
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            refresh_token:
+              type: string
+      application/x-www-form-urlencoded:
+        schema:
+          type: object
+          properties:
+            refresh_token:
+              type: string
+      multipart/form-data:
+        schema:
+          type: object
+          properties:
+            refresh_token:
+              type: string
+  responses:
+    "205":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: "../../shared/schemas/response_metadata_patch.yaml"
+              data:
+                type: object
+      description: ""
+  tags:
+    - users

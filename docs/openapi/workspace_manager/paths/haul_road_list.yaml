@@ -1,0 +1,35 @@
+get:
+  operationId: list_haul_roads
+  description: "Retrieve a list of all haul roads for generation in the current workspace."
+  parameters:
+    - name: iteration
+      in: query
+      required: true
+      schema:
+        type: string
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/response/get_haul_road_list.yaml"
+  tags:
+    - workspace
+
+post:
+  operationId: create_haul_road
+  description: "Create a new haul road entity in the workspace."
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: "../schemas/request/create_haul_road.yaml"
+  responses:
+    "201":
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/response/get_haul_road_list.yaml"
+      description: "Details of the newly created haul road entity."
+  tags:
+    - workspace

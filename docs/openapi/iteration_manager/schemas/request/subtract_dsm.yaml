@@ -1,0 +1,17 @@
+type: object
+properties:
+  new_iteration_name:
+    type: string
+  date:
+    type: date
+  first_iteration_id:
+    type: string
+    format: uuid
+  second_iteration_id:
+    type: string
+    format: uuid
+  threshold_value:
+    type: number
+  copy_ortho_from_iteration:
+    type: string
+    format: uuid

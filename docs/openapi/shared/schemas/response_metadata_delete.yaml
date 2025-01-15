@@ -1,0 +1,14 @@
+type: object
+properties:
+  success:
+    type: boolean
+    default: true
+  status_code:
+    type: number
+    default: 204
+  message:
+    type: string
+  details:
+    type: object
+  type:
+    type: string

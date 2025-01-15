@@ -1,0 +1,117 @@
+Task:
+  type: object
+  properties:
+    id:
+      type: string
+      format: uuid
+    serial_id:
+      type: integer
+    name:
+      type: string
+    status:
+      type: string
+    iteration_dataset:
+      type: string
+      format: uuid
+    merged_dataset:
+      type: string
+      format: uuid
+    options:
+      type: string
+      fomat: JSON
+    preset_id:
+      type: string
+      maxLen: 255
+    batch_job_details:
+      type: string
+      format: uuid
+    x_average_error:
+      type: number
+      format: double
+      maxLen: 20
+    y_average_error:
+      type: number
+      format: double
+      maxLen: 20
+    z_average_error:
+      type: number
+      format: double
+      maxLen: 20
+    end_stage:
+      type: string
+    continued_from_task:
+      type: string
+      format: uuid
+    continued_from:
+      $ref: "../../../../shared/schemas/processing_workflow_constant.yaml#/ContinuedFromDatasetType"
+    is_sparse_point_cloud_present:
+      type: boolean
+      default: false
+    is_dense_point_cloud_present:
+      type: boolean
+      default: false
+    is_ortho_present:
+      type: boolean
+      default: false
+    is_dem_present:
+      type: boolean
+      default: false
+    rotation_angle_type:
+      type: string
+      $ref: "../../../../shared/schemas/processing_workflow_constant.yaml#/RotationAngle"
+    clipping_boundary:
+      type: object
+      format: GeoJson
+    input_geotag_horizontal_crs:
+      $ref: "../../../../shared/schemas/processing_workflow_constant.yaml#/HorizontalCRSSRID"
+    input_gcp_horizontal_crs:
+      $ref: "../../../../shared/schemas/processing_workflow_constant.yaml#/HorizontalCRSSRID"
+    input_geotag_vertical_crs:
+      $ref: "../../../../shared/schemas/processing_workflow_constant.yaml#/VerticalCRS"
+    input_gcp_vertical_crs:
+      $ref: "../../../../shared/schemas/processing_workflow_constant.yaml#/VerticalCRS"
+    output_horizontal_crs:
+      $ref: "../../../../shared/schemas/processing_workflow_constant.yaml#/HorizontalCRS"
+    output_vertical_crs:
+      $ref: "../../../../shared/schemas/processing_workflow_constant.yaml#/VerticalCRS"
+    cropping_region:
+      type: string
+      format: GeoJSON
+    cropping_region_behaviour:
+      type: string
+    output_folder_path:
+      type: string
+      format: uuid
+    output_project_file_info:
+      type: string
+      format: uuid
+    output_dense_point_cloud_file_info:
+      type: string
+      format: uuid
+    output_dem:
+      type: string
+      format: uuid
+    output_dem_cog:
+      type: string
+      format: uuid
+    output_ortho:
+      type: string
+      format: uuid
+    output_ortho_cog:
+      type: string
+      format: uuid
+    output_ortho_tile_zip:
+      type: string
+      format: uuid
+    output_report:
+      type: string
+      format: uuid
+    output_all_assets_zip:
+      type: string
+      format: uuid
+    created_at:
+      type: string
+      format: date-time
+    updated_at:
+      type: string
+      format: date-time

@@ -1,0 +1,78 @@
+get:
+  operationId: fetch_gcps_list
+  description: "Fetch gcps list for a dataset."
+  parameters:
+    - in: query
+      name: merged_dataset
+      type: uuid
+      description: ID of the merged dataset.
+    - in: query
+      name: iteration_dataset
+      type: uuid
+      description: ID of the iteration dataset.
+    - in: query
+      name: page_number
+      type: integer
+      description: Page number for pagination.
+    - in: query
+      name: page_size
+      type: integer
+      description: Page size for pagination.
+    - in: query
+      name: search
+      type: string
+      description: Search query.
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              gcps:
+                type: array
+                items:
+                  $ref: "../schemas/response/gcp_details.yml"
+      description: ""
+  tags:
+    - processing_workflow
+
+
+post:
+  operationId: create_gcps
+  description: "Creates gcps from file."
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: "../schemas/request/create_gcps.yaml"
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/response/create_gcps.yaml"
+      description: ""
+  tags:
+    - processing_workflow
+
+
+patch:
+  operationId: update_gcp
+  description: "Update gcp details partially."
+  parameters:
+    - $ref: "../../shared/parameters/object_id.yaml"
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: "../schemas/request/update_gcp.yaml"
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/response/update_gcp.yaml"
+      description: ""
+  tags:
+    - processing_workflow

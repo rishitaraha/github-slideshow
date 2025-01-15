@@ -1,0 +1,8 @@
+type: object
+properties:
+  meta:
+    $ref: "../../../../shared/schemas/response_metadata_get.yaml"
+  data:
+    type: array
+    items:
+      $ref: "../../../../shared/schemas/response/geotag_image.yaml"

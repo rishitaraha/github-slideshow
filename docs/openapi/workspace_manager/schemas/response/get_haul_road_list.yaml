@@ -1,0 +1,11 @@
+type: array
+items:
+  type: object
+  properties:
+    id:
+      type: string
+    name:
+      type: string
+    processing_status:
+      type: string
+      enum: [pending, processing, completed, error]

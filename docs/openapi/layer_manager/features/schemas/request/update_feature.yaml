@@ -1,0 +1,10 @@
+type: object
+properties:
+  name:
+    type: string
+  geometry:
+    type: string
+  properties:
+    type: object
+  type:
+    type: string

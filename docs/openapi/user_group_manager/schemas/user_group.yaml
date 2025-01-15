@@ -1,0 +1,18 @@
+type: object
+properties:
+  id:
+    type: string
+    format: uuid
+    readOnly: true
+  name:
+    type: string
+    maxLength: 256
+  users:
+    type: array
+    items:
+      type: string
+      format: uuid
+      maxLength: 128
+required:
+- name
+- users

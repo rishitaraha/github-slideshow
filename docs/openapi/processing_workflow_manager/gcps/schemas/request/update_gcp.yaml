@@ -1,0 +1,12 @@
+type: object
+properties:
+  label:
+    type: string
+  x_coordinate:
+    type: decimal
+  y_coordinate:
+    type: decimal
+  z_coordinate:
+      type: decimal
+  type:
+    $ref: "../../../processing_workflow_constants.yaml#/GCPType"

@@ -1,0 +1,37 @@
+type: object
+properties:
+  name:
+    type: string
+    maxLength: 100
+  iteration:
+    type: string
+    format: uuid
+  access-tags:
+    type: array
+    items:
+      type: string
+      format: uuid
+  polygon_wkt:
+   type: string
+  minor_interval:
+    type: number
+  major_interval:
+    type: number
+  lowest_altitude:
+    type: number
+  highest_altitude:
+    type: number
+  threshold_value:
+    type: number
+  smoothing_filter_size:
+    type: number
+
+required:
+- name
+- iteration
+- minor_interval
+- major_interval
+- lowest_altitude
+- highest_altitude
+- threshold_value
+- smoothing_filter_size

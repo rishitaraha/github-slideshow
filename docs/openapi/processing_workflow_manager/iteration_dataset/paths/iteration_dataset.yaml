@@ -1,0 +1,73 @@
+get:
+  operationId: retrieve_processing_iteration_dataset_detail
+  description: "Returns processing iteration dataset detail."
+  parameters:
+    - $ref: "../../../shared/parameters/search.yaml"
+
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/response/iteration_dataset.yaml"
+      description: ""
+  tags:
+    - processing
+
+post:
+  operationId: create_processing_iteration_dataset_detail
+  description: "Creates processing iteration dataset."
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            iteration:
+              type: string
+              format: uuid
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/response/iteration_dataset.yaml"
+      description: ""
+    "208":
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/response/iteration_dataset.yaml"
+      description: ""
+  tags:
+    - processing_workflow
+
+
+patch:
+  operationId: update_iteration_dataset
+  description: "Update iteration dataset partially."
+  parameters:
+    - $ref: "../../shared/parameters/object_id.yaml"
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+              gcp_vertical_crs:
+                type: string
+              gcp_horizontal_crs:
+                type: string
+              geotag_vertical_crs:
+                type: string
+              geotag_horizontal_crs:
+                type: string
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/response/iteration_dataset.yaml"
+      description: ""
+  tags:
+    - processing_workflow

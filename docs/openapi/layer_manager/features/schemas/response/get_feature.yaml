@@ -1,0 +1,23 @@
+type: object
+properties:
+  id:
+    type: string
+    format: uuid
+  info:
+    type: string
+  images:
+    type: array
+    items:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+        image_s3_key:
+          type: string
+          format: uri
+        thumbnail_s3_key:
+          type: string
+          format: uri

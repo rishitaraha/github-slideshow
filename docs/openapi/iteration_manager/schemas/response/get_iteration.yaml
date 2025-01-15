@@ -1,0 +1,32 @@
+type: object
+properties:
+  id:
+    type: string
+    format: uuid
+    readOnly: true
+  name:
+    type: string
+    maxLength: 200
+  site:
+    type: string
+    format: uuid
+    readOnly: true
+  date:
+    type: string
+    format: date
+  info:
+    type: string
+  terrain_tiles:
+    type: object
+    properties:
+      path:
+        type: string
+      status:
+        type: string
+  captured_dsm:
+    $ref: "../../../shared/file-info/schemas/response/get_file.yaml"
+  iteration_dataset:
+    $ref: "../../../processing_workflow_manager/iteration_dataset/schemas/response/iteration_dataset.yaml"
+required:
+  - name
+  - date

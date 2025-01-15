@@ -1,0 +1,27 @@
+post:
+  operationId: add_haul_road_layer
+  description: "Upload a shape file for the Haul Road Layer."
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: "../schemas/request/haul_road_upload_shape_file.yaml"
+  responses:
+    '202':
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: "../../shared/schemas/response_metadata_post.yaml"
+              data:
+                type: object
+                properties:
+                  file_info_id:
+                    type: string
+                    format: uuid
+                    readOnly: true
+      description: ""
+  tags:
+    - workspace

@@ -1,0 +1,17 @@
+type: object
+properties:
+  site:
+    type: string
+    format: uuid
+  user_group:
+    type: string
+    format: uuid
+  can_view:
+    type: boolean
+  can_manage_iterations_and_layers:
+    type: boolean
+  access_type:
+    type: string
+    enum:
+      - basic
+      - advance

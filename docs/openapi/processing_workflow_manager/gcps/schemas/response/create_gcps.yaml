@@ -1,0 +1,7 @@
+type: object
+properties:
+  message:
+    type: string
+    description: Success message indicating that the gcps were created successfully.
+  data:
+    type: object

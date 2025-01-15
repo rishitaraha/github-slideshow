@@ -1,0 +1,11 @@
+type: object
+properties:
+  name:
+    type: string
+    maxLength: 200
+  site:
+    type: string
+    format: uuid
+  date:
+    type: string
+    format: date

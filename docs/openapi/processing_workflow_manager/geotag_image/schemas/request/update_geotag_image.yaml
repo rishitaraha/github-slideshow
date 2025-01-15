@@ -1,0 +1,23 @@
+type: object
+properties:
+  iteration_dataset:
+    type: uuid
+    nullable: true
+  merged_dataset:
+    type: uuid
+    nullable: true
+  x_coordinate:
+    type: decimal
+  y_coordinate:
+    type: decimal
+  z_coordinate:
+    type: decimal
+  is_image_available:
+    type: boolean
+    example: true
+  is_geotag_disabled:
+    type: boolean
+    example: false
+  is_image_disabled:
+    type: boolean
+    example: false

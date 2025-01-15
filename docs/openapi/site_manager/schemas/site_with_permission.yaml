@@ -1,0 +1,40 @@
+type: object
+properties:
+  id:
+    type: string
+    format: uuid
+  project:
+    type: string
+    format: uuid
+  name:
+    type: string
+    maxLength: 100
+  base_dsm:
+    type: string
+    format: uuid
+  dashboard_layer_mapbox_id:
+    type: string
+    maxLength: 2044
+  type:
+    type: string
+  latitude:
+    type: number
+    format: float
+  longitude:
+    type: number
+    format: float
+  boundary:
+    type: string
+    maxLength: 100
+  permissions:
+    type: array
+    items:
+      type: object
+      properties:
+        user_group:
+          type: string
+          format: uuid
+        can_view:
+          type: boolean
+        can_manage_iterations_and_layers:
+          type: boolean

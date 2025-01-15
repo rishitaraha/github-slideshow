@@ -1,0 +1,44 @@
+post:
+  operationId: processing_token_validation
+  description: "Token validation for rainbow processing."
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: "../schemas/params/processing.yaml"
+      application/x-www-form-urlencoded:
+        schema:
+          $ref: "../schemas/params/processing.yaml"
+      multipart/form-data:
+        schema:
+          $ref: "../schemas/params/processing.yaml"
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: "../../shared/schemas/response_metadata_get.yaml"
+              data:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "User is valid"
+                  data:
+                    type: object
+                    properties:
+                      email:
+                        type: string
+                        example: user@org.co.in
+                      type:
+                        type: string
+                        enum:
+                          - org_admin
+                          - member
+
+      description: ""
+  tags:
+    - auth

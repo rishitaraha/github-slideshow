@@ -1,0 +1,15 @@
+type: object
+properties:
+  iterations:
+    type: array
+    items:
+      type: string
+      format: uuid
+  line_wkt:
+    type: string
+  feature:
+    type: string
+    format: uuid
+
+required:
+  - iterations

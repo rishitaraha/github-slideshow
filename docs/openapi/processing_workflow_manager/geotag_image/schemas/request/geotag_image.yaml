@@ -1,0 +1,26 @@
+type: object
+properties:
+  merged_dataset:
+    type: uuid
+    description: ID of the merged dataset.
+  iteration_dataset:
+    type: uuid
+    description: ID of the iteration dataset.
+  page_number:
+    type: integer
+    description: Page number for pagination.
+  page_size:
+    type: integer
+    description: Page size for pagination.
+  search:
+    type: string
+    description: Search query.
+  images_with_geotags:
+    type: boolean
+    description: Whether to include images with geotags.
+  images_without_geotags:
+    type: boolean
+    description: Whether to include images without geotags.
+  geotags_without_images:
+    type: boolean
+    description: Whether to include geotags without images.

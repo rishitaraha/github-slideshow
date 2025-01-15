@@ -1,0 +1,115 @@
+type: array
+items:
+  type: object
+  properties:
+    name:
+      type: string
+      maxLength: 100
+    id:
+      type: string
+      format: uuid
+      readOnly: true
+    iteration:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        name:
+          type: string
+          maxLength: 200
+        date:
+          type: string
+          format: date
+        info:
+          type: string
+    site:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+    show:
+      type: boolean
+    z_index:
+      type: number
+    type:
+      type: string
+      enum:
+        - mapbox
+        - cesium
+        - vector
+        - orthomosaic
+        - mbtiles
+    files:
+      type: array
+      items:
+        type: object
+        properties:
+          id:
+            type: string
+            format: string
+          type:
+            type: string
+          s3_key:
+            type: string
+          status:
+            type: string
+          properties:
+            type: object
+    tiles:
+      type: object
+      properties:
+        filename:
+          type: string
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        status:
+          type: string
+        properties:
+          type: object
+    source_id:
+      type: string
+      format: uuid
+    properties:
+      type: object
+    features_count:
+      type: object
+      properties:
+        polygons:
+          type: number
+        lines:
+          type: number
+        points:
+          type: number
+        textbox:
+          type: number
+    features_styles:
+      type: object
+    map_layer_styles:
+      type: object
+    can_manage_layers:
+      type: boolean
+    area_category:
+      type: string
+      enum:
+        - planned_and_active
+        - planned_and_inactive
+        - unplanned_and_active
+        - unplanned_and_active_beyond_critical_boundary
+        - other
+    created_at:
+      type: string
+      format: date-time
+      readOnly: true
+    status:
+      type: string
+    access_tags:
+      type: object

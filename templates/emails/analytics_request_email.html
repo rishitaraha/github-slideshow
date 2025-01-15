@@ -1,0 +1,24 @@
+<html>
+
+<body>
+    <p>Hi,<br />The following request has been created for analytics:
+    <ul>
+        <li>Organisation: <strong>{{ org_name }}</strong></li>
+        <li>Project: <strong>{{ project_name }}</strong></li>
+        <li>Site: <strong>{{ site_name }}</strong></li>
+        <li>Iteration: <strong>{{ iteration_name }}</strong></li>
+        <li>Outputs selected:
+            <ul>
+            {% for selected_output in selected_outputs %}
+                <li><strong>{{ selected_output }}</strong></li>
+            {% endfor %}
+            </ul>
+        </li>
+    </ul>
+    </p>
+    <p>
+        Regards,<br />Aereo Cloud
+    </p>
+</body>
+
+</html>

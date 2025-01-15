@@ -1,0 +1,8 @@
+type: object
+properties:
+  file_info:
+    type: string
+    format: uuid
+    readOnly: true
+  upload_id:
+    type: string

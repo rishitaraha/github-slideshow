@@ -1,0 +1,12 @@
+type: object
+properties:
+  upload_id:
+    type: string
+  part_number:
+    type: integer
+  filetype:
+    type: string
+required:
+  - upload_id
+  - part_number
+  - filetype

@@ -1,0 +1,43 @@
+{
+  "version": 8,
+  "glyphs": "{{map_fonts_base_url}}{fontstack}/{range}.pbf",
+  "sources": {
+    "contours": {
+      "type": "vector"
+    }
+  },
+  "layers": [
+    {
+      "id": "1",
+      "type": "line",
+      "source": "contours",
+      "source-layer": "contour",
+      "paint": {
+        "line-color": "#a50d0d",
+        "line-width": ["match", ["get", "line_type"], "major", 3, 1]
+      }
+    },
+    {
+      "id": "Freight/label/Default",
+      "type": "symbol",
+      "source": "contours",
+      "source-layer": "contour",
+      "filter": ["all", ["==", "line_type", "major"]],
+      "minzoom": 16,
+      "layout": {
+        "symbol-avoid-edges": true,
+        "text-font": ["Open Sans Bold"],
+        "text-size": 14,
+        "text-field": "{elevation} m",
+        "symbol-placement": "point",
+        "symbol-spacing": 1000,
+        "text-rotation-alignment": "viewport"
+      },
+      "paint": {
+        "text-color": "#000000",
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 0.5
+      }
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+get:
+  operationId: retrieve_organisation
+  description: "Get details of an organisation."
+  parameters:
+    - $ref: "../../shared/parameters/object_id.yaml"
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: "../../shared/schemas/response_metadata_get.yaml"
+              data:
+                $ref: "../schemas/org.yaml"
+      description: ""
+  tags:
+    - organisations

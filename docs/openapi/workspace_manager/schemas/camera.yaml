@@ -1,0 +1,20 @@
+type: object
+properties:
+  latitude:
+    type: number
+    format: float
+  longitude:
+    type: number
+    format: float
+  height:
+    type: number
+    format: float
+  heading:
+    type: number
+    format: float
+  pitch:
+    type: number
+    format: float
+  roll:
+    type: number
+    format: float

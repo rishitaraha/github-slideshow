@@ -1,0 +1,45 @@
+type: object
+properties:
+  id:
+    type: string
+    format: uuid
+    readOnly: true
+  name:
+    type: string
+    maxLength: 200
+  iteration:
+    type: string
+    format: uuid
+    readOnly: true
+  base_reference:
+    type: string
+  base_iteration:
+    type: string
+    format: uuid
+  geometry:
+    type: string
+    format: date
+  remarks:
+    type: string
+  centroid:
+    type: string
+  bulk_density:
+    type: number
+    format: float
+  weight:
+    type: number
+    format: float
+  created_at:
+    type: string
+    format: date-time
+    readOnly: true
+  updated_at:
+    type: string
+    format: date-time
+    readOnly: true
+required:
+  - name
+  - status
+  - volume
+  - remarks
+  - centroid

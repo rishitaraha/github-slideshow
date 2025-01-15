@@ -1,0 +1,44 @@
+patch:
+  operationId: update_geotag_images
+  description: "Updates multiple geotag images."
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: "../schemas/request/bulk_update_geotag_images.yaml"
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/response/bulk_update_geotag_images.yaml"
+      description: ""
+  tags:
+    - processing_workflow
+
+get:
+  summary: Downloads the Geotag Images file.
+  parameters:
+    - in: query
+      name: id
+      required: true
+      description: UUID of parent dataset
+      schema:
+        type: string
+        format: uuid
+
+  responses:
+    "200":
+      description: Text file containing Geotag Images details.
+      content:
+        text/csv:
+          schema:
+            type: string
+            format: binary
+      headers:
+        Content-Disposition:
+          schema:
+            type: string
+            example: attachment; filename="geotags.txt"
+  tags:
+    - processing_workflow

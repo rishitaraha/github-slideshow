@@ -1,0 +1,50 @@
+patch:
+  operationId: partial_update_access-tag
+  description: "Update few details of an access-tag."
+  parameters:
+    - $ref: "../../shared/parameters/object_id.yaml"
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: "../schemas/access-tag.yaml"
+      application/x-www-form-urlencoded:
+        schema:
+          $ref: "../schemas/access-tag.yaml"
+      multipart/form-data:
+        schema:
+          $ref: "../schemas/access-tag.yaml"
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: "../../shared/schemas/response_metadata_patch.yaml"
+              data:
+                $ref: "../schemas/access-tag.yaml"
+      description: ""
+  tags:
+    - access-tags
+
+delete:
+  operationId: delete_access-tag
+  description: "Delete an Access Tag."
+  parameters:
+    - $ref: "../../shared/parameters/object_id.yaml"
+  responses:
+    "204":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: "../../shared/schemas/response_metadata_delete.yaml"
+              data:
+                type: object
+      description: "No Content"
+  tags:
+    - access-tags

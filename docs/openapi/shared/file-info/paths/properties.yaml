@@ -1,0 +1,47 @@
+get:
+  operationId: get_iteration_properties
+  description: "Gives the properties tied to the file type of an iteration."
+  parameters:
+    - $ref: "../../parameters/object_id.yaml"
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: "../../schemas/response_metadata_get.yaml"
+              data:
+                $ref: "../../schemas/response/file_properties.yaml"
+  tags:
+    - iterations
+patch:
+  operationId: update_iteration_file_properties
+  description: "Updates the properties of the iteration file."
+  parameters:
+    - $ref: "../../parameters/object_id.yaml"
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: "../schemas/request/file_properties.yaml"
+      application/x-www-form-urlencoded:
+        schema:
+          $ref: "../schemas/request/file_properties.yaml"
+      multipart/form-data:
+        schema:
+          $ref: "../schemas/request/file_properties.yaml"
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: "../../schemas/response_metadata_patch.yaml"
+              data:
+                $ref: "../../schemas/response/file_properties.yaml"
+  tags:
+    - iterations

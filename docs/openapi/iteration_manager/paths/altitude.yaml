@@ -1,0 +1,39 @@
+get:
+  operationId: get_iteration_altitude
+  description: "Returns altitude at (latitude,latitude) from iteration's DSM"
+  parameters:
+    - name: id
+      in: path
+      required: true
+      description: A UUID string identifying this iteration.
+      schema:
+        type: string
+    - name: latitude
+      in: query
+      description: Latitude of the location.
+      schema:
+        type: float
+      required: true
+    - name: longitude
+      in: query
+      description: Longitude of the location.
+      schema:
+        type: float
+      required: true
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: "../../shared/schemas/response_metadata_get.yaml"
+              data:
+                type: object
+                properties:
+                  altitude:
+                    type: number
+      description: "Altitude value at (latitude,latitude)"
+  tags:
+    - iterations

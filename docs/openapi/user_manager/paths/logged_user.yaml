@@ -1,0 +1,17 @@
+get:
+  operationId: logged_user
+  description: "Get details of the logged user."
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: "../../shared/schemas/response_metadata_get.yaml"
+              data:
+                $ref: "../schemas/logged_user_response.yaml"
+      description: ""
+  tags:
+  - users

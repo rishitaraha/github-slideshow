@@ -1,0 +1,24 @@
+delete:
+  operationId: delete_captured_dsm
+  description: "Delete an captured dsm."
+  parameters:
+    - name: id
+      in: path
+      required: true
+      description: A UUID string identifying this iteration.
+      schema:
+        type: string
+  responses:
+    "204":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: "../../shared/schemas/response_metadata_delete.yaml"
+              data:
+                type: object
+      description: "No Content"
+  tags:
+    - iterations

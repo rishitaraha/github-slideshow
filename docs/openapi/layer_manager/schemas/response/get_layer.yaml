@@ -1,0 +1,54 @@
+type: object
+properties:
+  id:
+    type: string
+    format: uuid
+    readOnly: true
+  name:
+    type: string
+    maxLength: 100
+  type:
+    type: string
+    enum:
+      - mapbox
+      - cesium
+      - vector
+      - orthomosaic
+      - mbtiles
+  files:
+    type: array
+    items:
+      $ref: "../../../shared/file-info/schemas/response/get_file.yaml"
+  source_id:
+    type: string
+    format: uuid
+  properties:
+    type: object
+  access_tags:
+    type: array
+    items:
+      type: string
+      format: uuid
+  area_category:
+    type: string
+    enum:
+      - planned_and_active
+      - planned_and_inactive
+      - unplanned_and_active
+      - unplanned_and_active_beyond_critical_boundary
+      - other
+  features_styles:
+    type: object
+  features_count:
+    type: object
+    properties:
+      polygons:
+        type: number
+      lines:
+        type: number
+      points:
+        type: number
+      textbox:
+        type: number
+  created_at:
+    type: date-time

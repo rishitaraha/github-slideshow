@@ -1,0 +1,26 @@
+get:
+  summary: Downloads the GCP file.
+  parameters:
+    - in: query
+      name: id
+      required: true
+      description: UUID of parent dataset
+      schema:
+        type: string
+        format: uuid
+
+  responses:
+    "200":
+      description: Text file containing GCP details.
+      content:
+        text/csv:
+          schema:
+            type: string
+            format: binary
+      headers:
+        Content-Disposition:
+          schema:
+            type: string
+            example: attachment; filename="gcp.txt"
+  tags:
+    - processing_workflow

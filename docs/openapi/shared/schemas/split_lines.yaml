@@ -1,0 +1,9 @@
+type: object
+properties:
+  line_geom:
+    type: string
+  segments:
+    type: integer
+required:
+- line_geom
+- segments

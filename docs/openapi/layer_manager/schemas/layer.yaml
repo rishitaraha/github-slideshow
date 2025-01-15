@@ -1,0 +1,52 @@
+type: object
+properties:
+  id:
+    type: string
+    format: uuid
+    readOnly: true
+  name:
+    type: string
+    maxLength: 100
+  type:
+    type: string
+    enum:
+      - mapbox
+      - cesium
+      - vector
+      - orthomosaic
+      - mbtiles
+  iteration:
+    type: string
+    format: uuid
+  site:
+    type: string
+    format: uuid
+  file_id:
+    type: string
+    format: uuid
+  source_id:
+    type: string
+    format: uuid
+  access_tags:
+    type: array
+    items:
+      type: string,
+      format: uuid
+  area_category:
+    type: string
+    enum:
+      - planned_and_active
+      - planned_and_inactive
+      - unplanned_and_active
+      - unplanned_and_active_beyond_critical_boundary
+      - other
+  features_file:
+    type: string
+    format: binary
+  features_styles:
+    type: object
+
+required:
+  - name
+  - iteration
+  - type

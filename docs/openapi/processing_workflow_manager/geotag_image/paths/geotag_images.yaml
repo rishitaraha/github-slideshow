@@ -1,0 +1,35 @@
+post:
+  operationId: create_geotag_images
+  description: "Creates geotag images from file."
+  parameters:
+    content:
+      application/json:
+        schema:
+          $ref: "../schemas/request/create_geotag_image.yaml"
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/response/create_geotag_image.yaml"
+      description: ""
+  tags:
+    - processing_workflow
+
+get:
+  operationId: get_geotag_images
+  description: "Fetches geotag images."
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: "../schemas/request/geotag_image.yaml"
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/response/geotag_image.yaml"
+      description: ""
+  tags:
+    - processing_workflow

@@ -1,0 +1,14 @@
+type: object
+properties:
+  merged_dataset:
+    type: uuid
+    description: ID of the merged dataset.
+  iteration_dataset:
+    type: uuid
+    description: ID of the iteration dataset.
+  type:
+    $ref: "../../../processing_workflow_constants.yaml#/GCPType"
+  gcp_image_ids:
+    type: array
+    items:
+      type: uuid

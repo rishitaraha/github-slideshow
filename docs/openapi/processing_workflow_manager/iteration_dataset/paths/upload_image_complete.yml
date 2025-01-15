@@ -1,0 +1,34 @@
+post:
+  operationId: images_upload_complete
+  description: "Accepts the image upload success status from frontend and submits exif extraction job."
+  parameters:
+    - $ref: "../../../shared/parameters/object_id.yaml"
+      description: "UUID of Iteration dataset."
+
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            upload_status:
+              type: string
+              enum:
+                - done
+                - failed
+                - started
+
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: "../../../shared/schemas/response_metadata_get.yaml"
+              data:
+                type: object
+
+  tags:
+    - processing_workflow

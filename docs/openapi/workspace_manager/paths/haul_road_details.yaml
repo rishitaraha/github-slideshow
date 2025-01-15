@@ -1,0 +1,19 @@
+get:
+  operationId: retrieve_haul_road_details
+  description: "Retrieve details of a specific haul road."
+  parameters:
+    - name: id
+      in: path
+      required: true
+      description: "ID of the haul road."
+      schema:
+        type: string
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/response/get_haul_road_details.yaml"
+          description: "Details of the specified haul road."
+  tags:
+    - workspace

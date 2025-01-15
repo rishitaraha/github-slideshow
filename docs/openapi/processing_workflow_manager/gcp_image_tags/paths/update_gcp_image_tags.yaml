@@ -1,0 +1,23 @@
+put:
+  operationId: update_gcp_image_tags
+  description: "Adds or updates gcp images tags."
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: "../schemas/request/create_gcp_image_tags.yaml"
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              images:
+                type: array
+                items:
+                  $ref: "../../../shared/schemas/response/gcp_image_tag_data.yaml"
+
+      description: ""
+  tags:
+    - processing_workflow

@@ -1,0 +1,31 @@
+type: object
+properties:
+  project_id:
+    type: string
+    format: uuid
+  terrain_iteration_id:
+    type: string
+    format: uuid
+  selected_iteration_id:
+    type: string
+    format: uuid
+  camera:
+    $ref: "../camera.yaml"
+  layers:
+    type: array
+    items:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        show:
+          type: boolean
+        z_index:
+          type: integer
+      required:
+        - id
+        - show
+        - z_index
+required:
+  - project

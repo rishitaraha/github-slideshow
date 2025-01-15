@@ -1,0 +1,17 @@
+get:
+  operationId: retrieve_my_organisation
+  description: "Get details of logged user organisation."
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: "../../shared/schemas/response_metadata_get.yaml"
+              data:
+                $ref: "../schemas/get_my_org.yaml"
+      description: ""
+  tags:
+    - organisations

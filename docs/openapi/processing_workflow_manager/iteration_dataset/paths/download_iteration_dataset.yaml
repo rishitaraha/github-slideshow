@@ -1,0 +1,24 @@
+get:
+  summary: Downloads iteration input data as a ZIP file.
+  parameters:
+    - in: query
+      name: signed_token
+      required: true
+      description: Signed token
+      schema:
+        type: string
+  responses:
+    "200":
+      description: Streamed ZIP file containing Iteration Input data.
+      content:
+        application/zip:
+          schema:
+            type: string
+            format: binary
+      headers:
+        Content-Disposition:
+          schema:
+            type: string
+            example: attachment; filename="iteration_dataset.zip"
+  tags:
+    - processing_workflow

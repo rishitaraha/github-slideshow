@@ -1,0 +1,57 @@
+get:
+  operationId: list_sites
+  description: "Returns List of Sites."
+  parameters:
+    - $ref: "../../shared/parameters/search.yaml"
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: "../../shared/schemas/response_metadata_get.yaml"
+              data:
+                type: object
+                properties:
+                  sites:
+                    type: array
+                    items:
+                      $ref: "../schemas/site.yaml"
+                  total:
+                    type: number
+                  can_manage_sites:
+                    type: boolean
+
+      description: ""
+  tags:
+    - sites
+post:
+  operationId: create_site
+  description: Create a new site. Type can be - \"mine_site\", \"wagon_site\", \"crushed_site\", \"uncrushed_site\", \"urban_land\".
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: "../schemas/site.yaml"
+      application/x-www-form-urlencoded:
+        schema:
+          $ref: "../schemas/site.yaml"
+      multipart/form-data:
+        schema:
+          $ref: "../schemas/site.yaml"
+  responses:
+    "201":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: "../../shared/schemas/response_metadata_get.yaml"
+              data:
+                $ref: "../schemas/site.yaml"
+      description: ""
+  tags:
+    - sites

@@ -1,0 +1,28 @@
+post:
+  operationId: generate_contour
+  description: Invokes the lambda to generate contour and creates a layer for contour as well,
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: "../schemas/contour_generator_body.yaml"
+      application/x-www-form-urlencoded:
+        schema:
+          $ref: "../schemas/contour_generator_body.yaml"
+      multipart/form-data:
+        schema:
+          $ref: "../schemas/contour_generator_body.yaml"
+  responses:
+    "202":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: "../../shared/schemas/response_metadata_post.yaml"
+              data:
+                $ref: "../schemas/layer.yaml"
+      description: ""
+  tags:
+    - layers

@@ -1,0 +1,38 @@
+type: object
+properties:
+  iteration:
+    type: string
+    description: The UUID of the Iteration object.
+  input_ortho_layer:
+    type: string
+    description: The UUID of the input ortho Layer object.
+  input_aoi_layer:
+    type: string
+    description: The UUID of the input AOI Layer object.
+  smart_detect_outputs:
+    type: array
+    description: A list of SmartDetect outputs, each with an output type and name.
+    items:
+      type: object
+      properties:
+        output_type:
+          type: string
+          enum:
+            - bench_toe_crest
+            - building_footprints_or_roof_tops
+            - drainage_analysis
+            - heap_detection
+            - metalled_roads
+            - ponds_and_lakes
+            - rivers_and_streams
+            - tree_canopies
+            - unmetalled_roads
+          description: The type of SmartDetect output.
+        name:
+          type: string
+          description: The name of the output layer for the specified output type.
+required:
+  - iteration
+  - input_ortho_layer
+  - input_aoi_layer
+  - smart_detect_outputs

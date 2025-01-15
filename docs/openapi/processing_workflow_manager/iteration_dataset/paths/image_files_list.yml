@@ -1,0 +1,25 @@
+get:
+  operationId: image_files_list
+  description: "Responds with List of image filenames already uploaded for an iteration."
+  parameters:
+    - $ref: "../../../shared/parameters/object_id.yaml"
+      description: "UUID of Iteration dataset."
+
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: "../../../shared/schemas/response_metadata_get.yaml"
+              data:
+                type: object
+                properties:
+                  filenames:
+                    type: Array
+                    items:
+                      type: string
+  tags:
+    - processing_workflow

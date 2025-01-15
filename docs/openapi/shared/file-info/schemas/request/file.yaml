@@ -1,0 +1,5 @@
+type: object
+properties:
+  filename:
+    type: string
+    maxLength: 100

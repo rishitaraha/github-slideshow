@@ -1,0 +1,5 @@
+type: object
+properties:
+  access:
+    type: string
+    readOnly: true

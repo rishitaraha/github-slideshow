@@ -1,0 +1,26 @@
+get:
+  summary: Downloads the volume report pdf.
+  parameters:
+    - in: query
+      name: id
+      required: true
+      description: Heap Id.
+      schema:
+        type: string
+        format: uuid
+
+  responses:
+    "200":
+      description: Volume report PDF.
+      content:
+        application/pdf:
+          schema:
+            type: string
+            format: binary
+      headers:
+        Content-Disposition:
+          schema:
+            type: string
+            example: attachment; filename="iteration_name_volume_report.pdf"
+  tags:
+    - heap-boundary

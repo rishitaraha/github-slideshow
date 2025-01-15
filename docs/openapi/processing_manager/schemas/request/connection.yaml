@@ -1,0 +1,12 @@
+type: object
+properties:
+  processing_org_id:
+    type: string
+    format: uuid
+  connection_token:
+    type: string
+    maxLength: 500
+
+required:
+  - processing_id
+  - connection_token

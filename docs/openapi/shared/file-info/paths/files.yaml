@@ -1,0 +1,28 @@
+post:
+  operationId: create_files
+  description: "Create a new files."
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: "../schemas/request/file.yaml"
+      application/x-www-form-urlencoded:
+        schema:
+          $ref: "../schemas/request/file.yaml"
+      multipart/form-data:
+        schema:
+          $ref: "../schemas/request/file.yaml"
+  responses:
+    "201":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: "../../schemas/response_metadata_post.yaml"
+              data:
+                $ref: "../schemas/response/create_file.yaml"
+      description: ""
+  tags:
+    - files

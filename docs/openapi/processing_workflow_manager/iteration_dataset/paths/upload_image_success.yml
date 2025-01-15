@@ -1,0 +1,29 @@
+post:
+  operationId: upload_images_success
+  description: "Creates GeotagImage object in DB upload image is success."
+  parameters:
+    - $ref: "../../../shared/parameters/object_id.yaml"
+      description: "UUID of Iteration dataset."
+
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            image_name:
+              type: string
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: "../../../shared/schemas/response_metadata_post.yaml"
+              data:
+                type: object
+
+  tags:
+    - processing_workflow

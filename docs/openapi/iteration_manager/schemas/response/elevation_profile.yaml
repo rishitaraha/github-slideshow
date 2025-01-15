@@ -1,0 +1,18 @@
+type: object
+properties:
+  elevation_profiles:
+    type: array
+    items:
+      type: object
+      properties:
+        iteration:
+          type: string
+          format: uuid
+        elevations:
+          type: array
+          items:
+            type: array
+            items:
+              type: number
+            minItems: 2
+            maxItems: 2

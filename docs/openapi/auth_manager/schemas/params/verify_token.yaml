@@ -1,0 +1,8 @@
+properties:
+  token:
+    type: string
+  type:
+    type: string
+    enum:
+      - user_access_token
+      - org_access_token

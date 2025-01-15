@@ -1,0 +1,77 @@
+get:
+  operationId: list_users
+  description: "Org Admin can list of all the Users in Org of requester."
+  parameters:
+    - in: query
+      name: search
+      schema:
+        type: string
+      required: false
+      description: A search term.
+    - in: query
+      name: page
+      schema:
+        type: number
+        default: 1
+      required: false
+      description: Page number.
+    - in: query
+      name: deactivated_users
+      schema:
+        type: number
+        default: 0
+      required: false
+      description: "Filter only active or inactive users."
+    - in: query
+      name: members_only
+      schema:
+        type: boolean
+      required: false
+      description: "Filter org admin users."
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: "../../shared/schemas/response_metadata_get.yaml"
+              data:
+                type: array
+                items:
+                  $ref: "../schemas/user.yaml"
+              total:
+                type: number
+                default: 1
+      description: ""
+  tags:
+  - users
+post:
+  operationId: create_user
+  description: "Org Admin can create a new user in same org as requester."
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: "../schemas/user.yaml"
+      application/x-www-form-urlencoded:
+        schema:
+          $ref: "../schemas/user.yaml"
+      multipart/form-data:
+        schema:
+          $ref: "../schemas/user.yaml"
+  responses:
+    "201":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: "../../shared/schemas/response_metadata_post.yaml"
+              data:
+                $ref: "../schemas/user.yaml"
+      description: ""
+  tags:
+  - users

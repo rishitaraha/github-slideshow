@@ -1,0 +1,43 @@
+get:
+  operationId: retrieve_file
+  description: "Get details of a file."
+  parameters:
+    $ref: "../../parameters/search.yaml"
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: "../../schemas/response_metadata_get.yaml"
+              data:
+                $ref: "../schemas/response/get_file.yaml"
+      description: ""
+  tags:
+    - files
+delete:
+  operationId: destroy_file
+  description: "Delete a File object."
+  parameters:
+    - name: id
+      in: path
+      required: true
+      description: A UUID string identifying this file.
+      schema:
+        type: string
+  responses:
+    "204":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: "../../schemas/response_metadata_delete.yaml"
+              data:
+                type: object
+      description: "No Content"
+  tags:
+    - files

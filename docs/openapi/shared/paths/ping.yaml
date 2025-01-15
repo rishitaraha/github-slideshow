@@ -1,0 +1,19 @@
+get:
+  operationId: ping
+  description: "Test endpoint returns pong as response."
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: "../../shared/schemas/response_metadata_get.yaml"
+              data:
+                type: string
+                items:
+                  $ref: "../schemas/ping.yaml"
+      description: ""
+  tags:
+    - ping

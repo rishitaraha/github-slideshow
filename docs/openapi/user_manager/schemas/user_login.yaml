@@ -1,0 +1,11 @@
+type: object
+properties:
+  email:
+    type: string
+    maxLength: 50
+  password:
+    type: string
+    maxLength: 128
+required:
+- email
+- password

@@ -1,0 +1,56 @@
+{% extends "admin/change_form.html" %} {% load static %} {% block extrahead %}
+{{ block.super }}
+<script src="{% static 'admin/js/jquery.init.js' %}"></script>
+<script type="text/javascript">
+  (function ($) {
+    $(document).ready(function () {
+      // Function to load haul road types based on selected org
+      function loadHaulRoadTypes(orgId) {
+        if (orgId) {
+          $.ajax({
+            url: "{% url 'admin:ajax_load_haul_road_types' %}",
+            data: {
+              org_id: orgId,
+            },
+            success: function (data) {
+              var select = $("#id_haul_road_type");
+              select.empty(); // Remove existing options
+              select.append('<option value="">---------</option>'); // Add empty option
+              $.each(data, function (index, haulRoadType) {
+                select.append(
+                  $("<option></option>")
+                    .attr("value", haulRoadType.id)
+                    .text(haulRoadType.name)
+                );
+              });
+            },
+            error: function () {
+              alert("Failed to load haul road types.");
+            },
+          });
+        } else {
+          $("#id_haul_road_type").empty();
+          $("#id_haul_road_type").append('<option value="">---------</option>');
+        }
+      }
+
+      // Event listener for org field change
+      $("#id_org").change(function () {
+        var orgId = $(this).val();
+        loadHaulRoadTypes(orgId);
+      });
+
+      // $("#id_haul_road_type").change(function () {
+      //   var orgId = $(this).val();
+      //   loadHaulRoadTypes(orgId);
+      // });
+
+      // Trigger change event on page load if org is already selected
+      var initialOrgId = $("#id_org").val();
+      if (initialOrgId) {
+        loadHaulRoadTypes(initialOrgId);
+      }
+    });
+  })(django.jQuery);
+</script>
+{% endblock %}

@@ -1,0 +1,19 @@
+get:
+  operationId: retrieve_workspace
+  description: Retrieve all layers, terrain present in the Workspace."
+  parameters:
+    - $ref: "../../shared/parameters/object_id.yaml"
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: "../../shared/schemas/response_metadata_get.yaml"
+              data:
+                $ref: "../schemas/response/get_workspace.yaml"
+      description: ""
+  tags:
+    - workspace

@@ -1,0 +1,18 @@
+post:
+  operationId: elevation_profile
+  description: "Calculates elevation profile."
+
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: "../../shared/schemas/response_metadata_post.yaml"
+              data:
+                $ref: "../schemas/heap-boundary.yaml"
+      description: ""
+  tags:
+    - iterations

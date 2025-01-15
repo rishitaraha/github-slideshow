@@ -1,0 +1,54 @@
+get:
+  operationId: list_access_tags
+  description: "Returns list of layers."
+  parameters:
+    $ref: "../../shared/parameters/search.yaml"
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: "../../shared/schemas/response_metadata_get.yaml"
+              data:
+                type: object
+                properties:
+                  access_tags:
+                    type: array
+                    items:
+                      $ref: "../schemas/access-tag.yaml"
+                  total:
+                    type: number
+      description: ""
+  tags:
+    - access-tags
+
+post:
+  operationId: create_access-tag
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: "../schemas/access-tag.yaml"
+      application/x-www-form-urlencoded:
+        schema:
+          $ref: "../schemas/access-tag.yaml"
+      multipart/form-data:
+        schema:
+          $ref: "../schemas/access-tag.yaml"
+  responses:
+    "201":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: "../../shared/schemas/response_metadata_post.yaml"
+              data:
+                $ref: "../schemas/access-tag.yaml"
+      description: ""
+  tags:
+    - access-tags

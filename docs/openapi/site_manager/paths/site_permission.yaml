@@ -1,0 +1,35 @@
+post:
+  operationId: site_permission
+  description: "Add or update site permission."
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            user_group:
+              type: string
+              format: uuid
+            can_view:
+              type: boolean
+            can_manage_iterations_and_layers:
+              type: boolean
+            access_type:
+              type: string
+              enum:
+                - basic
+                - advance
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: "../../shared/schemas/response_metadata_get.yaml"
+              data:
+                $ref: "../schemas/site_permission.yaml"
+
+  tags:
+    - sites

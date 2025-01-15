@@ -1,0 +1,16 @@
+type: object
+properties:
+  iteration:
+    type: string
+    format: uuid
+    readOnly: true
+  status:
+    type: string
+    enum:
+    - started
+    - processing
+    - completed
+    - failed
+
+required:
+- status

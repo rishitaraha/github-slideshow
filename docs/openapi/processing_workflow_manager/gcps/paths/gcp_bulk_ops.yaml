@@ -1,0 +1,17 @@
+patch:
+  operationId: update_gcps
+  description: "Updates multiple gcps."
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: "../schemas/request/bulk_update_gcps.yaml"
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/response/bulk_update_gcps.yaml"
+      description: ""
+  tags:
+    - processing_workflow

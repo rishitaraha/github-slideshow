@@ -1,0 +1,19 @@
+get:
+  operationId: is_connected
+  description: "Check if the connection is still alive with the processing application."
+  parameters:
+    - $ref: "../../shared/parameters/object_id.yaml"
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: "../../shared/schemas/response_metadata_get.yaml"
+              data:
+                type: boolean
+      description: ""
+  tags:
+    - processing

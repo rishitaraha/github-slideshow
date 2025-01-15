@@ -1,0 +1,12 @@
+type: object
+properties:
+  type:
+    type: string
+    description: "Type of the Haul Road Layer"
+    example: "center line"
+  shape_file:
+    type: string
+    format: binary
+required:
+  - type
+  - shape_file

@@ -1,0 +1,40 @@
+type: object
+properties:
+  meta:
+    $ref: "../../../../shared/schemas/response_metadata_get.yaml"
+  data:
+    type: array
+    items:
+      type: object
+      properties:
+        merged_dataset:
+          type: string
+          format: uuid
+          nullable: true
+          description: ID of the merged dataset.
+        iteration_dataset:
+          type: string
+          format: uuid
+          nullable: true
+          description: ID of the iteration dataset.
+        label:
+          type: string
+        type:
+          $ref: "../../../processing_workflow_constants.yaml#/GCPType"
+        x_coordinate:
+          type: decimal
+        y_coordinate:
+          type: decimal
+        z_coordinate:
+          type: decimal
+        location_wgs84:
+          type: object
+          nullable: true
+          properties:
+            type:
+              type: string
+              example: "Point"
+            coordinates:
+              type: array
+              items:
+                type: number

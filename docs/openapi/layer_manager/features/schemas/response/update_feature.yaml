@@ -1,0 +1,16 @@
+type: object
+properties:
+  name:
+    type: string
+  geometry:
+    type: string
+  properties:
+    type: object
+  type:
+    type: string
+  layer:
+    type: string
+    format: uuid
+  created_at:
+    type: string
+    format: date

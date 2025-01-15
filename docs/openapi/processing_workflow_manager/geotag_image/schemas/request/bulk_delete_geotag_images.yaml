@@ -1,0 +1,15 @@
+type: object
+properties:
+  merged_dataset:
+    type: string
+    format: uuid
+    description: ID of the merged dataset.
+  iteration_dataset:
+    type: string
+    format: uuid
+    description: ID of the iteration dataset.
+  geotag_image_ids:
+    type: array
+    items:
+      type: string
+      format: uuid

@@ -1,0 +1,24 @@
+get:
+  operationId: list_features
+  description: "Returns list of features."
+  parameters:
+    - in: query
+      name: layer_id
+      required: true
+      schema:
+        type: string
+        format: uuid
+      description: get feature for a specific layer
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: "../../../shared/schemas/response_metadata_get.yaml"
+              data:
+                $ref: "../schemas/response/get_features.yaml"
+  tags:
+    - features

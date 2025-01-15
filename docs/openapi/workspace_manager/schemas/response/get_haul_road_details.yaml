@@ -1,0 +1,28 @@
+type: object
+properties:
+  id:
+    type: string
+  name:
+    type: string
+  type:
+    type: string
+  vehicle_width:
+    type: number
+  iteration:
+    type: string
+  detection_type:
+    type: string
+  haul_road_layers:
+    type: array
+    items:
+      type: object
+      properties:
+        type:
+          type: string
+          enum:
+            - "center_line"
+            - "edges"
+            - "gradient_analysis"
+            - "width_analysis"
+        layer:
+          $ref: "../../../layer_manager/schemas/response/get_layer.yaml"

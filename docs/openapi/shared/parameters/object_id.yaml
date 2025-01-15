@@ -1,0 +1,7 @@
+name: id
+in: path
+required: true
+description: "The UUID of the object."
+schema:
+  type: string
+  format: uuid

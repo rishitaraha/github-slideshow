@@ -1,0 +1,17 @@
+get:
+  operationId: retrieve_connection
+  description: "Get details of current org's connection."
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: "../../shared/schemas/response_metadata_get.yaml"
+              data:
+                $ref: "../schemas/connection.yaml"
+      description: ""
+  tags:
+    - processing

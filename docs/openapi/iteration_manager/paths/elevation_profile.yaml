@@ -1,0 +1,28 @@
+post:
+  operationId: elevation_profile
+  description: "Calculates elevation profile."
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: "../schemas/request/elevation_profile.yaml"
+      application/x-www-form-urlencoded:
+        schema:
+          $ref: "../schemas/request/elevation_profile.yaml"
+      multipart/form-data:
+        schema:
+          $ref: "../schemas/request/elevation_profile.yaml"
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: "../../shared/schemas/response_metadata_post.yaml"
+              data:
+                $ref: "../schemas/response/elevation_profile.yaml"
+      description: ""
+  tags:
+    - iterations

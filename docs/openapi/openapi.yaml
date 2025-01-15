@@ -1,0 +1,249 @@
+openapi: 3.1.0
+info:
+  title: "Rainbow Api Engine"
+  version: "1"
+
+components:
+  securitySchemes:
+    bearerTokenAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: "Enter user access token to authenticate"
+
+    orgTokenAuth:
+      type: apiKey
+      in: header
+      name: X-ORG-TOKEN
+      description: "Enter org access token to authenticate"
+
+# Apply the security globally to all operations
+security:
+  - bearerTokenAuth: []
+
+paths:
+  # Auth Manager.
+  /auth/login/:
+    $ref: "./auth_manager/paths/login.yaml"
+  /auth/login/cognito/:
+    $ref: "./auth_manager/paths/login_cognito.yaml"
+  /auth/logout/:
+    $ref: "./auth_manager/paths/logout.yaml"
+  /auth/processing/:
+    $ref: "./auth_manager/paths/processing.yaml"
+  /auth/token/verify/:
+    $ref: "./auth_manager/paths/verify_token.yaml"
+  /auth/token/refresh/:
+    $ref: "./auth_manager/paths/token_refresh.yaml"
+
+  # Access Tags.
+  /access-tags/:
+    $ref: "./access_tags/paths/access-tags.yaml"
+  /access-tags/{id}/:
+    $ref: "./access_tags/paths/access-tag.yaml"
+
+  # User Manager.
+  /users/:
+    $ref: "./user_manager/paths/users.yaml"
+  /users/{id}/:
+    $ref: "./user_manager/paths/user.yaml"
+  /users/logged/:
+    $ref: "./user_manager/paths/logged_user.yaml"
+  /users/change_password/:
+    $ref: "./user_manager/paths/user_change_password.yaml"
+
+  # User Group Manager.
+  /user-groups/:
+    $ref: "./user_group_manager/paths/user_groups.yaml"
+  /user-groups/{id}/:
+    $ref: "./user_group_manager/paths/user_group.yaml"
+
+  # Org Manager.
+  /organisations/:
+    $ref: "./org_manager/paths/organisations.yaml"
+  /organisations/{id}/:
+    $ref: "./org_manager/paths/organisation.yaml"
+  /organisations/my-org/:
+    $ref: "./org_manager/paths/get_my_org.yaml"
+  /organisations/logo/:
+    $ref: "./org_manager/paths/logo.yaml"
+
+  # Project Manager.
+  /projects/:
+    $ref: "./project_manager/paths/projects.yaml"
+  /projects/{id}/:
+    $ref: "./project_manager/paths/project.yaml"
+  /projects/{id}/permission/:
+    $ref: "./project_manager/paths/project_permission.yaml"
+
+  # Site Manager.
+  /sites/:
+    $ref: "./site_manager/paths/sites.yaml"
+  /sites/{id}/:
+    $ref: "./site_manager/paths/site.yaml"
+  /sites/{id}/permission/:
+    $ref: "./site_manager/paths/site_permission.yaml"
+
+  # Iteration Manager.
+  /iterations/:
+    $ref: "./iteration_manager/paths/iterations.yaml"
+  /iterations/{id}/:
+    $ref: "./iteration_manager/paths/iteration.yaml"
+  /iterations/{id}/upload-file/:
+    $ref: "./iteration_manager/paths/upload_file.yaml"
+  /iterations/{id}/presigned-url/:
+    $ref: "./iteration_manager/paths/presigned_url.yaml"
+  /iterations/{id}/complete-upload/:
+    $ref: "./iteration_manager/paths/complete_upload.yaml"
+  /iterations/{id}/captured-dsm/:
+    $ref: "./iteration_manager/paths/captured_dsm.yaml"
+  /iterations/{id}/altitude/:
+    $ref: "./iteration_manager/paths/altitude.yaml"
+  /iterations/{id}/batch-status/{file_type}/:
+    $ref: "./iteration_manager/paths/batch_status.yaml"
+  /iterations/subtract-dsm/:
+    $ref: "./iteration_manager/paths/subtract_dsm.yaml"
+  /iterations/elevation-profile/:
+    $ref: "./iteration_manager/paths/elevation_profile.yaml"
+  /iterations/heap-boundary/:
+    $ref: "./iteration_manager/paths/heap_boundaries.yaml"
+  /iterations/heap-boundary/{id}/:
+    $ref: "./iteration_manager/paths/heap_boundary.yaml"
+  /iterations/heap-boundary/{id}/recalculate-volume/:
+    $ref: "./iteration_manager/paths/recalculate_volume.yaml"
+  /iterations/heap-boundary/{id}/download/:
+    $ref: "./iteration_manager/paths/download_heap.yaml"
+  /iterations/heap-boundary/volume-report/:
+    $ref: "./iteration_manager/paths/download_volume_report.yaml"
+  /iteration/{id}/signed-token/:
+    $ref: "./iteration_manager/paths/get_signed_token.yaml"
+  /iteration/{id}/input-data/:
+    $ref: "./iteration_manager/paths/download_iteration_dataset.yaml"
+
+  # Layer Manager.
+  /layers/:
+    $ref: "./layer_manager/paths/layers.yaml"
+  /layers/{id}/:
+    $ref: "./layer_manager/paths/layer.yaml"
+  /layers/{id}/update-index/:
+    $ref: "./layer_manager/paths/update_layer_index.yaml"
+  /layers/{id}/clamp-to-terrain/:
+    $ref: "./layer_manager/paths/clamp_to_terrain.yaml"
+  /layers/generate-contour/:
+    $ref: "./layer_manager/paths/contour_generator.yaml"
+
+  # Features.
+  /features/:
+    $ref: "./layer_manager/features/paths/features.yaml"
+  /features/{id}/:
+    $ref: "./layer_manager/features/paths/feature.yaml"
+  /features/bulk/:
+    $ref: "./layer_manager/features/paths/bulk_features.yaml"
+  /features/{id}/info:
+    $ref: "./layer_manager/features/paths/feature_info.yaml"
+  /features/info/image/{id}:
+    $ref: "./layer_manager/features/paths/feature_image_delete.yaml"
+
+  # Shared Manager.
+  /ping:
+    $ref: "./shared/paths/ping.yaml"
+
+  # File Info.
+  /files/:
+    $ref: "./shared/file-info/paths/files.yaml"
+  /files/{id}/:
+    $ref: "./shared/file-info/paths/file.yaml"
+  /files/{id}/upload-file/:
+    $ref: "./shared/file-info/paths/upload_file.yaml"
+  /files/{id}/presigned-url/:
+    $ref: "./shared/file-info/paths/presigned_url.yaml"
+  /files/{id}/complete-upload/:
+    $ref: "./shared/file-info/paths/complete_upload.yaml"
+  /files/{id}/properties/:
+    $ref: "./shared/file-info/paths/properties.yaml"
+  /files/{id}/status/:
+    $ref: "./shared/file-info/paths/update_file_status.yaml"
+  /files/{id}/download-file/:
+    $ref: "./shared/file-info/paths/download_file.yaml"
+
+  # Processing Manager.
+  /processing/connect/:
+    $ref: "./processing_manager/paths/connect.yaml"
+  /processing/connection/:
+    $ref: "./processing_manager/paths/connection.yaml"
+  /processing/disconnect/:
+    $ref: "./processing_manager/paths/disconnect.yaml"
+  /processing/export/:
+    $ref: "./processing_manager/paths/export.yaml"
+  /processing/org/:
+    $ref: "./processing_manager/paths/processing.yaml"
+
+  # Workspace Manager.
+  /workspace/analytics/haul-roads/:
+    $ref: "./workspace_manager/paths/haul_road_list.yaml"
+  /workspace/analytics/haul-roads/{id}/layer:
+    $ref: "./workspace_manager/paths/haul_road_shape_file_upload.yaml"
+  /workspace/analytics/haul-roads/{id}/:
+    $ref: "./workspace_manager/paths/haul_road_details.yaml"
+  /workspace/analytics/haul-roads/types/:
+    $ref: "./workspace_manager/paths/haul_road_types_list.yaml"
+  /workspace/analytics/smart-detect/:
+    $ref: "./workspace_manager/paths/smart_detect.yaml"
+  /workspace/:
+    $ref: "./workspace_manager/paths/workspaces.yaml"
+  /workspaces/{id}/:
+    $ref: "./workspace_manager/paths/workspace.yaml"
+
+  # Processing Workflow Manager.
+  /processing/iteration-dataset/{id}/:
+    $ref: "./processing_workflow_manager/iteration_dataset/paths/iteration_dataset.yaml"
+
+  # Upload Images for Iteration Dataset.
+  /processing/iteration-dataset/{id}/images-list/:
+    $ref: "./processing_workflow_manager/iteration_dataset/paths/image_files_list.yml"
+  /processing/iteration-dataset/{id}/images-presigned-url/:
+    $ref: "./processing_workflow_manager/iteration_dataset/paths/upload_images_presigned_url.yml"
+  /processing/iteration-dataset/{id}/image-upload-success/:
+    $ref: "./processing_workflow_manager/iteration_dataset/paths/upload_image_success.yml"
+  /processing/iteration-dataset/{id}/image-upload-complete/:
+    $ref: "./processing_workflow_manager/iteration_dataset/paths/upload_image_complete.yml"
+
+  # Geotag Images.
+  /processing/geotag-images/:
+    $ref: "./processing_workflow_manager/geotag_image/paths/geotag_images.yaml"
+  /processing/geotag-images/{id}:
+    $ref: "./processing_workflow_manager/geotag_image/paths/geotag_image.yaml"
+  /processing/geotag-images/{id}/presigned-url:
+    $ref: "./processing_workflow_manager/geotag_image/paths/geotag_image_presigned_url.yaml"
+  /processing/geotag-images/bulk:
+    $ref: "./processing_workflow_manager/geotag_image/paths/geotag_images_bulk_ops.yaml"
+  /processing/geotag-images/download:
+    $ref: "./processing_workflow_manager/geotag_image/paths/geotag_images_bulk_ops.yaml"
+  /processing/geotag-images/delete:
+    $ref: "./processing_workflow_manager/geotag_image/paths/geotag_image_delete.yaml"
+
+  # GCPs.
+  /processing/gcps/:
+    $ref: "./processing_workflow_manager/gcps/paths/gcps.yaml"
+  /processing/gcps/download:
+    $ref: "./processing_workflow_manager/gcps/paths/download_gcps.yaml"
+  /processing/gcps/delete:
+    $ref: "./processing_workflow_manager/gcps/paths/bulk_delete_gcps.yaml"
+  /processing/gcps/bulk:
+    $ref: "./processing_workflow_manager/gcps/paths/gcp_bulk_ops.yaml"
+  /processing/gcps/{id}/images:
+    $ref: "./processing_workflow_manager/gcps/paths/gcp_images_list.yaml"
+
+  # GCP Image Tags.
+  /processing/gcp-image-tags/update:
+    $ref: "./processing_workflow_manager/gcp_image_tags/paths/update_gcp_image_tags.yaml"
+  /processing/gcp-image-tags/delete:
+    $ref: "./processing_workflow_manager/gcp_image_tags/paths/delete_gcp_image_tags.yaml"
+
+  #Presets.
+  /processing/presets/:
+    $ref: "./processing_workflow_manager/presets/paths/get_presets.yaml"
+
+  #Tasks.
+  /processing/tasks/{id}/download:
+    $ref: "./processing_workflow_manager/tasks/paths/task_output_download.yaml"

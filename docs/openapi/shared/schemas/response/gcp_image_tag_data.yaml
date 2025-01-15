@@ -1,0 +1,17 @@
+type: object
+properties:
+  image_id:
+    type: string
+    format: uuid
+  image_filename:
+    type: string
+  image_orientation:
+    type: string
+  presigned_url:
+    type: string
+  image_x:
+    type: number
+  image_y:
+    type: number
+  tag_type:
+    type: string

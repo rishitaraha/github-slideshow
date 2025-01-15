@@ -1,0 +1,4 @@
+type: object
+properties:
+  download_url:
+    type: string

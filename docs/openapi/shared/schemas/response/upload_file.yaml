@@ -1,0 +1,8 @@
+type: object
+properties:
+  iteration:
+    type: string
+    format: uuid
+    readOnly: true
+  upload_id:
+    type: string

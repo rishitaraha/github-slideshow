@@ -1,0 +1,21 @@
+type: object
+properties:
+  filename:
+    type: string
+    maxLength: 250
+  id:
+    type: string
+    format: uuid
+  s3_key:
+    type: string
+    format: url
+  size:
+    type: number
+  status:
+    type: string
+  download_url:
+    type: number
+  batch_job:
+    type: object
+  extension:
+    type: string

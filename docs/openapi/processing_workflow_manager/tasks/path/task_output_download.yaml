@@ -1,0 +1,31 @@
+get:
+  summary: Get signed token for task output download.
+  parameters:
+    - in: query
+      name: id
+      required: true
+      description: UUID of the iteration dataset.
+      schema:
+        type: string
+        format: uuid
+    - in: query
+      name: download_type
+      required: true
+      description: download file type
+      schema:
+        type: string
+
+  responses:
+    "200":
+      description: Signed token for task output download.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              token:
+                type: string
+                description: The signed token for task output download.
+
+tags:
+  - processing_workflow

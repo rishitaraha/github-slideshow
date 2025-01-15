@@ -1,0 +1,19 @@
+type: object
+properties:
+  gcp:
+    type: string
+    format: uuid
+    description: ID for GCP to be tagged.
+  gcp_image_tags:
+    type: array
+    items:
+      type: object
+      properties:
+        image_id:
+          type: string
+          format: uuid
+          description: ID for geotag image tagged.
+        image_x:
+          type: number
+        image_y:
+          type: number

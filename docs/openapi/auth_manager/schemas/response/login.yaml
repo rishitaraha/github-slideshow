@@ -1,0 +1,14 @@
+type: object
+properties:
+  name:
+    type: string
+    maxLength: 50
+  email:
+    type: string
+    maxLength: 50
+  access_token:
+    type: string
+    maxLength: 128
+  refresh_token:
+    type: string
+    maxLength: 128

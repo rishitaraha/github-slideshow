@@ -1,0 +1,6 @@
+type: object
+properties:
+  ra_access_token:
+    type: string
+  org_connection_token:
+    type: string

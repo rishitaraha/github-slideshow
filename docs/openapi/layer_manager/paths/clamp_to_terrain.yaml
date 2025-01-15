@@ -1,0 +1,58 @@
+post:
+  operationId: clamp_to_terrain
+  description: Clamps the features of a layer to the terrain.
+  parameters:
+    - $ref: "../../shared/parameters/object_id.yaml"
+  responses:
+    "202":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: "../../shared/schemas/response_metadata_accepted.yaml"
+              data:
+                type: object
+      description: ""
+  tags:
+    - layers
+
+patch:
+  operationId: clamp_to_terrain_status
+  description: Clamps the features of a layer to the terrain.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            status:
+              type: string
+      application/x-www-form-urlencoded:
+        schema:
+          type: object
+          properties:
+            status:
+              type: string
+
+      multipart/form-data:
+        schema:
+          type: object
+          properties:
+            status:
+              type: string
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: "../../shared/schemas/response_metadata_patch.yaml"
+              data:
+                type: object
+      description: ""
+  tags:
+    - layers

@@ -1,0 +1,23 @@
+type: object
+properties:
+  id:
+    type: string
+    format: uuid
+    readOnly: true
+  name:
+    type: string
+    maxLength: 15
+  color:
+    type: string
+    maxLength: 8
+  created_at:
+    type: string
+    readOnly: true
+  user_groups_count:
+    type: number
+    readOnly: true
+
+required:
+  - id
+  - name
+  - color

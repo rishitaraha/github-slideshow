@@ -1,0 +1,17 @@
+delete:
+  operationId: delete_connection
+  description: "Disconnect from processing module"
+  responses:
+    "204":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: "../../shared/schemas/response_metadata_delete.yaml"
+              data:
+                type: object
+      description: "No Content"
+  tags:
+    - processing

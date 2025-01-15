@@ -1,0 +1,83 @@
+post:
+  operationId: create_bulk_features
+  description: "create features in bulk."
+  parameters:
+    $ref: "../../../shared/parameters/search.yaml"
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: "../schemas/request/create_bulk_features.yaml"
+      application/x-www-form-urlencoded:
+        schema:
+          $ref: "../schemas/request/create_bulk_features.yaml"
+      multipart/form-data:
+        schema:
+          $ref: "../schemas/request/create_bulk_features.yaml"
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                $ref: "../schemas/response/create_&_update_bulk_features.yaml"
+              meta:
+                $ref: "../../../shared/schemas/response_metadata_get.yaml"
+      description: ""
+  tags:
+    - features
+
+patch:
+  operationId: update_bulk_features
+  description: "update features in bulk."
+  parameters:
+    $ref: "../../../shared/parameters/search.yaml"
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: "../schemas/request/update_bulk_features.yaml"
+      application/x-www-form-urlencoded:
+        schema:
+          $ref: "../schemas/request/update_bulk_features.yaml"
+      multipart/form-data:
+        schema:
+          $ref: "../schemas/request/update_bulk_features.yaml"
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                $ref: "../schemas/response/create_&_update_bulk_features.yaml"
+              meta:
+                $ref: "../../../shared/schemas/response_metadata_get.yaml"
+  tags:
+    - features
+
+delete:
+  operationId: delete_bulk_features
+  description: "delete features in bulk."
+  parameters:
+    - in: query
+      name: ids
+      schema:
+        type: array
+      description: ids of all the features you want to delete
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              meta:
+                $ref: "../../../shared/schemas/response_metadata_get.yaml"
+              data:
+                type: object
+  tags:
+    - features
