@@ -1,0 +1,107 @@
+// css for printing elevation report pdf.
+@media print {
+  .show.popover {
+    visibility: hidden;
+  }
+
+  .aus-pill * {
+    visibility: visible;
+  }
+
+  .elevation-profile-card {
+    &.card {
+      position: relative;
+      margin-left: 0.4rem;
+      border: none;
+      box-shadow: none;
+      height: 50rem;
+      background-color: $white;
+      width: 100%;
+      top: 0 !important;
+
+      .card-body canvas {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: contain;
+      }
+    }
+
+    .card-header {
+      margin-top: 1rem;
+      height: fit-content;
+      border: none;
+      padding: 0;
+    }
+
+    &__header {
+      gap: 0;
+      width: 100%;
+
+      &-options {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      &__calculate-slope__tooltip,
+      &__text {
+        display: none;
+      }
+
+      &__calculate-slope {
+        @include flex-end-x;
+        width: 100%;
+
+        &__container {
+          padding: 0;
+
+          .aus-pill {
+            margin: 0;
+          }
+        }
+      }
+
+      &__line-endpoints {
+        @include flex-space-between-x;
+        margin-bottom: 0.8rem;
+        width: 100%;
+
+        .line-endpoints {
+          @include flex-center-y;
+          color: $primary-500;
+          font-size: $body-txt-5;
+          background-color: $primary-200;
+          width: fit-content;
+          border-radius: 0.4rem;
+
+          & > span {
+            height: fit-content;
+          }
+
+          &--start {
+            padding: 0.2rem 0.6rem 0.2rem 0.4rem;
+            .aus-icon {
+              margin-right: 0.4rem;
+            }
+          }
+
+          &--end {
+            padding: 0.2rem 0.4rem 0.2rem 0.6rem;
+            .aus-icon {
+              margin-left: 0.4rem;
+            }
+          }
+        }
+      }
+
+      &__calculate-slope__exit-btn,
+      &__close-icon {
+        display: none !important;
+      }
+    }
+
+    .aus-pill {
+      visibility: visible;
+    }
+  }
+}

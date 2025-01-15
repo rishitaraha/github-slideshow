@@ -1,0 +1,48 @@
+.popover {
+  border: none;
+
+  &-body {
+    padding: 0.6rem 0;
+    border: none;
+    border-radius: 0.6rem;
+    box-shadow: 0px 4px 16px $shadow-color;
+    font-family: $font-family-nunito;
+    width: 15.5rem;
+  }
+}
+
+.download-popover {
+  &__item {
+    &.aus-btn.btn-link {
+      @include flex-start-x;
+      padding: 0.8rem 1.6rem;
+      cursor: pointer;
+      gap: 0;
+      border-radius: 0.2rem;
+      width: 100%;
+      color: $black;
+
+      &:disabled {
+        @include flex-end-x;
+        flex-direction: row-reverse;
+
+        .spinner-border {
+          margin-left: 1.3rem;
+        }
+      }
+      &:hover {
+        background: $neutral-100;
+      }
+    }
+  }
+
+  &__button.btn-outline {
+    border: none;
+  }
+}
+
+@media print {
+  .download-popover__button {
+    display: none;
+  }
+}

@@ -1,0 +1,56 @@
+// Local mixin.
+@mixin dashboardKpiGrid() {
+  display: grid;
+  grid-gap: 1.4rem;
+  grid-template-columns: repeat(auto-fill, minmax(60rem, 1fr));
+  margin-top: 1.4rem;
+  padding-bottom: 2rem;
+
+  @include response(phone) {
+    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+  }
+}
+
+.dashboard-kpi-charts {
+  &-container {
+    margin-top: 1.4rem;
+    padding-bottom: 3rem;
+
+    &__production {
+      @include dashboardKpiGrid;
+    }
+  }
+
+  &__month-selector {
+    margin-top: -0.6rem;
+    min-width: 10rem;
+
+    .aus-select__control {
+      background-color: transparent;
+      border: none;
+    }
+    .aus-select__placeholder {
+      color: $primary-500 !important;
+    }
+    .aus-select__indicator {
+      .chevron-small-down {
+        color: $primary-500;
+      }
+      padding: 0;
+    }
+    .aus-select__single-value {
+      color: $primary-500 !important;
+    }
+  }
+
+  &__no-data-message {
+    @include flex-center-rev;
+    gap: 1.4rem;
+    text-align: center;
+
+    span {
+      font-size: 2.4rem;
+      color: $neutral-300;
+    }
+  }
+}

@@ -1,0 +1,153 @@
+.accordion-sidenav {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 0rem;
+  position: absolute;
+  background: $neutral-25;
+  border: none;
+  user-select: none;
+
+  @include response(tab-port) {
+    width: 25rem;
+  }
+
+  &.offcanvas-start {
+    width: 25rem;
+  }
+
+  .offcanvas-body {
+    overflow: visible;
+    padding: 0rem;
+    width: 100%;
+  }
+
+  .offcanvas-header {
+    padding: 1rem;
+    height: 9.4rem;
+    width: 100%;
+    .sidecard__header__children {
+      display: none;
+    }
+  }
+
+  .offcanvas-title,
+  .offcanvas-title span {
+    max-width: 100%;
+    width: 100%;
+    display: block;
+  }
+
+  &__title {
+    display: flex;
+    padding: 1rem;
+    gap: 1rem;
+    width: 100%;
+    background: $neutral-100;
+    border-radius: 12px;
+
+    &__logo {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+
+      &.blur {
+        filter: blur(3px);
+      }
+
+      &-container {
+        @include flex-center;
+        height: 5.5rem;
+        width: 5.5rem;
+        position: relative;
+        overflow: hidden;
+        border-radius: 50%;
+
+        &:hover {
+          .accordion-sidenav__title__logo__upload-btn {
+            visibility: visible;
+            opacity: 1;
+          }
+        }
+
+        .aus-spinner {
+          height: 5.5rem;
+          width: 5.5rem;
+          border-width: 7px;
+
+          &-container {
+            padding: 0;
+          }
+        }
+      }
+
+      &__upload-btn {
+        @include flex-center;
+        position: absolute;
+        width: 3.9rem;
+        height: 3.9rem;
+        background: rgba(0, 0, 0, 0.8);
+        border-radius: 50%;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.2s ease-out;
+        cursor: pointer;
+      }
+    }
+
+    &__org-name {
+      @include text-ellipses;
+      font-weight: $bold-txt-2;
+      font-size: $body-txt-4;
+      color: $primary-700;
+      margin: 0;
+      padding: 0;
+      width: fit-content;
+      white-space: pre-line;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+
+      &-container {
+        @include flex-center-rev-y;
+        gap: 0.2rem;
+        width: calc(100% - 6.5rem);
+
+        span {
+          @include text-ellipses;
+          font-size: $body-txt-5;
+          color: $neutral-250;
+        }
+      }
+    }
+  }
+
+  &__footer {
+    position: fixed;
+    bottom: 0;
+    width: 25rem;
+
+    &__copyright {
+      font-size: 0.8rem;
+      text-align: center;
+      color: $neutral-300;
+    }
+
+    &__org-name {
+      @include flex-row-center-x;
+      padding: 0 1rem;
+      width: 100%;
+      height: 2.3rem;
+      background-color: $primary-700;
+      color: $white;
+      font-size: $body-txt-3;
+      img {
+        height: 1rem;
+      }
+    }
+  }
+}
+
+@import './components/accordion-sidenav-items';

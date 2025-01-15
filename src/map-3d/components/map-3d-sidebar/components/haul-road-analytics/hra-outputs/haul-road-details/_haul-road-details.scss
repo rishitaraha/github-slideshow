@@ -1,0 +1,126 @@
+.haul-road-details-title {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+
+  span {
+    color: $primary-500;
+    font-weight: $bold-txt-2;
+  }
+
+  hr {
+    height: 0.1rem;
+    flex-grow: 1;
+    color: $neutral-50;
+  }
+}
+
+.haul-road-details {
+  @include flex-center-rev-y;
+  font-size: $body-txt-4;
+  border: 0.1rem solid $neutral-50;
+  border-radius: 1rem;
+
+  &-header {
+    @include flex-center-y;
+    justify-content: flex-start;
+    padding: 1rem 1.2rem;
+    font-size: $body-txt-3;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    background-color: $primary-100;
+    font-weight: 600;
+
+    &__back-button {
+      margin-right: 1rem;
+      width: 2.4rem;
+      flex-shrink: 0;
+    }
+  }
+
+  &-info {
+    display: grid;
+    width: 100%;
+    grid-template-rows: auto auto auto;
+    gap: 0.6rem;
+    padding: 1rem 0.8rem;
+
+    &__columns,
+    &__rows {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      justify-content: space-between;
+    }
+
+    &__columns {
+      color: $neutral-250;
+    }
+  }
+
+  &-layers {
+    @include flex-col;
+    border-top: 1px solid $neutral-50;
+    padding: 1rem 0.6rem;
+    gap: 0.6rem;
+
+    &__container {
+      @include flex-col;
+      gap: 0.1rem;
+    }
+
+    &__layer {
+      @include flex-center-y;
+      height: 3.4rem;
+      border: 1px solid $neutral-50;
+      padding: 0.65rem 0.8rem;
+
+      &--disabled {
+        cursor: not-allowed;
+        color: $neutral-250;
+        background-color: $neutral-25;
+        border-color: $neutral-200;
+      }
+
+      .aus-spinner-container {
+        padding: 0;
+        width: fit-content;
+      }
+
+      &__spinner {
+        --bs-spinner-border-width: 0.2rem;
+        height: 1.8rem;
+        width: 1.8rem;
+        color: $accent-warning-500;
+      }
+
+      &__text {
+        @include text-ellipses;
+        font-size: $body-txt-3;
+        flex-grow: 1;
+      }
+
+      &__actions {
+        display: none;
+        color: $neutral-250;
+        gap: 1rem;
+
+        .haul-road-details-layers__layer:hover & {
+          @include flex-row-center-x;
+          transition: all 0.1s linear;
+        }
+      }
+
+      &.disabled {
+        background-color: $neutral-50;
+        border-color: $neutral-200;
+        color: $neutral-250;
+      }
+    }
+  }
+
+  &-view-table-btn {
+    width: max-content;
+    align-self: center;
+    margin-bottom: 1rem;
+  }
+}

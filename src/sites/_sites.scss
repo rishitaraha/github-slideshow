@@ -1,0 +1,61 @@
+.site-list {
+  font-size: 1.4rem;
+  line-height: 2.1rem;
+
+  &__add-site-btn {
+    margin-left: auto;
+  }
+  .aus-pill {
+    padding: 0;
+    margin: 0 2rem;
+    cursor: pointer;
+  }
+
+  &__action {
+    padding-right: 1.6rem;
+
+    &-pill {
+      &__label {
+        font-size: 1.4rem;
+        padding: 0rem 0.4rem;
+      }
+    }
+
+    label {
+      cursor: pointer;
+    }
+
+    &-item {
+      &__iteration-button {
+        &.aus-btn {
+          &.btn-secondary {
+            background-color: $primary-200;
+            gap: 0.8rem;
+            color: $primary-500;
+            border-radius: 6px;
+          }
+        }
+      }
+      &__edit-button {
+        margin-left: 0.8rem;
+        &.aus-btn {
+          &.btn-link {
+            color: $primary-500;
+          }
+        }
+      }
+      &__delete-button {
+        .aus-icon {
+          color: $error;
+        }
+      }
+
+      &__label {
+        margin: 0 0.4rem;
+      }
+    }
+  }
+}
+
+@import './components/site-sidecard';
+@import './components/site-acl/site-acl';

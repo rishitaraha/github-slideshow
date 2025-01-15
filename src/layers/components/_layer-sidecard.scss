@@ -1,0 +1,117 @@
+.layer-sidecard {
+  .aus-input-label {
+    line-height: 1.9rem;
+  }
+
+  &-form {
+    @include flex-col;
+    padding: $sidecard-padding;
+    gap: $form-gap;
+
+    &__no-toggle {
+      .aus-radio-toggle__radio-container {
+        display: none;
+      }
+      .aus-radio-toggle__label {
+        margin-left: 0;
+      }
+    }
+
+    &__option {
+      @include flex-space-between-x;
+      padding: 0.8rem 1.6rem;
+
+      &:hover {
+        background-color: $primary-200;
+      }
+
+      &.disabled {
+        color: $neutral-200;
+
+        &:hover {
+          cursor: not-allowed;
+        }
+      }
+
+      &__tooltip {
+        z-index: $z-index-100; // Override the z-index of select dropdown.
+      }
+    }
+    .add-layers__checkbox-input-group {
+      @include flex-center-y;
+      flex-direction: row;
+      gap: 0.6rem;
+    }
+  }
+
+  .offcanvas {
+    &-body {
+      padding: 0;
+    }
+  }
+
+  &__access-tags {
+    height: calc(100vh - 29rem);
+    overflow-y: auto;
+
+    &.access-tag__input-group {
+      .aus-input-group {
+        padding: 0;
+      }
+    }
+    .checkbox {
+      &__txt-box {
+        @include checkbox-border-bottom;
+      }
+    }
+
+    &__search {
+      margin: $sidecard-padding 0;
+    }
+
+    &__header {
+      height: 3.9rem;
+      display: flex;
+      justify-content: space-between;
+      padding: 1.4rem 1.6rem 0;
+      h5 {
+        font-weight: $bold-txt-2;
+        font-size: $body-txt-3;
+      }
+    }
+
+    &__info-message {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      box-shadow: 0px -2px 8px rgba(0, 0, 0, 0.08);
+      height: 3.2rem;
+      display: flex;
+      align-items: center;
+      padding: 0 1.6rem;
+      border-radius: 0;
+    }
+
+    &.show_info {
+      height: calc(100vh - 28.5rem);
+    }
+
+    .aus-input-group {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 0.6rem;
+      height: 4rem;
+    }
+
+    hr {
+      background-color: $neutral-100;
+      margin: 0 0 0 -2.4rem;
+      position: absolute;
+      width: 100%;
+      height: 0.1rem;
+    }
+  }
+}
+
+@import './layer-menu/layer-menu';

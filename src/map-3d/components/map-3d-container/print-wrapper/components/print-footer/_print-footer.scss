@@ -1,0 +1,15 @@
+.print {
+  &-footer {
+    display: none;
+  }
+}
+
+@media print {
+  .print-footer {
+    @include flex-end-x;
+    position: relative;
+    font-size: $body-txt-5;
+    color: $neutral-400;
+    margin-top: 0.8rem;
+  }
+}

@@ -1,0 +1,44 @@
+.map-tools {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+  gap: 1rem;
+}
+
+.tool-buttons {
+  gap: 1rem;
+  display: flex;
+}
+
+.qc-tooltip {
+  width: 18rem;
+  height: 8rem;
+  position: relative;
+  top: 4rem;
+  left: -4.2rem;
+  overflow: hidden;
+  padding: 4px 10px;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 2;
+  color: white;
+  font-size: $body-txt-3;
+  @include flex-center-rev-y;
+  &-text {
+    &__prop-box {
+      @include flex-center;
+      justify-content: space-between;
+    }
+
+    &__value {
+      font-weight: $bold-txt-1;
+    }
+
+    &__key {
+      margin-right: 0.8rem;
+    }
+  }
+}

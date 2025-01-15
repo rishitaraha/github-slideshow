@@ -1,0 +1,53 @@
+.profile {
+  &__modal {
+    max-width: 50.2rem;
+  }
+  &__title {
+    font-weight: $bold-txt-2;
+    font-size: 2rem;
+    color: $primary-600;
+    margin: 0;
+  }
+  &__btn {
+    width: 100%;
+    font-weight: $bold-txt-2;
+  }
+  &-form {
+    @include flex-col;
+    gap: 1.2rem;
+    &__name-container {
+      display: flex;
+      gap: 1.4rem;
+    }
+  }
+  &__change-password {
+    &__form {
+      @include flex-col;
+      gap: 1.2rem;
+      margin-top: 1rem;
+    }
+
+    &__btn {
+      color: $primary-500;
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      text-decoration: none;
+      display: inline;
+      margin-left: -0.6rem;
+    }
+
+    &__cancel-btn {
+      color: $red-500;
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      text-decoration: none;
+      display: inline;
+    }
+    .active {
+      color: $neutral-300;
+      background: none;
+    }
+  }
+}

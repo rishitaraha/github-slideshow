@@ -1,0 +1,20 @@
+.heap-management-guide {
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  span {
+    color: $primary-600;
+    font-weight: 700;
+    width: 5.3rem;
+    white-space: nowrap;
+  }
+  li {
+    display: flex;
+    flex-direction: row;
+    width: 33rem;
+    align-items: flex-start;
+    align-self: stretch;
+    gap: 0.3rem;
+  }
+}

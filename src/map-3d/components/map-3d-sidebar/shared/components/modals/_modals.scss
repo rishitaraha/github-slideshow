@@ -1,0 +1,12 @@
+.workspace-select-terrain-modal {
+  width: 50rem;
+  form {
+    @include flex-col;
+    gap: 1.2rem;
+  }
+  &__footer {
+    &__cancel-btn {
+      margin-right: 0.6rem;
+    }
+  }
+}

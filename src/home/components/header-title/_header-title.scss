@@ -1,0 +1,10 @@
+.header-title {
+  @include flex-center-y;
+  margin-bottom: 2.4rem;
+  height: 3.8rem;
+  span {
+    @include text-ellipses;
+    max-width: calc(100% - 3.4rem);
+    text-transform: capitalize;
+  }
+}

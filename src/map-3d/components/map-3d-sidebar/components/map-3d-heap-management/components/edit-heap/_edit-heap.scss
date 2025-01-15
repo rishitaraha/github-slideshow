@@ -1,0 +1,37 @@
+.edit-heap {
+  .modal {
+    &-content {
+      border-radius: 4px;
+      min-width: 50rem;
+      @include response(phone) {
+        min-width: 38rem;
+      }
+    }
+
+    &-body {
+      min-height: 24.1rem;
+      &.modal-response-loading {
+        @include flex-row-center-xy;
+      }
+    }
+
+    &__checkbox {
+      @include flex-row-center-x;
+    }
+
+    &__select {
+      .aus-select {
+        text-transform: capitalize;
+      }
+    }
+  }
+
+  &__buttons {
+    @include flex-end-x;
+    width: 100%;
+    gap: 1rem;
+  }
+}
+.modal-backdrop {
+  --bs-backdrop-opacity: 0.4;
+}

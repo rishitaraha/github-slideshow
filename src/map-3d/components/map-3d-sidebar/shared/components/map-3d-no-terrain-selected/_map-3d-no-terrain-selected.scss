@@ -1,0 +1,11 @@
+.map-3d-no-terrain-container {
+  @include flex-center-rev;
+  font-size: $body-txt-3;
+  margin: auto;
+  height: 100%;
+
+  &__text {
+    color: $neutral-250;
+    margin-bottom: 1rem;
+  }
+}

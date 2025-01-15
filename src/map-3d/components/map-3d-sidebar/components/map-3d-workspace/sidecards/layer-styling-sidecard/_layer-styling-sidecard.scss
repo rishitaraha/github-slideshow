@@ -1,0 +1,27 @@
+.layer-styling-sidecard {
+  height: 100%;
+
+  .rc-tabs {
+    height: 100%;
+
+    &-content-holder {
+      height: calc(100% - 4rem);
+    }
+
+    &-content,
+    .rc-tabs-tabpane {
+      height: 100%;
+    }
+  }
+
+  &.sidecard {
+    height: calc(100% - calc($header-height + $footer-height));
+
+    .offcanvas-body {
+      padding: 0;
+    }
+  }
+}
+
+@import './feature-details/feature-details';
+@import './feature-styling/feature-styling';

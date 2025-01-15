@@ -1,0 +1,105 @@
+.geotags-schema-modal {
+  background: $shadow-color;
+  .modal-dialog {
+    max-height: 100% !important;
+    overflow: visible;
+  }
+  .modal-content {
+    overflow: visible;
+    width: 94.2rem;
+
+    @include response(tab-land) {
+      min-width: 30rem;
+    }
+  }
+
+  &__body {
+    overflow: visible;
+    @include response(tab-land) {
+      overflow: auto;
+    }
+
+    &__header {
+      font-size: 1.4rem;
+      font-weight: $bold-txt-1;
+      color: $neutral-200;
+      margin-bottom: 1rem;
+    }
+
+    &__selectors {
+      &-container {
+        @include flex-row-start-x;
+        gap: 3.2rem;
+      }
+
+      &-label {
+        font-size: 1.4rem;
+        font-weight: 400;
+      }
+
+      &-dropdown {
+        min-width: 22rem;
+        max-width: 22rem;
+      }
+    }
+
+    &__add-column-button {
+      margin: 2rem 0;
+      width: 22rem;
+    }
+
+    &__columns-grid {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(5, 1fr);
+      row-gap: 0.6rem;
+      grid-auto-flow: column;
+      padding-bottom: 1rem;
+
+      &-cell {
+        @include flex-center-y;
+
+        &-sno {
+          text-align: center;
+          width: 2.4rem;
+          color: $neutral-200;
+          font-size: 1.4rem;
+        }
+        &-remove-icon {
+          .aus-icon {
+            color: $red-500;
+            opacity: 0;
+            transition: all 0.2s ease-in-out;
+
+            @include response(tab-land) {
+              opacity: 1;
+            }
+          }
+        }
+        .aus-btn:hover,
+        .aus-btn:focus,
+        .aus-btn:active {
+          background-color: white;
+          border: none;
+          box-shadow: none;
+        }
+        .aus-btn:disabled {
+          opacity: 0;
+          cursor: default;
+        }
+        .aus-select {
+          width: 22.4rem;
+        }
+      }
+      &-cell:hover {
+        .aus-icon {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  .cancel-btn {
+    margin-right: 0.8rem;
+  }
+}

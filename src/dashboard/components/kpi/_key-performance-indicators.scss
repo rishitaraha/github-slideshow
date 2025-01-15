@@ -1,0 +1,83 @@
+.key-performance-indicators {
+  margin-top: 1.4rem;
+
+  &__actions {
+    @include flex-end-x;
+    margin-top: 2.4rem;
+
+    &__print-btn {
+      margin-right: 0.8rem;
+    }
+
+    &__upload-kpi-btn {
+      .dropdown-toggle::after {
+        display: none;
+      }
+
+      .aus-dropdown-card {
+        width: 100%;
+        font-size: $body-txt-3;
+      }
+
+      .dropdown-item {
+        @include flex-center-rev-y;
+        padding: 0.25rem 1.6rem;
+        height: 3.5rem;
+      }
+    }
+  }
+
+  &__timeline-strip {
+    @include flex-space-between-x;
+    align-items: center;
+    height: 5.8rem;
+    background-color: $primary-200;
+    border-radius: 8px;
+    padding: 0 1.2rem;
+
+    &__title {
+      font-weight: $bold-txt-2;
+      font-size: 2rem;
+      color: $primary-600;
+    }
+
+    &__actions {
+      @include flex-center;
+    }
+
+    &__financial_year_selector {
+      width: 13.5rem;
+
+      .aus-select__control {
+        background-color: transparent;
+        border: none;
+      }
+      .aus-select__placeholder {
+        color: $primary-500 !important;
+      }
+      .aus-select__indicator {
+        .chevron-small-down {
+          color: $primary-500;
+        }
+        padding: 0;
+      }
+      .aus-select__single-value {
+        color: $primary-500 !important;
+      }
+    }
+  }
+
+  &__message {
+    @include flex-center-rev;
+    gap: 1.4rem;
+    height: 34rem;
+
+    span {
+      font-size: 2.4rem;
+      color: $neutral-300;
+      text-align: center;
+    }
+  }
+}
+
+@import './components/dashboard-kpi-charts/dashboard-kpi-charts';

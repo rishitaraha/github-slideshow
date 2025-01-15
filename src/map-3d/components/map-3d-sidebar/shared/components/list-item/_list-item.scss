@@ -1,0 +1,80 @@
+.list-item {
+  height: 5.1rem;
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  border-radius: 0.4rem;
+  border: 1px solid $neutral-25;
+  min-width: 0;
+  user-select: none;
+
+  &-container {
+    @include flex-center-y;
+
+    .aus-input__checkbox {
+      margin: 0;
+      margin-right: 0.6rem;
+    }
+  }
+
+  &--active {
+    cursor: pointer;
+  }
+
+  &--disabled {
+    cursor: not-allowed;
+    color: $neutral-200;
+  }
+
+  &.primary {
+    border: 1px solid $neutral-25;
+    background: $white;
+  }
+
+  &.info,
+  &.primary.list-item--checked {
+    border: 1px solid $primary-500;
+  }
+
+  &.warning {
+    border: 1px solid $accent-warning-500;
+    background: $accent-warning-100;
+  }
+
+  &.success {
+    border: 1px solid $accent-success-500;
+    background-color: $accent-success-100;
+  }
+
+  &.error {
+    border: 1px solid $accent-error-500;
+    background-color: $accent-error-100;
+  }
+
+  &-avatar {
+    @include flex-center;
+    width: 2.8rem;
+    border-radius: 0.4rem 0 0 0.4rem;
+    background-color: $neutral-25;
+  }
+
+  &-action {
+    @include flex-center;
+  }
+
+  &-content {
+    @include text-ellipses;
+    @include flex-center-y;
+    max-width: 27rem;
+    font-size: $body-txt-3;
+    padding-left: 0.8rem;
+    line-height: 1.9rem;
+    min-width: 0;
+    width: 100%;
+
+    & > * {
+      @include text-ellipses;
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,124 @@
+$dataset-strip-height: 5.4rem;
+
+.swipe-map-3d {
+  &-container {
+    height: 100%;
+    width: 100vw;
+    display: flex;
+
+    &--left,
+    &--right {
+      width: 100vw;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    &--left {
+      clip-path: inset(0 50% 0 0);
+    }
+
+    &--right {
+      clip-path: inset(0 0 0 50%);
+    }
+
+    &.move-by-right-sidecard .compass {
+      transform: translateX(-$sidecard-width);
+    }
+
+    .compass {
+      top: calc($header-height + $dataset-strip-height + 1rem);
+      right: 0.7rem;
+    }
+
+    .map-navigation-controls {
+      right: 2rem;
+      bottom: 2rem;
+    }
+
+    // Classes to move FABs when sidecard opens/closes.
+    .move-by-left-sidecard {
+      transform: translateX($sidecard-width);
+      transition: transform $sidecard-transition;
+    }
+
+    .move-by-right-sidecard {
+      transform: translateX(-$sidecard-width);
+      transition: transform $sidecard-transition;
+    }
+
+    // Classes to move FABs when sidecard opens/closes.
+    .move-by-left-sidecard {
+      transform: translateX($sidecard-width);
+      transition: transform $sidecard-transition;
+    }
+
+    .move-by-right-sidecard {
+      transform: translateX(-$sidecard-width);
+      transition: transform $sidecard-transition;
+    }
+  }
+
+  &__slider {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: calc(100% - $header-height);
+    border: 2px solid $white;
+    cursor: ew-resize;
+    z-index: $z-index-base;
+
+    &-icon {
+      position: absolute;
+      top: calc(50% - $header-height / 2);
+      transform: translate(-50%, -50%);
+      background-color: $white;
+      border-radius: 100%;
+    }
+  }
+
+  &__dataset {
+    background-color: rgba($white, $alpha: 0.5);
+    z-index: $z-index-1;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+    height: fit-content;
+    padding: 1rem 0;
+    backdrop-filter: blur(5px);
+
+    &__dropdown {
+      width: 30rem;
+      .aus-select {
+        &__control,
+        &__control--is-focused {
+          border-color: $white;
+          background-color: rgba($white, 0.6);
+
+          &:hover {
+            border-color: $white;
+          }
+        }
+
+        &__single-value {
+          color: black !important;
+        }
+
+        &__placeholder {
+          color: $neutral-400 !important;
+        }
+
+        &__indicator .aus-icon {
+          color: black;
+        }
+      }
+    }
+  }
+}
+
+@import './swipe-map-3d-sidecard/swipe-map-3d-sidecard';
+@import './swipe-map-3d-measurement-tool/swipe-map-3d-measurement-tool';
+@import './swipe-map-3d-layer-properties-sidecard/swipe-map-3d-layer-properties-sidecard';
+@import './swipe-map-3d-base-layers/swipe-map-3d-base-layers';

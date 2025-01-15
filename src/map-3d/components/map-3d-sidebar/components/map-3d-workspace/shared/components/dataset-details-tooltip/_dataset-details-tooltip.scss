@@ -1,0 +1,13 @@
+.dataset-details-tooltip {
+  z-index: $z-index-100;
+
+  &-container & {
+    text-align: left;
+  }
+
+  &__grid-container {
+    display: grid;
+    grid-template-columns: 4.5rem calc(100% - 5.3rem);
+    column-gap: 0.8rem;
+  }
+}

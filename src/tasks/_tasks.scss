@@ -1,0 +1,40 @@
+.no-data-view {
+  margin-top: 1.6rem;
+
+  &__details {
+    @include position-center;
+    @include flex-col;
+    font-weight: $bold-txt-1;
+    align-items: center;
+    margin: auto;
+  }
+
+  &__header {
+    font-size: $header-txt-3;
+    margin-top: 2rem;
+    color: $neutral-300;
+  }
+
+  &__subtitle {
+    font-size: $body-txt-2;
+    margin-top: 0.6rem;
+    color: $neutral-300;
+  }
+
+  &__btn {
+    width: fit-content;
+    margin-top: 2.4rem;
+  }
+}
+
+@import './geotag-images-modal/geotag-images-modal';
+@import './input-data-card/input-data-card';
+@import './update-input-crs-overlay/update-input-crs-overlay';
+@import './upload-gcp-modal/upload-gcp-modal';
+@import './upload-geotags-modal/geotags-schema-modal';
+@import './upload-images/upload-images-modal';
+@import './upload-images/upload-images-modal';
+@import './gcp-schema-modal/gcp-schema-modal';
+@import './create-task-card/create-task-card';
+@import './map/map';
+@import './task-details-card/task-details-card';

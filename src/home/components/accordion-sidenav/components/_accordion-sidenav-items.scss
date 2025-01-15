@@ -1,0 +1,46 @@
+.accordion-sidenav-item {
+  @include flex-row-center-x;
+  height: 5.2rem;
+  line-height: 2rem;
+  list-style-type: none;
+  cursor: pointer;
+  padding: 1rem 2rem;
+  color: $primary-700;
+
+  @include response(tab-port) {
+    width: 25rem;
+  }
+
+  &-container {
+    height: calc(100vh - 18.7rem);
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  &__text {
+    margin: 0rem 1rem;
+    font-size: $body-txt-2;
+  }
+
+  &:hover {
+    background: $neutral-100;
+  }
+
+  &.active {
+    background: $primary-700;
+    color: $white;
+  }
+  &__item-icon {
+    height: 1.6rem;
+    width: 1.4rem;
+    border-radius: 0;
+  }
+
+  &__divider {
+    margin: 0;
+    padding: 0;
+    align-self: stretch;
+    color: $neutral-200;
+    border: 0.1rem solid $neutral-200;
+  }
+}

@@ -1,0 +1,28 @@
+.map-3d-feature-info-sidecard {
+  height: calc(100% - ($footer-height + $header-height));
+
+  &__form {
+    .aus-input-group {
+      margin-bottom: 1.2rem;
+    }
+  }
+
+  &__image-container {
+    @include flex-space-between-x;
+  }
+
+  &__attribute-table {
+    font-size: $body-txt-3;
+
+    &__container {
+      max-height: calc(100vh - 58.4rem);
+      overflow: auto;
+    }
+  }
+
+  .empty {
+    margin-left: 0.8rem;
+    color: $neutral-200;
+    font-size: $body-txt-4;
+  }
+}

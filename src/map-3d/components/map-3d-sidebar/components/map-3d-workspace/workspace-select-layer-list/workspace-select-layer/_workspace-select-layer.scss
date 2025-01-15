@@ -1,0 +1,22 @@
+.workspace-select-layer {
+  margin-bottom: 0.3rem;
+
+  .list-item-content {
+    @include flex-center-rev-y;
+    align-items: flex-start;
+  }
+
+  &__date {
+    font-size: $body-txt-5;
+    color: $neutral-300;
+  }
+
+  &__name {
+    @include text-ellipses();
+    width: 100%;
+  }
+
+  &__checkbox {
+    margin-left: auto;
+  }
+}

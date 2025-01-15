@@ -1,0 +1,56 @@
+.generate-road-analytics {
+  height: 100%;
+  padding: 0.8rem 0rem;
+
+  &__form {
+    padding: 0.4rem 1.6rem;
+
+    .aus-btn.btn-outline {
+      margin-top: 0.4rem;
+      padding: 0.75rem 1.4rem;
+    }
+
+    .aus-btn.btn-primary {
+      margin-top: 0.4rem;
+    }
+
+    .divider {
+      &--start::after {
+        margin: 0;
+      }
+    }
+
+    .aus-input {
+      &-label {
+        color: $primary-600;
+        font-weight: $bold-txt-2;
+      }
+    }
+
+    &__select-output {
+      &__parent-checkbox {
+        @include flex-space-between-x;
+        align-items: center;
+      }
+
+      .checkbox {
+        margin: 0.35rem 0rem;
+      }
+    }
+
+    &__submit-btn {
+      &__container {
+        background: $white;
+        padding: 1.2rem 1.6rem;
+        border-top: 1px solid $neutral-100;
+        height: 5.8rem;
+        margin-top: auto;
+        position: absolute;
+        width: 100%;
+        bottom: 7rem;
+        right: 0rem;
+      }
+      margin-left: auto;
+    }
+  }
+}

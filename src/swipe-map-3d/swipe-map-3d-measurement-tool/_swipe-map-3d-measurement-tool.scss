@@ -1,0 +1,46 @@
+.swipe-map-3d-measurement-tool {
+  & {
+    display: flex;
+    gap: 0.6rem;
+  }
+
+  &-container {
+    position: absolute;
+    top: calc($header-height + $dataset-strip-height + 1rem);
+    left: 2rem;
+    z-index: $z-index-1;
+  }
+
+  &__spot-info {
+    background-color: rgba($color: white, $alpha: 0.8);
+    border-radius: 0.4rem;
+    color: black;
+    padding: 0.4rem 0.8rem;
+    width: 27.5rem;
+    font-size: $body-txt-3;
+    margin-top: 1rem;
+    backdrop-filter: blur(5px);
+    border: 1px solid $white;
+
+    &__group {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.6rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .aus-spinner {
+      &,
+      &-container {
+        height: 1.7rem;
+        width: 1.7rem;
+        padding: 0;
+        border-width: 0.2rem;
+        border-color: black;
+      }
+    }
+  }
+}

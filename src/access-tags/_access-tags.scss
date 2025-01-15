@@ -1,0 +1,20 @@
+.access-tags {
+  height: calc(100vh - 21.1rem);
+
+  &-list {
+    &__action-item {
+      &__edit-button {
+        color: $primary-500;
+      }
+
+      &__delete-button,
+      &__delete-button:hover {
+        // TODO: remove important, override bootstrap new btn classes.
+        color: $error !important;
+        margin-left: 3rem;
+      }
+    }
+  }
+}
+
+@import './components/access-tag-modal';

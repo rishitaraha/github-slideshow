@@ -1,0 +1,107 @@
+.header {
+  @include flex-center-y;
+  padding: 1.2rem 1.6rem;
+  height: 5rem;
+  background: $primary-700;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: $z-index-11;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.06);
+
+  &__navbar {
+    color: $white;
+  }
+
+  &__title {
+    display: flex;
+    cursor: pointer;
+    color: $white;
+    gap: 0.6rem;
+    margin-left: 1.6rem;
+    height: 2.7rem;
+    user-select: none;
+
+    @include response(phone) {
+      margin-left: 1rem;
+    }
+
+    &__logo {
+      width: 21.1rem;
+      @include response(phone) {
+        width: 15rem;
+      }
+    }
+
+    &__text {
+      font-size: $body-txt-1;
+      line-height: 2.1rem;
+      align-self: flex-end;
+    }
+  }
+  &__dropdown {
+    margin-left: auto;
+
+    // Shadow on Dropdown Button Show.
+    .aus-dropdown-button__button.show {
+      .header__dropdown-btn {
+        box-shadow: 0px 0px 0px 3px $primary-300;
+      }
+    }
+
+    // Dropdown Button.
+    &-btn {
+      padding-right: 0.8rem;
+      border: none !important;
+      border-radius: 0.8rem;
+
+      .aus-icon {
+        color: $primary-500;
+      }
+      .separator {
+        border: 0.05rem solid $primary-300;
+        width: 0;
+        height: 1.6rem;
+      }
+      .aus-dropdown-button__text {
+        color: $primary-500;
+        font-size: $body-txt-2;
+        font-weight: $bold-txt-1;
+      }
+    }
+
+    // Dropdown Menu Container.
+    .aus-dropdown-card {
+      margin-top: 0.3rem;
+      inset: 0 0 auto auto !important;
+      border-radius: 0.6rem;
+    }
+
+    // Dropdown Menu Item.
+    &__item {
+      @include flex-start-x;
+      align-items: center;
+      font-size: $body-txt-3;
+      font-weight: $bold-txt-1;
+      padding: 0 1.6rem;
+      height: 3.5rem;
+      background: $white;
+      border-bottom: 0.1rem solid $neutral-150;
+
+      &:hover {
+        background-color: $neutral-50;
+      }
+      &:active {
+        color: $white;
+        background-color: $primary-700;
+      }
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &.logout {
+        color: $red-500;
+      }
+    }
+  }
+}

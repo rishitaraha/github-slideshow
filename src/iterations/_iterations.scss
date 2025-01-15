@@ -1,0 +1,92 @@
+.iterations {
+  &__header-btns {
+    @include flex-end-x;
+    margin-left: auto;
+    gap: 0.8rem;
+  }
+}
+
+.iteration-list {
+  font-size: 1.4rem;
+  line-height: 2.1rem;
+  height: 100%;
+
+  label {
+    cursor: pointer;
+  }
+
+  &__status_icons {
+    @include flex-center;
+    height: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-right: 4rem;
+    .aus-tooltip-text:last-child {
+      margin-left: 2rem;
+    }
+  }
+
+  &__action {
+    padding-right: 1.6rem;
+
+    .aus-btn:active {
+      border: none;
+    }
+
+    .state-icon-container {
+      z-index: -1;
+    }
+
+    &-pill {
+      &__label {
+        font-size: 1.4rem;
+        padding: 0rem 0.4rem;
+      }
+    }
+
+    &-item {
+      margin-right: 2rem;
+      &__layer {
+        &.aus-btn {
+          &.btn-secondary {
+            background-color: $accent-success-100;
+            color: $accent-success-500;
+            border-radius: 6px;
+          }
+        }
+      }
+      &__button {
+        &-container {
+          @include flex-space-evenly-x;
+        }
+
+        &--delete,
+        &--edit {
+          border-radius: 6px;
+          margin-left: 0.8rem;
+        }
+
+        &--delete {
+          margin-left: 0.4rem;
+          .aus-icon {
+            color: $error;
+          }
+        }
+      }
+
+      &__label {
+        margin: 0 0.4rem;
+      }
+      &__notification {
+        margin-right: 2rem;
+      }
+    }
+  }
+  .aus-table__tbody {
+    cursor: pointer;
+  }
+}
+
+@import './components/iteration-sidecard';
+@import './components/subtract-dsm/subtract-dsm';

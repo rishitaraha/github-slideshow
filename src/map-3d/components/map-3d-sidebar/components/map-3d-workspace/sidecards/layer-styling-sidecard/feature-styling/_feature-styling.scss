@@ -1,0 +1,68 @@
+.feature-styling {
+  &-container {
+    height: 100%;
+
+    .chevron-right.accordion .accordion {
+      &-button {
+        font-size: $body-txt-4;
+        letter-spacing: 0.1rem;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  &__form {
+    @include flex-space-between-y;
+    height: 100%;
+
+    .accordion-body {
+      padding: 0.6rem 1.6rem 0.8rem 1.6rem;
+
+      .aus-input-group {
+        margin-bottom: 1.2rem;
+      }
+    }
+
+    &__color-input-group,
+    &__number-input-group {
+      @include flex-space-between-x;
+
+      .aus-input__number {
+        width: 5.7rem;
+        color: $neutral-200;
+      }
+    }
+
+    &__button-group {
+      @include flex-end-x;
+      flex-direction: row;
+      padding: 1.2rem 1.6rem;
+      border-top: 1px solid $neutral-100;
+
+      .aus-btn {
+        width: fit-content;
+        margin-left: 0.8rem;
+      }
+    }
+    &__polygon-input-group {
+      &__color-section {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      &__fill-opacity-section {
+        .aus-input-label {
+          font-size: $body-txt-4;
+        }
+        .opacity-slider {
+          margin-left: 0.9rem;
+        }
+      }
+    }
+  }
+
+  &__accordion-container {
+    max-height: calc(100% - 5.8rem);
+    overflow: auto;
+  }
+}

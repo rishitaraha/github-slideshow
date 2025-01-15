@@ -1,0 +1,76 @@
+.layer-list {
+  height: 100%;
+  .aus-table {
+    &__thead {
+      z-index: $z-index-1;
+    }
+
+    &__action__buttons {
+      gap: 0.8rem;
+      margin-left: 4rem;
+      padding-right: 1.6rem;
+    }
+
+    &__header-options {
+      .aus-btn {
+        margin-top: 0;
+      }
+    }
+    &-container {
+      height: calc(100vh - 30rem);
+    }
+  }
+
+  &__table {
+    &-cell {
+      @include flex-center-y;
+
+      .clamped-state-icon {
+        @include flex-center-y;
+
+        margin-left: 1rem;
+      }
+    }
+
+    &-row {
+      &--highlighted {
+        cursor: pointer;
+        background-color: $primary-200;
+      }
+    }
+  }
+
+  &__options {
+    width: 100%;
+    display: inline-flex;
+    justify-content: end;
+    padding: 2rem 2.5rem;
+  }
+
+  &__action {
+    &-item {
+      &__delete-button.aus-btn,
+      &__delete-button:hover.aus-btn,
+      &__delete-button:active.aus-btn {
+        color: $error;
+      }
+
+      &__menu-button {
+        margin-left: 1rem;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  &__actions {
+    @include flex-center-y;
+    justify-content: right;
+  }
+
+  &__indicators {
+    @include flex-center;
+    gap: 2rem;
+  }
+}
+
+@import './components/layer-sidecard';

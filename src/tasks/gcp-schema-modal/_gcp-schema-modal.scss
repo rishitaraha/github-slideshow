@@ -1,0 +1,114 @@
+.gcp-schema-modal {
+  .modal {
+    &-header {
+      height: 5.8rem;
+    }
+    &-dialog {
+      max-height: 100% !important;
+      max-width: 98vw;
+      padding-top: 4rem;
+    }
+    &-content {
+      overflow: hidden;
+      width: 98vw;
+      height: 90vh;
+      margin: 0 auto;
+    }
+    &-body {
+      padding: 0;
+      overflow: hidden;
+      display: contents;
+    }
+  }
+
+  &__table {
+    &-action-list {
+      @include flex-end-y-end-x;
+      gap: 2rem;
+      margin-right: 1.5rem;
+
+      &__hover-only {
+        opacity: 0;
+      }
+    }
+  }
+
+  &__sub-header {
+    @include flex-row-center-x;
+    justify-content: space-between;
+    padding: 0.9rem 1.6rem;
+
+    &--left {
+      @include flex-row-center-x;
+      gap: 1rem;
+
+      .aus-input {
+        &__search-box {
+          width: 24rem;
+        }
+      }
+
+      .aus-dropdown {
+        &-button {
+          .dropdown-toggle {
+            .aus-btn {
+              width: 24rem;
+            }
+          }
+        }
+
+        &-card {
+          width: 34rem;
+
+          a {
+            color: white;
+            background-color: white;
+          }
+        }
+      }
+    }
+
+    &__gcp-input-crs {
+      gap: 1rem;
+
+      .aus-input-label-container {
+        color: black;
+        font-size: 1.4rem;
+      }
+
+      &--btns {
+        @include flex-end-y-end-x;
+      }
+    }
+
+    &--right {
+      @include flex-row-center-x;
+      gap: 0.8rem;
+    }
+
+    .aus-table {
+      &__tr {
+        &:hover {
+          background-color: $neutral-25;
+          cursor: pointer;
+
+          .gcp-schema-modal__table-action-list {
+            &__hover-only {
+              opacity: 1;
+            }
+          }
+        }
+      }
+      &__delete-btn {
+        &.aus-btn.btn-outline {
+          color: $red-500;
+          border-color: $red-500;
+        }
+      }
+    }
+  }
+}
+
+@import './gcp-edit-modal/gcp-edit-modal';
+@import './gcp-delete-modal/gcp-delete-modal';
+@import './gcp-image-tagging/gcp-image-tagging';

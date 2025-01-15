@@ -1,0 +1,33 @@
+.haul-road-analytics {
+  &__container {
+    height: 100%;
+    overflow-y: hidden;
+    .rc-tabs {
+      height: 100%;
+      &-nav {
+        width: 35rem;
+        z-index: $z-index-1;
+      }
+      &-tab-btn {
+        width: 10.8rem;
+      }
+      &-content-holder {
+        height: 100%;
+        overflow-y: auto;
+      }
+      &-content,
+      .rc-tabs-tabpane {
+        height: 100%;
+      }
+    }
+  }
+}
+
+.hra-sidecard-tab-content {
+  height: 100%;
+  padding: 1rem 0.8rem 0.6rem 1rem;
+}
+
+@import './hra-outputs/hra-outputs';
+@import './hra-table-card/hra-table-card';
+@import './hra-generate-form/hra-generate-form';

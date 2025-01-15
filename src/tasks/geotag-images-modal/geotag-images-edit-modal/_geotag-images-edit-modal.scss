@@ -1,0 +1,25 @@
+.geotag-edit-modal {
+  background-color: $black-translucent-light;
+
+  .modal-content {
+    max-height: 47rem;
+    width: 44rem;
+    border-radius: 10px;
+
+    .modal-header {
+      border-radius: 10px;
+      color: $primary-600;
+      background-color: $white;
+      padding: 1.55rem 1.6rem;
+      font-size: $header-txt-5;
+    }
+
+    .modal-body {
+      padding: 2rem;
+    }
+    .modal-footer {
+      @include flex-center-y;
+      padding: 1.2rem 1.6rem;
+    }
+  }
+}

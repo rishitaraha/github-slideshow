@@ -1,0 +1,11 @@
+.gcp-image-tagging {
+  height: 100%;
+  display: flex;
+  overflow: hidden;
+  padding: 2rem;
+}
+
+@import './components/gcp-exit-confirmation-modal';
+@import './components/gcp-image-list';
+@import './components/gcp-image-preview';
+@import './components/gcp-untag-all-confirmation';

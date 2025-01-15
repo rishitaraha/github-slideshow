@@ -1,0 +1,17 @@
+.search-bar {
+  @include flex-space-between-x;
+  align-items: center;
+  gap: 0.6rem;
+
+  .aus-input__search-box {
+    width: 24rem;
+
+    input::placeholder {
+      text-align: center;
+    }
+
+    .aus-icon-btn {
+      width: 3.4rem;
+    }
+  }
+}

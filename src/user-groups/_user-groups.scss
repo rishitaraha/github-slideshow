@@ -1,0 +1,52 @@
+.user-group {
+  &-list {
+    &__action-btns {
+      @include flex-end-x;
+    }
+    &__name {
+      .aus-pill__label {
+        padding: 0;
+      }
+    }
+    &__members-count {
+      font-size: 1.2rem;
+    }
+    &__header {
+      width: 50%;
+      .aus-input__search-box {
+        width: 30rem;
+      }
+
+      .aus-input-label {
+        margin: 0;
+      }
+      &__add-btn {
+        margin-left: auto;
+      }
+    }
+    .aus-input__search-box {
+      .aus-btn {
+        padding: 0.4rem;
+      }
+    }
+  }
+  &-empty {
+    position: relative;
+    align-items: center;
+    &-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      .text {
+        font-size: 1.4rem;
+        margin-bottom: 0.4rem;
+        text-align: center;
+      }
+    }
+  }
+}
+
+@import './components/add-user-group/add-user-group';
+@import './components/edit-user-group/edit-user-group';
+@import './components/user-group-acl/user-group-acl.scss';

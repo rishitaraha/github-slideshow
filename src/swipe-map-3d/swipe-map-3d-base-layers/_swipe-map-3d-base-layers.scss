@@ -1,0 +1,23 @@
+.swipe-map-3d__base-layers {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+
+  &-container {
+    display: flex;
+  }
+
+  .aus-icon-btn {
+    border-radius: 0.8rem;
+    color: $neutral-300;
+    background-color: $white;
+    width: 3.4rem;
+    height: 3.4rem;
+    backdrop-filter: blur(1px);
+
+    &.active {
+      background-color: $white;
+      color: $neutral-300;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+.user-group-acl {
+  padding: $sidecard-padding-top-bottom;
+  .aus-input-group {
+    padding: $sidecard-padding-left-right;
+  }
+  &__span {
+    @include flex-row-center-xy;
+    height: calc(100vh - 35rem);
+  }
+  &__search {
+    .aus-input {
+      &__search {
+        width: 100%;
+      }
+    }
+    margin-bottom: $body-txt-3;
+  }
+
+  &__user-group-list {
+    &-header {
+      @include flex-row-start-x;
+      justify-content: space-between;
+      font-weight: $bold-txt-2;
+      color: $neutral-200;
+    }
+    &-body {
+      overflow: auto;
+      height: calc(100vh - 31.5rem);
+
+      .checkbox {
+        @include checkbox-border-bottom;
+      }
+    }
+  }
+}

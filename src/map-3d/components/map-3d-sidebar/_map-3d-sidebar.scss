@@ -1,0 +1,66 @@
+@import './components/map-3d-legend/map-3d-legend';
+@import './components/map-3d-elevation-tool/map-3d-elevation-tool';
+@import './components/map-3d-heap-management/map-3d-heap-management';
+@import './components/map-3d-base-layers/map-3d-base-layer';
+@import './components/map-3d-workspace/map-3d-workspace';
+@import './components/map-3d-smart-detect/map-3d-smart-detect';
+@import './components/map-3d-contour/map-3d-contour';
+@import './components/map-3d-slope-map/map-3d-slope-map';
+@import './components/map-3d-generate-analytics/map-3d-generate-analytics';
+@import './components/haul-road-analytics/haul-road-analytics';
+@import './components/additional-information/additional-information';
+
+// Shared components.
+@import './shared/components/map-3d-no-terrain-selected/map-3d-no-terrain-selected';
+@import './shared/components/map-3d-generating-output/map-3d-generating-output';
+@import './shared/components/map-3d-no-access-to-feature/map-3d-no-access-to-feature';
+@import './shared/components/select-terrain-footer/select-terrain-footer';
+@import './shared/components/modals/modals';
+@import './shared/components/list-item/list-item';
+
+.map-3d-sidebar {
+  height: calc(100% - $footer-height);
+
+  &__sidecard-container {
+    overflow: hidden;
+  }
+
+  .aus-sidebar-item {
+    &:last-child {
+      margin-top: auto;
+      margin-bottom: 0;
+    }
+  }
+
+  &-card {
+    z-index: 5;
+    &-right {
+      // 100% - (header_height + footer_height)
+      height: calc(100% - 8rem);
+      &.offcanvas.offcanvas-end {
+        width: 35rem;
+      }
+    }
+    .sidebar-card {
+      display: flex;
+      flex-direction: column;
+
+      &__body {
+        height: calc(100% - (5.7rem + $terrain-footer-height));
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}
+
+.map-3d-sidebar-card-right {
+  height: calc(100% - calc($header-height + $footer-height));
+  .offcanvas-body {
+    overflow: scroll;
+  }
+}
+
+.map-3d-sidebar-content {
+  padding: $sidecard-padding;
+}

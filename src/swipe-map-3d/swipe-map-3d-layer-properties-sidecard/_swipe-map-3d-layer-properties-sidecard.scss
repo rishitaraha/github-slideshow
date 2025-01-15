@@ -1,0 +1,28 @@
+.layer-properties-sidecard {
+  height: calc(100% - ($header-height));
+
+  .offcanvas-body {
+    padding: 0;
+    height: 100%;
+  }
+
+  &__accordion {
+    border-bottom: 1px solid $neutral-100;
+
+    .accordion {
+      &__group {
+        padding-bottom: 1.2rem;
+
+        &--separated {
+          padding-top: 1.2rem;
+          border-top: 1px solid $neutral-25;
+        }
+
+        &__content {
+          color: $neutral-300;
+          margin-top: 0.4rem;
+        }
+      }
+    }
+  }
+}

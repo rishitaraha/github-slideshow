@@ -1,0 +1,33 @@
+@media print {
+  .compass {
+    display: block !important;
+    right: 0 !important;
+  }
+
+  .map-3d-container__bottom-bar,
+  .map-3d-tools,
+  .scene-mode-switcher__container {
+    visibility: hidden;
+  }
+
+  .map-3d-container {
+    .map-3d-print-warning {
+      @include position-center;
+      display: block;
+      color: $white;
+      top: calc(100% - 7rem);
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(20px);
+      padding: 0.4rem 0.8rem;
+      border-radius: 0.4rem;
+      font-size: $body-txt-4;
+      z-index: $z-index-1;
+    }
+
+    &--2d-mode {
+      .map-3d-print-warning {
+        display: none;
+      }
+    }
+  }
+}

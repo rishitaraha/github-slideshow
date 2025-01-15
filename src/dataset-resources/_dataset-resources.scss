@@ -1,0 +1,29 @@
+.dataset-resources-tabs {
+  @include flex-row-start-x;
+  height: 100%;
+
+  .rc-tabs {
+    height: 100%;
+    overflow: visible;
+    &-nav {
+      margin-bottom: 2.4rem;
+    }
+    &-content {
+      height: 100%;
+    }
+    &-tabpane {
+      height: 100%;
+    }
+    &-ink-bar {
+      left: 3rem;
+    }
+    &-nav-list {
+      justify-content: flex-start;
+      border-bottom: 3.2px solid $neutral-100;
+    }
+    &-tab {
+      padding: 0 1rem;
+      width: fit-content;
+    }
+  }
+}

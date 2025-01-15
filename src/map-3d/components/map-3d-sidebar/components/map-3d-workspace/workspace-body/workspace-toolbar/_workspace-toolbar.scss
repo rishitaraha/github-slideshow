@@ -1,0 +1,51 @@
+.workspace-toolbar {
+  @include flex-center-y;
+  justify-content: space-between;
+  padding: 0.4rem 0.8rem;
+  border-bottom: 1px solid $neutral-100;
+
+  &__icon-box {
+    @include flex-center-y;
+    gap: 0.4rem;
+    padding: 0.4rem 0.4rem;
+  }
+
+  &__tool {
+    height: 2.4rem;
+    width: 2.4rem;
+    cursor: pointer;
+    color: $neutral-250;
+    padding: 0.4rem;
+    border-radius: 0.4rem;
+
+    &.btn-secondary {
+      color: $neutral-250;
+      background-color: $white;
+
+      &:hover:not(:disabled) {
+        background-color: $neutral-25;
+      }
+
+      &:active:not(:disabled) {
+        background-color: $primary-200;
+        color: $primary-500;
+      }
+
+      &:focus-visible {
+        box-shadow: 0 0 0 0.3rem rgba($primary-300, 1);
+      }
+    }
+  }
+
+  &__spacer {
+    width: 0.1rem;
+    height: 1.4rem;
+    background-color: $neutral-100;
+  }
+
+  &__selected-items {
+    font-size: $body-txt-4;
+    font-weight: $font-weight-500;
+    color: $neutral-250;
+  }
+}

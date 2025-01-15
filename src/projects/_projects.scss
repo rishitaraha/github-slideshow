@@ -1,0 +1,53 @@
+.projects {
+  &__container {
+    display: grid;
+    grid-gap: 2.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(25.6rem, 1fr));
+    padding: 0rem 0.1rem 4rem 0.1rem;
+
+    margin-top: 1.6rem;
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: transparentize($color: gray, $amount: 0.5);
+    }
+  }
+
+  &__options {
+    display: flex;
+    margin-left: auto;
+    margin-top: -6rem;
+    .aus-input__search {
+      width: 31.9rem;
+      @include response(phone) {
+        width: auto;
+      }
+    }
+    &__add-btn {
+      margin-left: 0.8rem;
+      @include response(phone) {
+        margin-left: 1rem;
+      }
+    }
+  }
+  &-empty {
+    @include flex-center-rev;
+    width: 100%;
+    height: calc(100vh - 27rem);
+
+    &__text {
+      color: $neutral-300;
+      font-size: $body-txt-2;
+      margin-bottom: 1.6rem;
+    }
+  }
+  .aus-spinner-container {
+    @include position-center;
+    position: fixed;
+  }
+}
+
+@import './components/project-card/project-card';
+@import './components/project-acl/project-acl';

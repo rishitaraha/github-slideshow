@@ -1,0 +1,102 @@
+.task-options-edit-modal {
+  .modal-content {
+    width: 44rem;
+    border-radius: 4px;
+    .modal-header {
+      color: $primary-600;
+      background-color: $white;
+      padding: 1.8rem 2rem;
+      font-size: $header-txt-5;
+      font-weight: $bold-txt-2;
+    }
+
+    .modal-body {
+      padding: 2rem;
+      min-height: auto;
+      height: auto;
+    }
+  }
+
+  &__heading {
+    @include flex-row-start-x;
+    font-size: $body-txt-3;
+    color: $neutral-200;
+    text-transform: uppercase;
+    font-weight: $bold-txt-2;
+    letter-spacing: 0.05em;
+
+    .aus-input__checkbox {
+      margin: auto;
+      margin-right: 0.5rem;
+    }
+  }
+
+  &__options {
+    font-size: $body-txt-2;
+
+    .aus-input {
+      .aus-select {
+        width: 19.3rem;
+      }
+
+      &__number {
+        width: 19.3rem;
+      }
+    }
+
+    &-wrapper {
+      @include flex-space-between-x;
+      margin: 0.9rem 0 2rem 0;
+    }
+  }
+
+  &__boundary_options {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 1rem 0;
+
+    .tooltip-icon {
+      margin: auto;
+      padding-left: 1rem;
+    }
+  }
+
+  &__add-boundary-btn {
+    width: calc(100% - 3.2rem);
+  }
+
+  &__focal-length-check {
+    height: 2rem;
+    margin-top: 1rem;
+
+    @include flex-center-y;
+    font-size: $body-txt-3;
+  }
+
+  &__clip-boundary-info {
+    width: 100%;
+    color: $primary-500;
+    font-size: $body-txt-4;
+    text-align: left;
+    background-color: $primary-200;
+    border-radius: 4px;
+    padding: 0.4rem 0.8rem;
+  }
+  .aus-input-group {
+    padding: 0;
+  }
+
+  .line {
+    margin-bottom: 2rem;
+    background-color: #dee2e6;
+  }
+
+  .checkbox-no-background {
+    margin: auto;
+    margin-right: 0.5rem;
+  }
+  .aus-save-btn {
+    border-radius: 6px;
+  }
+}

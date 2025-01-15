@@ -1,0 +1,51 @@
+.generate-contour {
+  @include flex-center-rev-x;
+  height: 100%;
+  gap: 1rem;
+
+  &__polygon-btn {
+    padding: 1.3rem 0;
+    height: 3.4rem;
+  }
+
+  &__form-container {
+    padding: 1rem;
+    padding-bottom: 0;
+  }
+
+  .aus-btn {
+    width: 100%;
+  }
+
+  .generate-contour-btn {
+    margin-top: 0.6rem;
+  }
+
+  &__form {
+    @include flex-col;
+    gap: 1rem;
+
+    &__group {
+      & .aus-input-label {
+        margin: 0;
+      }
+    }
+
+    &__header {
+      color: $primary-500;
+      font-weight: 700;
+      font-size: 1.4rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .input-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 1rem;
+
+      .aus-input-label {
+        margin-top: 0rem;
+      }
+    }
+  }
+}

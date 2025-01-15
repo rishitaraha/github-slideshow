@@ -1,0 +1,96 @@
+.upload-images-modal {
+  .modal-content {
+    max-width: 60rem;
+    @include response(phone) {
+      max-width: 40rem;
+    }
+  }
+  .modal-body {
+    padding-bottom: 3rem;
+  }
+
+  .aus-input-group {
+    padding: 0;
+    @include response(phone) {
+      width: 90%;
+    }
+    .aus-input {
+      width: 100%;
+      @include response(phone) {
+        width: 18.3rem;
+      }
+    }
+  }
+  &__it-name {
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  &__btn-box {
+    display: flex;
+    &:last-child {
+      margin-left: 2rem;
+    }
+  }
+  &__details {
+    padding: 0.4rem 0;
+  }
+
+  &__highlight {
+    color: $neutral-300;
+    font-weight: 700;
+    line-height: 16px;
+    letter-spacing: 0em;
+
+    &-green {
+      color: $accent-success-500;
+    }
+    &-red {
+      color: $accent-error-500;
+    }
+    &-yellow {
+      color: $accent-warning-500;
+    }
+    &-blue {
+      color: $accent-primary-500;
+    }
+  }
+}
+
+.flex-div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ellipsis {
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: bottom;
+  animation: ellipsis 2s infinite;
+  -webkit-animation: ellipsis 2s infinite;
+  -moz-animation: ellipsis 2s infinite;
+}
+@keyframes ellipsis {
+  from {
+    width: 2px;
+  }
+  to {
+    width: 12px;
+  }
+}
+@-webkit-keyframes ellipsis {
+  from {
+    width: 2px;
+  }
+  to {
+    width: 12px;
+  }
+}
+@-moz-keyframes ellipsis {
+  from {
+    width: 2px;
+  }
+  to {
+    width: 12px;
+  }
+}

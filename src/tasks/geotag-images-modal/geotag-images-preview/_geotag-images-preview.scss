@@ -1,0 +1,73 @@
+.image-preview-body {
+  @include flex-center;
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+  height: 100%;
+
+  &__image,
+  &__image-flip {
+    padding: 1rem;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  &__image-flip {
+    transform: rotate(90deg);
+  }
+  &__left-icon,
+  &__right-icon {
+    z-index: $z-index-11;
+    @include flex-center;
+    position: absolute;
+    min-width: 4.4rem;
+    min-height: 4.4rem;
+    border-radius: 50%;
+    background-color: #f0f3f4;
+  }
+  &__left-icon:hover,
+  &__right-icon:hover {
+    background-color: $neutral-100;
+    cursor: pointer;
+  }
+  &__left-icon {
+    left: 4rem;
+  }
+  &__right-icon {
+    right: 4rem;
+  }
+
+  .geotag-image-preview {
+    display: block;
+    &__zoom-container {
+      border-radius: 4px;
+      max-width: 99%;
+      max-height: 98%;
+    }
+    &__image {
+      &-top-btn {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        border-radius: 4px;
+        @include square(4);
+      }
+
+      &-button {
+        @include square(4);
+        position: absolute;
+        right: 2rem;
+        bottom: 2rem;
+      }
+    }
+    .react-transform-component {
+      image-rendering: optimizeSpeed; /* STOP SMOOTHING, GIVE ME SPEED  */
+      image-rendering: -moz-crisp-edges; /* Firefox                        */
+      image-rendering: -o-crisp-edges; /* Opera                          */
+      image-rendering: -webkit-optimize-contrast; /* Chrome (and eventually Safari) */
+      image-rendering: pixelated; /* Chrome */
+      image-rendering: optimize-contrast; /* CSS3 Proposed                  */
+      -ms-interpolation-mode: nearest-neighbor; /* IE8+                           */
+    }
+  }
+}

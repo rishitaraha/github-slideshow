@@ -1,0 +1,132 @@
+.geotag-images-modal {
+  margin-top: 2rem;
+
+  .modal {
+    &-dialog {
+      max-height: 100% !important;
+      max-width: 98vw;
+    }
+    &-content {
+      overflow: hidden;
+      width: 98vw;
+      height: 90vh;
+      margin: 0 auto;
+    }
+    &-body {
+      padding: 0;
+      overflow: hidden;
+      display: contents;
+    }
+  }
+  &-header {
+    @include flex-space-between-x;
+    padding: 0.9rem 1.6rem;
+    height: 5rem;
+    &__left {
+      @include flex-row-center-x;
+      justify-content: flex-start;
+      gap: 8px;
+      min-width: 40%;
+      &-crs {
+        min-width: 20rem;
+      }
+    }
+    &__right {
+      @include flex-row-center-x;
+      justify-content: flex-end;
+      gap: 8px;
+      margin-right: 1rem;
+      min-width: 40%;
+    }
+  }
+
+  &-header {
+    @include flex-space-between-x;
+    padding: 0.9rem 1.6rem;
+    &__left {
+      @include flex-row-center-x;
+      justify-content: flex-start;
+      gap: 8px;
+      min-width: 40%;
+      &-change-crs-btn {
+        display: flex;
+        justify-content: space-between;
+        width: 23rem;
+        color: $neutral-400 !important;
+        border: 1px solid $neutral-200 !important;
+      }
+    }
+    &__right {
+      @include flex-row-center-x;
+      justify-content: flex-end;
+      gap: 8px;
+      margin-right: 1rem;
+      min-width: 40%;
+    }
+  }
+
+  &__icon:hover {
+    cursor: pointer;
+  }
+
+  .aus-table__header-options {
+    min-height: 0rem;
+  }
+  .aus-table__pagination {
+    overflow: visible;
+  }
+
+  &__table {
+    .aus-pill {
+      height: 2rem;
+      width: 4rem;
+      &__label {
+        border-radius: 4px;
+        padding: 0rem;
+        gap: 0.4rem;
+        z-index: 1;
+      }
+    }
+    .aus-input__checkbox {
+      margin: 0;
+    }
+    &-action {
+      @include flex-center;
+      justify-content: flex-end;
+      margin-right: 1.2rem;
+      gap: 1.5rem;
+
+      .state-icon-container {
+        width: 1.4rem;
+        height: 1.4rem;
+        padding: 0.2rem 0;
+      }
+    }
+    &-row {
+      cursor: pointer;
+      &:hover {
+        background-color: $neutral-25;
+        .geotags-action-list__hover-only {
+          opacity: 1;
+        }
+      }
+      &__warning {
+        background-color: $red-100;
+        border-color: $neutral-25;
+        &:hover {
+          cursor: pointer;
+          background-color: $neutral-25;
+          .geotags-action-list__hover-only {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+@import './geotag-images-preview/geotag-images-preview';
+@import './filter-options-overlay/filter-options-overlay';
+@import './geotag-images-edit-modal/geotag-images-edit-modal';
+@import './delete-geotags-modal/delete-geotags-modal';
+@import './geotag-images-table/geotag-images-table-toggle-modal';

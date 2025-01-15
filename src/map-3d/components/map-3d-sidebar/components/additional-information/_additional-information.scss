@@ -1,0 +1,60 @@
+.additional-information {
+  height: calc(100% - $terrain-footer-height);
+  overflow-y: scroll;
+
+  &__empty-text {
+    color: $neutral-250;
+    margin-bottom: 1rem;
+    font-size: $body-txt-3;
+    text-align: center;
+    height: fit-content;
+  }
+
+  &--empty-project,
+  &--empty-workspace {
+    @include flex-center-rev;
+    margin: auto;
+    height: 100%;
+  }
+
+  &__accordion-title {
+    @include flex-row-center-x;
+    width: 30rem;
+
+    &__site,
+    &__iteration {
+      @include text-ellipses;
+      display: block;
+    }
+
+    &__site {
+      width: fit-content;
+      max-width: 50%;
+    }
+
+    /*
+      When site's width is < 50%, iteration will take up the entire space
+      Otherwise, when site's width is 50%, iteration will shrink as much as site i.e. 50%
+    */
+    &__iteration {
+      flex: 1 0.5 0;
+    }
+  }
+
+  .accordion-body {
+    @include flex-row-center-x;
+    min-height: 10rem;
+  }
+
+  .accordion-body &__empty-text {
+    margin: auto;
+  }
+
+  &__iteration-info {
+    width: 100%;
+  }
+
+  &__tooltip-container {
+    text-align: left;
+  }
+}

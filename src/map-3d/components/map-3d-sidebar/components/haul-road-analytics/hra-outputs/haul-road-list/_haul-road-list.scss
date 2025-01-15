@@ -1,0 +1,54 @@
+.haul-road-list {
+  @include flex-col;
+  gap: 0.6rem;
+  height: 100%;
+
+  &__empty {
+    height: 100%;
+
+    @include flex-center;
+    &__text {
+      color: $neutral-250;
+    }
+  }
+
+  .list-item-container {
+    .delete-icon {
+      visibility: hidden;
+      margin: 1.7rem 1.3rem 1.6rem;
+      color: $error;
+    }
+
+    :hover {
+      .delete-icon {
+        visibility: visible;
+      }
+    }
+  }
+}
+
+.modal-header {
+  justify-content: space-between;
+  padding: 1.5rem 4rem;
+
+  .aus-icon {
+    margin: 0.5rem 1rem;
+  }
+
+  .title {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+  }
+}
+.modal-body {
+  padding: 2rem;
+  text-align: left;
+}
+
+.modal-footer {
+  .aus-btn.btn {
+    width: 6.6rem;
+    height: 3.4rem;
+  }
+}

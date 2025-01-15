@@ -1,0 +1,17 @@
+.site-sidecard {
+  &-form {
+    @include flex-col;
+    gap: $form-gap;
+
+    &__long-lat {
+      @include flex-row-start-x;
+      gap: $form-gap;
+    }
+
+    &__location-label {
+      color: $neutral-200;
+      font-weight: bold;
+      padding-bottom: 0;
+    }
+  }
+}

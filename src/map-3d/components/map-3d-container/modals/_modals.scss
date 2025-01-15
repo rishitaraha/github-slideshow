@@ -1,0 +1,48 @@
+.map-3d-container-modal {
+  font-size: $body-txt-3;
+
+  .modal-footer {
+    gap: 0.8rem;
+  }
+}
+
+.shareable-link-modal {
+  .modal-content {
+    width: 50rem;
+    height: 15.9rem;
+  }
+
+  .modal-body {
+    p {
+      margin: 0;
+    }
+  }
+  &__link-copied {
+    .tooltip-inner {
+      background-color: $accent-success-500;
+    }
+
+    &.tooltip.bs-tooltip-top .tooltip-arrow:before {
+      border-top-color: $accent-success-500;
+    }
+  }
+}
+
+.shareable-link-container {
+  display: flex;
+  flex-direction: row;
+  width: 46rem;
+
+  .aus-input {
+    .aus-input__txt:disabled {
+      background-color: white;
+      color: $neutral-250;
+      width: 41.8rem;
+      margin-right: 1rem;
+    }
+  }
+}
+
+.aus-icon-btn:disabled {
+  background-color: $primary-500;
+}

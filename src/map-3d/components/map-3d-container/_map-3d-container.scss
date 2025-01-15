@@ -1,0 +1,186 @@
+.map-3d-container {
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  overflow: hidden;
+
+  .distance-legend {
+    display: none;
+  }
+
+  &--2d-mode {
+    .distance-legend {
+      display: block;
+    }
+  }
+
+  &.shift-by-sidecard {
+    .compass {
+      right: calc($sidecard-width + 0.5rem);
+    }
+
+    .map-navigation-controls {
+      right: calc($sidecard-width + 1.5rem);
+      bottom: calc($footer-height + 6.1rem);
+    }
+    .shareable-link__tooltip {
+      right: calc($sidecard-width + 1.5rem);
+      bottom: calc($footer-height + 17rem);
+      position: absolute;
+    }
+
+    .viewport-capture__tooltip {
+      right: calc($sidecard-width + 1.5rem);
+      bottom: calc($footer-height + 2rem);
+      position: absolute;
+    }
+  }
+
+  &__tools {
+    @include flex-col;
+    gap: 1rem;
+
+    position: absolute;
+    top: 2rem;
+    left: 8rem;
+
+    &.move-position {
+      left: 43rem;
+    }
+
+    .scene-mode-switcher {
+      @include flex-space-between-x;
+
+      .aus-tooltip-text {
+        display: inline-flex;
+      }
+
+      &__2d-button.aus-fab.btn.btn-primary {
+        border-radius: 0.6rem 0 0 0.6rem;
+      }
+
+      &__container {
+        @include position-center;
+        top: 10%;
+        z-index: $z-index-3;
+        position: fixed;
+      }
+    }
+
+    &__hide-ui-btn {
+      z-index: 20000;
+      position: fixed;
+      right: 2rem;
+      top: 21rem;
+    }
+  }
+
+  &__bottom-bar {
+    background-color: $primary-800;
+    width: 100%;
+    height: $footer-height;
+    position: fixed;
+    bottom: 0;
+    z-index: $z-index-100;
+
+    @include flex-center-y;
+    justify-content: space-between;
+    font-size: $body-txt-3;
+    color: $white;
+
+    &-mouse-location {
+      position: absolute;
+      right: 1.4rem;
+    }
+
+    &-site-name {
+      position: absolute;
+      right: 50%;
+    }
+
+    &-company {
+      position: absolute;
+      left: 1.4rem;
+    }
+
+    &-mouse-location,
+    &-company,
+    &-site-name {
+      bottom: 0.7rem;
+    }
+  }
+
+  .shareable-link {
+    &__tooltip {
+      bottom: calc($footer-height + 17rem);
+      right: 1.6rem;
+
+      &.aus-tooltip-text {
+        transition: $sidecard-transition;
+      }
+    }
+  }
+
+  .viewport-capture {
+    &__tooltip {
+      bottom: calc($footer-height + 2rem);
+      right: 1.5rem;
+
+      &.aus-tooltip-text {
+        transition: $sidecard-transition;
+      }
+    }
+  }
+
+  .map-navigation-controls {
+    bottom: calc($footer-height + 6.1rem);
+    right: 1.5rem;
+    transition: $sidecard-transition;
+  }
+
+  .map-3d-print-warning {
+    display: none;
+  }
+}
+
+.cesium-viewer-container {
+  width: 100%;
+  height: 100%;
+}
+
+.cesium-viewer {
+  .cesium-widget-credits {
+    display: none;
+  }
+
+  .cesium-viewer-bottom {
+    display: none;
+  }
+
+  .cesium-viewer-vrContainer {
+    top: 12rem;
+    right: 2rem !important;
+  }
+
+  .compass {
+    top: 2rem;
+    transition: $sidecard-transition;
+  }
+
+  .distance-legend {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: calc($footer-height + 1.5rem);
+
+    &-label {
+      font-family: 'Rubik', sans-serif;
+    }
+  }
+}
+
+@import './map-3d-container-print-styles';
+@import './map-3d-tools/map-3d-tools';
+@import './print-wrapper/print-wrapper';
+@import './viewport-capture/viewport-capture';
+@import './shareable-link/shareable-link';
+@import './modals/modals';

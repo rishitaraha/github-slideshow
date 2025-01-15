@@ -1,0 +1,30 @@
+.layer-meatball-menu {
+  margin: 0 0.8rem 0 1rem;
+
+  .aus-input {
+    &-group {
+      @include flex-row-center-x;
+      justify-content: space-between;
+      padding: 0;
+      width: 15.9rem;
+    }
+
+    &-label-container {
+      margin: 0;
+    }
+
+    &__checkbox {
+      margin: 0;
+    }
+  }
+
+  .dropdown-item.active,
+  .dropdown-item:active {
+    background-color: transparent;
+    color: unset;
+  }
+  
+  &__go-to-layer.dropdown-item {
+    gap: 3.5rem;
+  }
+}

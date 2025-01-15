@@ -1,0 +1,12 @@
+.layer-menu {
+  &__clamp-to-terrain-option {
+    border-bottom: 1px solid $neutral-100;
+    .aus-tooltip-text {
+      margin-left: auto;
+    }
+  }
+
+  .dropdown-menu {
+    width: 18rem;
+  }
+}

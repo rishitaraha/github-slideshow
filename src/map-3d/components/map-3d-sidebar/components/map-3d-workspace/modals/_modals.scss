@@ -1,0 +1,64 @@
+.workspace-modal {
+  font-size: $body-txt-3;
+
+  .modal-footer {
+    gap: 0.8rem;
+  }
+}
+
+.modal-header {
+  padding: 15.5px 16px;
+  color: $primary-600;
+
+  .btn-close {
+    font-size: 14px;
+  }
+}
+
+.change-project-confirmation-modal {
+  .modal-content {
+    width: 41rem;
+  }
+
+  .modal-body {
+    p {
+      margin: 0;
+
+      &.confirmation-message {
+        margin-top: 2.1rem;
+      }
+    }
+  }
+}
+
+.workspace-unsaved-features-modal {
+  &__content {
+    margin-bottom: 1.6rem;
+  }
+}
+
+.workspace-create-layer-modal {
+  form {
+    @include flex-col;
+    gap: 1.2rem;
+  }
+  &__select-group {
+    @include flex-space-evenly-x;
+    gap: 0.8rem;
+    &__field {
+      .aus-select__control {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.add-textbox-modal {
+  .modal-content {
+    width: fit-content;
+    .aus-input-group {
+      padding: 0;
+      width: 46rem;
+    }
+  }
+}

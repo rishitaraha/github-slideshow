@@ -1,0 +1,247 @@
+.task-accordion {
+  border-radius: 4px;
+  position: relative;
+  margin: 1rem 0;
+  &__item {
+    border: none;
+    font-size: $body-txt-3;
+  }
+  &__header {
+    @include flex-center-y;
+    justify-content: space-between;
+    color: $neutral-300;
+    width: 100%;
+    height: 5.4rem;
+    cursor: pointer;
+    border-width: 1px;
+    border-color: rgba(0, 0, 0, 0.125);
+    border-style: solid;
+    border-left-width: 5px;
+    border-radius: 4px !important;
+
+    & > * {
+      margin: 0 2rem;
+
+      @include response(phone) {
+        margin: 0rem;
+      }
+    }
+
+    transition: border-bottom 1s linear;
+    &.border-bottom-hide {
+      transition: none;
+    }
+    @include response(phone-land) {
+      padding: 0rem 1rem;
+      height: 8.5rem;
+    }
+  }
+
+  &__task {
+    &__right-container {
+      @include flex-row-center-x;
+      max-width: 70rem;
+    }
+
+    &-name {
+      @include text-ellipses;
+      max-width: 100%;
+      font-size: 1.4rem;
+      font-weight: $bold-txt-1;
+    }
+    &-container {
+      @include flex-row-center-xy;
+
+      @include response(tab-land) {
+        gap: 2rem;
+      }
+    }
+    &-boxes {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      padding: 2.5rem 1rem 2.5rem 0;
+
+      &__pills {
+        display: flex;
+        gap: 2rem;
+        @include response(tab-land) {
+          flex-direction: column;
+        }
+      }
+    }
+    &-duration {
+      @include flex-row-center-xy;
+      color: $neutral-300;
+      font-size: 1.2rem;
+      min-width: 7rem;
+      margin-right: 1.5rem;
+      &-text {
+        margin-left: 0.6rem;
+      }
+
+      @include response(phone-land) {
+        margin-left: 1rem;
+      }
+    }
+
+    &-flag {
+      color: $primary-500;
+
+      &-text {
+        margin-left: 0.531rem;
+      }
+    }
+    &-status {
+      min-width: 12rem;
+      text-align: center;
+
+      @include response(tab-land) {
+        margin-left: 2rem;
+      }
+
+      @include response(tab-port) {
+        min-width: 10rem;
+        margin-left: 1.5rem;
+      }
+
+      @include response(phone-land) {
+        min-width: 8rem;
+        margin-left: 1rem;
+      }
+    }
+    &-created-at {
+      min-width: 17rem;
+      color: $neutral-250;
+      overflow: hidden;
+      font-size: $body-txt-4;
+      @include response(phone-land) {
+        margin-left: 1rem;
+        min-width: 13rem;
+        align-self: center;
+        padding: 0;
+      }
+    }
+    &-chevron {
+      @include flex-center;
+      width: 6rem;
+      margin: 0;
+      @include response(phone-land) {
+        width: 100%;
+        justify-content: flex-end;
+        grid-column: 3;
+        grid-row: 1;
+      }
+    }
+
+    &-label {
+      display: inline-block;
+      white-space: nowrap;
+      width: 7.6rem;
+      margin-right: 2rem;
+    }
+
+    &-detail {
+      @include flex-center;
+      justify-content: space-between;
+      width: 19.2rem;
+      margin-bottom: 2rem;
+
+      &-progress {
+        color: $neutral-300;
+        margin-top: 0.5rem;
+        font-size: $body-txt-4;
+        margin-bottom: 3rem;
+      }
+      &-status {
+        &-label {
+          margin-right: 0.75rem;
+        }
+      }
+
+      &-name {
+        text-overflow: ellipsis;
+        width: calc(10.6rem + 40ch);
+        width: 85ch;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+
+      &-option {
+        display: block;
+        width: 10rem;
+      }
+    }
+
+    &-options {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &-quality-check {
+        margin-right: 1.6rem;
+      }
+      &-divider {
+        background-color: $neutral-200;
+      }
+      .aus-meat-balls-menu {
+        margin-left: auto;
+      }
+      .aus-dropdown-button {
+        width: 16.5rem;
+        margin-right: 1.6rem;
+
+        &__button {
+          min-width: 16.5rem;
+        }
+      }
+      .aus-dropdown-card {
+        min-width: 18rem;
+        .dropdown-item {
+          height: 3.5rem;
+          padding-inline: 1.6rem;
+          align-content: center;
+        }
+      }
+    }
+
+    &-cancel-btn {
+      &.btn-secondary {
+        background-color: $red-100;
+        color: $red-500;
+        &:hover {
+          background-color: $red-500;
+          color: $white;
+        }
+      }
+    }
+  }
+
+  &__collapse {
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-top: none;
+    border-left: 5px solid $accent-purple-500;
+    border-bottom-left-radius: 4px !important;
+    border-bottom-right-radius: 4px !important;
+    width: 100%;
+    margin-top: -3px;
+    &-content {
+      padding: 2rem;
+    }
+    &-header {
+      display: flex;
+      flex-direction: row-reverse;
+      &__output {
+        @include flex-center-y;
+        color: $neutral-300;
+        &-toggle {
+          margin-left: 1rem;
+        }
+      }
+    }
+  }
+  .aus-icon {
+    font-size: $body-txt-3;
+  }
+}

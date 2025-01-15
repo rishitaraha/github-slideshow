@@ -1,0 +1,107 @@
+.dashboard-map {
+  width: 100%;
+  height: 65rem;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+
+  &__header {
+    @include flex-space-between-x;
+    align-items: center;
+    position: absolute;
+    min-height: 5.5rem;
+    width: 100%;
+    background-color: $black-translucent-bg;
+    z-index: $z-index-1;
+    padding: 1.2rem;
+
+    @include response(phone-land) {
+      padding: 1.2rem;
+    }
+
+    &__title {
+      font-weight: $bold-txt-2;
+      font-size: 2rem;
+      color: $white;
+      margin-left: 1.2rem;
+
+      @include response(phone-land) {
+        display: none;
+      }
+    }
+
+    &__input {
+      width: 20rem;
+
+      &-container {
+        @include flex-end-x;
+        align-items: center;
+        gap: 3rem;
+
+        @include response(phone-land) {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          column-gap: 0.8rem;
+          width: 100%;
+        }
+
+        .aus {
+          &-input-group {
+            flex-direction: row;
+            width: fit-content;
+
+            @include response(phone-land) {
+              display: flex;
+              flex-direction: column;
+              width: 100%;
+              padding: 0;
+            }
+          }
+
+          &-input-label {
+            align-self: center;
+            margin-right: 1rem;
+            color: $white;
+          }
+
+          &-select {
+            @include response(phone-land) {
+              margin: 0;
+              width: 100%;
+              min-width: 15rem;
+            }
+
+            &__control {
+              background-color: transparent;
+            }
+            &__placeholder {
+              color: $white !important;
+            }
+            &__indicator {
+              .chevron-small-down {
+                color: $white !important;
+              }
+            }
+            &__single-value {
+              color: $white !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Overriding compass style.
+  .compass {
+    top: 7.5rem;
+    @include response(phone-land) {
+      display: block;
+      top: 9rem;
+    }
+  }
+
+  .map-navigation-controls {
+    bottom: 1.4rem;
+    right: 1.5rem;
+  }
+}

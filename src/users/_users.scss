@@ -1,0 +1,77 @@
+.user-list {
+  &__action-btns {
+    font-size: 1.4rem;
+    white-space: nowrap;
+    button {
+      background: none;
+      border: none;
+    }
+  }
+
+  &__name {
+    &__logged-user-badge {
+      color: $neutral-200;
+      margin-left: 0.8rem;
+    }
+
+    .aus-tooltip-text {
+      margin-left: 0.8rem;
+    }
+
+    &__deactivated-user-pill {
+      height: 1.8rem;
+      font-size: $body-txt-5;
+      padding: 0.2rem 0.5rem;
+      margin-left: 0.8rem;
+
+      .aus-pill__label {
+        padding: 0;
+      }
+    }
+  }
+
+  &__time {
+    color: $gray-500;
+  }
+  &__not-loggedin {
+    color: $gray-500;
+  }
+
+  &__header {
+    @include flex-center-y;
+    width: 100%;
+
+    .aus-input__search-box {
+      width: 28.6rem;
+    }
+
+    &__show-deactivated-user-toggle {
+      padding: 0;
+      margin-left: 3.4rem;
+      width: fit-content;
+      flex-direction: row;
+      align-items: center;
+
+      .aus-input-label {
+        margin: 0;
+      }
+
+      .aus-input__checkbox {
+        margin: 0 0.8rem 0 0;
+      }
+    }
+
+    &__add-user-btn {
+      margin-left: auto;
+    }
+  }
+}
+
+.aus-input__search-box {
+  .aus-btn {
+    padding: 0.4rem;
+  }
+}
+
+@import './components/user-sidecard';
+@import './components/password-validation-message/password-validation-message';

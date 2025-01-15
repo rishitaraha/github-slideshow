@@ -1,0 +1,21 @@
+.sidecard-site-list {
+  &__action {
+    padding-right: 1.2rem;
+  }
+
+  &__item {
+    margin-bottom: 0.6rem;
+  }
+
+  &__content {
+    @include flex-center-rev-y;
+    align-items: flex-start;
+    max-width: 27rem;
+    padding: 0 0.8rem;
+
+    &__sub-heading {
+      font-size: $body-txt-5;
+      color: $neutral-300;
+    }
+  }
+}

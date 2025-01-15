@@ -1,0 +1,58 @@
+.tooltip-container {
+  @include flex-space-evenly-x;
+  height: auto;
+}
+.tooltip__column {
+  @include flex-col;
+
+  &__label {
+    text-align: left;
+    margin-right: 0.5rem;
+    margin-bottom: 0.2rem;
+  }
+
+  &__site {
+    @include text-ellipses;
+    max-width: 13rem;
+    text-align: left;
+    font-weight: $bold-txt-2;
+    margin-bottom: 0.2rem;
+  }
+
+  &__iteration {
+    max-width: 13rem;
+    text-align: left;
+    font-weight: $bold-txt-2;
+    margin-bottom: 0.2rem;
+  }
+}
+
+.select-terrain-footer {
+  @include flex-center-y;
+  justify-content: space-evenly;
+  border-top: 1px solid $neutral-100;
+  height: 3.5rem;
+  padding: 0.8rem 0.8rem;
+  &__text {
+    @include text-ellipses;
+    max-width: 17.8rem;
+    font-size: $body-txt-3;
+    color: $neutral-250;
+    margin-right: auto;
+  }
+
+  &__tooltip-icon {
+    margin: 0 0.4rem;
+
+    &--info-circle {
+      background-color: $white;
+      color: $primary-500;
+    }
+  }
+  &__btn {
+    width: 12.8rem;
+    &.aus-tooltip-copied {
+      display: none;
+    }
+  }
+}

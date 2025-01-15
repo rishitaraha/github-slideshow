@@ -1,0 +1,17 @@
+.feature-count {
+  &-item {
+    @include flex-center-y;
+    padding: 0.3rem 0.8rem;
+    border-radius: 0.4rem;
+    margin-top: 0.3rem;
+    font-size: $body-txt-3;
+    width: 29.6rem;
+    background-color: $neutral-25;
+    color: $neutral-250;
+  }
+
+  &__content {
+    @include flex-space-between-x;
+    width: 100%;
+  }
+}

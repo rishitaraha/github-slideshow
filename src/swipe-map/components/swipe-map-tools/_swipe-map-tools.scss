@@ -1,0 +1,83 @@
+.swipe-map__tools {
+  position: absolute;
+  top: 7.5rem;
+  left: 2rem;
+
+  &.expanded {
+    left: 37rem;
+  }
+
+  &-container {
+    display: flex;
+  }
+
+  .aus-icon-btn {
+    border-radius: 8px;
+    color: $white;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 4rem;
+    height: 4rem;
+    backdrop-filter: blur(1px);
+
+    &.is-active {
+      background-color: rgba($white, 0.7);
+      color: $black;
+      &:hover {
+        background-color: rgba($white, 0.7);
+      }
+    }
+
+    &:hover {
+      border: 1px solid $white;
+      background: rgba(0, 0, 0, 0.7);
+    }
+  }
+
+  &-expanded-container {
+    display: flex;
+    margin-left: 0.5rem;
+
+    .aus-icon-btn {
+      border-radius: 0;
+
+      &:first-child {
+        border-bottom-left-radius: 8px;
+        border-top-left-radius: 8px;
+      }
+      &:last-child {
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+      }
+    }
+  }
+}
+
+.ol-tooltip {
+  position: relative;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  color: $white;
+  padding: 0.4rem 0.8rem;
+  opacity: 1;
+  white-space: nowrap;
+  font-size: $body-txt-4;
+  cursor: default;
+  user-select: none;
+
+  &-measure {
+    opacity: 1;
+    font-weight: $bold-txt-2;
+  }
+
+  &-static {
+    background-color: $color-bar-8;
+    color: $black;
+    border: none;
+
+    &:before {
+      border-top-color: $color-bar-8;
+    }
+  }
+}
+
+@import './components/spot-measurement/spot-measurement';

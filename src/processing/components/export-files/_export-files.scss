@@ -1,0 +1,51 @@
+.export-files {
+  width: 54rem;
+
+  &__btn-container {
+    gap: 0.3rem;
+  }
+
+  .aus-input-group {
+    padding: 0;
+    margin-top: 1.4rem;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  &__checkbox-container {
+    @include flex-row-start-x;
+    gap: 1.4rem;
+  }
+}
+
+.export-files-status {
+  @include flex-center-rev;
+  height: 100%;
+  width: 100%;
+
+  &__img {
+    &-progress {
+      opacity: 40%;
+    }
+    &-failed {
+      opacity: 30%;
+    }
+  }
+
+  &__heading {
+    font-size: 2.4rem;
+    color: $neutral-300;
+    margin: 2.4rem 0 0 0;
+  }
+  &__text {
+    font-size: $body-txt-2;
+    color: $neutral-300;
+    margin-top: 0.6rem;
+  }
+  &__btn {
+    margin-top: 1.6rem;
+    margin-bottom: 0.4rem;
+  }
+}

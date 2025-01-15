@@ -1,0 +1,15 @@
+.generating-output {
+  height: 100%;
+  @include flex-center-rev;
+
+  &__loading-icon {
+    opacity: 0.2;
+  }
+
+  &__text {
+    text-align: center;
+    font-size: 1.4rem;
+    color: $neutral-250;
+    line-height: 2.3rem;
+  }
+}

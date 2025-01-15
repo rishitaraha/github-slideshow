@@ -1,0 +1,22 @@
+.workspace-body {
+  height: calc(100% - 3.5rem);
+
+  &__select-layer {
+    @include flex-row-center-x;
+    column-gap: 0.6rem;
+    padding: 0.6rem 1rem;
+    border-bottom: 1px solid $neutral-25;
+
+    .aus-input {
+      flex-grow: 1;
+    }
+
+    .aus-select__input-container {
+      font-size: $body-txt-3;
+    }
+  }
+}
+
+@import './workspace-layer-dnd/workspace-layer-dnd';
+@import './workspace-active-layer/workspace-active-layer';
+@import './workspace-toolbar/workspace-toolbar';

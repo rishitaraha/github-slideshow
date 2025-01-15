@@ -1,0 +1,41 @@
+// Local mixins.
+@mixin sso-auth-container {
+  @include flex-center-rev-x;
+  @include position-center;
+  padding: 0;
+  gap: 2.4rem;
+
+  .aus-icon {
+    opacity: 0.6;
+    color: $neutral-200;
+  }
+}
+
+@mixin sso-auth-textbox {
+  @include flex-center-rev-x;
+  gap: 0.6rem;
+  color: $neutral-300;
+  font-size: 1.6rem;
+
+  & :first-child {
+    font-size: 2.4rem;
+  }
+}
+
+.sso-logout {
+  &-container {
+    @include sso-auth-container();
+  }
+  &-textbox {
+    @include sso-auth-textbox();
+  }
+}
+
+.sso-auth-failed {
+  &-container {
+    @include sso-auth-container();
+  }
+  &-textbox {
+    @include sso-auth-textbox();
+  }
+}

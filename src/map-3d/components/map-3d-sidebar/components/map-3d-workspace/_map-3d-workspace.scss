@@ -1,0 +1,57 @@
+.map-3d-workspace {
+  &-container {
+    // Need this to prevent react-beautiful-dnd to throw a warning.
+    .sidebar-card__body {
+      overflow: hidden;
+
+      .map-3d-no-dataset-container {
+        margin-top: 2.4rem;
+      }
+    }
+  }
+}
+
+.workspace {
+  &__header {
+    @include flex-center-y;
+    justify-content: space-between;
+
+    .btn {
+      margin-left: 6.6rem;
+      width: 10.6rem;
+    }
+  }
+}
+
+// Modals
+.workspace-create-layer-modal {
+  .modal-content {
+    width: 50rem;
+  }
+
+  &__footer {
+    @include flex-center-y;
+  }
+}
+
+.workspace-empty-list {
+  @include position-center;
+  color: $neutral-250;
+  font-size: $body-txt-3;
+  width: 100%;
+  text-align: center;
+}
+
+// Shared.
+@import './shared/components/layer-icon/layer-icon';
+@import './shared/components/dataset-details-tooltip/dataset-details-tooltip';
+
+// Sidecards.
+@import './sidecards/layer-styling-sidecard/layer-styling-sidecard';
+@import './sidecards/select-dataset-sidecard/select-dataset-sidecard';
+@import './sidecards/layer-properties-sidecard/layer-properties-sidecard';
+
+// Components.
+@import './workspace-body/workspace-body';
+@import './workspace-toolbox/workspace-toolbox';
+@import './modals/modals';

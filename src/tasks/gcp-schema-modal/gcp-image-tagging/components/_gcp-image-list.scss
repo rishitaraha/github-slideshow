@@ -1,0 +1,137 @@
+.gcp-image-list {
+  @include card-shadow;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 28rem;
+
+  max-height: 85vh;
+  padding: 2rem;
+
+  &-header {
+    .aus-pill {
+      width: fit-content;
+      margin-left: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  &-header_row {
+    @include flex-space-between-x;
+    line-height: 29px;
+    margin-bottom: 0.4rem;
+  }
+
+  &-label {
+    color: black;
+    font-size: 1.6rem;
+  }
+  &-type {
+    .aus-pill {
+      border-radius: 4px;
+      height: 2rem;
+      padding: 0.4rem 0.8rem;
+      &__label {
+        font-size: $body-txt-4;
+        padding: 0;
+      }
+    }
+  }
+
+  &-tagged {
+    color: $neutral-250;
+    font-size: 1.4rem;
+  }
+
+  &-cards {
+    overflow: scroll;
+    padding: 0;
+    width: 26rem;
+
+    &::-webkit-scrollbar {
+      width: 0.8rem;
+    }
+  }
+
+  &__card {
+    min-height: 15rem;
+    border-radius: 8px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    z-index: 100;
+    margin: 1rem 0 1rem 0;
+    width: 24rem;
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.31);
+      transition: 0.1s ease-in;
+    }
+
+    &:focus {
+      outline: 4px solid $primary-300;
+      z-index: 100;
+      outline-offset: -4px;
+    }
+
+    &-image {
+      object-fit: contain;
+      max-width: 24rem;
+    }
+
+    &-tagged {
+      position: absolute;
+      right: 1rem;
+      bottom: 1rem;
+      background-color: $accent-success-500;
+      border-radius: 50%;
+    }
+
+    &-smart-gcp {
+      position: absolute;
+      left: 1rem;
+      bottom: 1rem;
+      background-color: $accent-primary-500;
+      border-radius: 50%;
+    }
+
+    &-title {
+      font-size: 12px;
+      font-weight: 700;
+      text-align: left;
+      padding: 1rem 1rem;
+      height: 4.5rem;
+      width: 100%;
+      position: absolute;
+      z-index: 0;
+
+      &:focus {
+        background: transparent;
+      }
+    }
+
+    &__active {
+      outline: 4px solid $primary-400;
+      outline-offset: -4px;
+      cursor: pointer;
+    }
+  }
+
+  &__load-more {
+    @include flex-center;
+    color: $primary-600;
+    cursor: pointer;
+    font-size: 1.4rem;
+  }
+
+  &__buttons {
+    @include flex-end-y-end-x;
+    gap: 1rem;
+    &__untag-all {
+      color: $red-500;
+    }
+  }
+}

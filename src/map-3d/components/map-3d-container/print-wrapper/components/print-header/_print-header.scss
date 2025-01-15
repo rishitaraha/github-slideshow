@@ -1,0 +1,114 @@
+.print {
+  &-header {
+    display: none;
+  }
+}
+
+@media print {
+  $dataset: 'project', 'site', 'iteration';
+
+  .print-header {
+    display: block;
+
+    &--main {
+      @include flex-space-between-x;
+      padding: 1.25rem 1.4rem;
+      border-radius: 1.2rem;
+      margin-bottom: 0.8rem;
+      background: $primary-200;
+    }
+
+    &--sub {
+      height: auto;
+      display: grid;
+      grid-template-areas:
+        'header header header'
+        'project site iteration';
+      grid-template-rows: 3.8rem 3.6rem;
+      margin-bottom: 0.8rem;
+      border: 1px solid $neutral-100;
+      border-radius: 1.2rem;
+    }
+
+    @each $value in $dataset {
+      &__dataset--#{$value} {
+        grid-area: $value;
+        padding: 0.4rem 0.6rem;
+        border-right: 1px solid $neutral-100;
+        font-size: 0.9rem;
+      }
+    }
+
+    &__dataset {
+      &__value {
+        @include text-ellipses;
+        max-width: 30rem;
+      }
+
+      &--iteration {
+        border: none;
+      }
+
+      &--iteration &__value {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        max-width: 40rem;
+      }
+    }
+
+    &__dataset--iteration {
+      border: none;
+
+      .iteration-date {
+        display: inline-block;
+        color: $neutral-400;
+        border-left: 1px solid $neutral-100;
+        padding-left: 0.6rem;
+        margin-left: 0.6rem;
+      }
+
+      .iteration-name {
+        @include text-ellipses;
+        display: inline-block;
+        max-width: 20rem;
+      }
+    }
+
+    &__org {
+      @include flex-center-y;
+      grid-area: header;
+      font-size: $body-txt-4;
+      padding: 0.6rem;
+      color: $neutral-400;
+      border-bottom: 1px solid $neutral-100;
+
+      &__logo {
+        margin-right: 0.8rem;
+        height: 2.6rem;
+        border-radius: 0.6rem;
+        object-fit: contain;
+      }
+    }
+
+    &__dataset__sub-header {
+      font-weight: $font-weight-300;
+      color: $neutral-400;
+    }
+
+    &__report-title {
+      font-size: $header-txt-5;
+      color: $neutral-400;
+    }
+
+    &__captured-time {
+      @include flex-col;
+      color: $neutral-400;
+      font-size: $body-txt-5;
+      text-align: right;
+
+      &__header {
+        font-weight: 300;
+      }
+    }
+  }
+}

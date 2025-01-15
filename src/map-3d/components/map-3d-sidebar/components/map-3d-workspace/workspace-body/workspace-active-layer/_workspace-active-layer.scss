@@ -1,0 +1,134 @@
+.workspace-active-layer {
+  &-draggable[role='button'] {
+    cursor: pointer;
+  }
+
+  &--is-dragging {
+    box-shadow: 0px 4px 16px 0px $shadow-color;
+    opacity: 0.6;
+  }
+
+  &-spinner {
+    height: 1.26rem;
+    width: 1.26rem;
+    color: $primary-500;
+    border-width: 0.1rem;
+    margin-left: 1rem;
+  }
+
+  .list-item-action {
+    .aus-pill {
+      &.warning {
+        border-radius: 4px;
+        padding: 0.2rem 0.4rem;
+        margin: 0;
+        height: 2rem;
+      }
+
+      &__label {
+        padding: 0;
+      }
+    }
+  }
+
+  .list-item-content {
+    width: 100%;
+
+    & > * {
+      overflow: visible;
+    }
+  }
+
+  &__parent-details {
+    &-container {
+      width: 100%;
+    }
+
+    &__name {
+      @include text-ellipses;
+    }
+
+    &__parent {
+      display: grid;
+      grid-template-columns: auto auto 1fr;
+      color: $neutral-300;
+      font-size: $body-txt-6;
+      width: 100%;
+
+      .aus-icon {
+        place-self: center;
+      }
+
+      span {
+        @include text-ellipses;
+        display: inline-block;
+
+        &:nth-of-type(1) {
+          max-width: 9rem;
+        }
+      }
+    }
+  }
+
+  &__area-category {
+    &-tooltip {
+      width: fit-content;
+      margin-right: 1rem;
+    }
+
+    &-pill {
+      min-width: 2.7rem;
+      height: 2rem;
+      text-align: center;
+
+      .aus-pill {
+        padding: 0.2rem;
+
+        &__label {
+          padding: 0;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &__sidecard.sidecard {
+    position: fixed;
+    // Workaround to position button according to grandparent.
+    transform: rotate(0);
+    width: 35rem;
+    height: calc(100% - calc($header-height + $footer-height));
+
+    .offcanvas-body {
+      padding: 0;
+    }
+  }
+
+  &__sidecard-btn {
+    position: fixed;
+    top: 50%;
+    width: 2.2rem;
+    height: 5.1rem;
+    padding: 0;
+    border: 1px solid $white;
+    background-color: $primary-600;
+    border-radius: 4px 0 0 4px;
+
+    &:focus {
+      border: 1px solid $white;
+    }
+
+    &--right {
+      right: 34.9rem;
+    }
+
+    &--left {
+      right: 0;
+    }
+  }
+}
+
+@import './components/feature-count/feature-count';
+@import './components/select-area-category-modal/select-area-category-modal';
+@import './components/layer-meatball-menu/layer-meatball-menu';
+@import './components/layer-action-item/layer-action-item';

@@ -1,0 +1,15 @@
+.iteration-sidecard {
+  &-form {
+    @include flex-col;
+    gap: $form-gap;
+
+    &__input-container {
+      display: flex;
+      gap: $form-gap;
+
+      &__date {
+        width: 13.2rem;
+      }
+    }
+  }
+}

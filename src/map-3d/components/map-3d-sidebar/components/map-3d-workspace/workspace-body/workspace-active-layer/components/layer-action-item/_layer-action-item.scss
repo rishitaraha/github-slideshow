@@ -1,0 +1,34 @@
+.workspace-active-layer {
+  &:not(.list-item--disabled):hover .layer-action-item-container,
+  .layer-action-item-container:hover {
+    display: flex;
+  }
+}
+
+.layer-action-item {
+  &-container {
+    @include flex-center-y;
+    display: none;
+    gap: 1rem;
+    height: 100%;
+
+    &:hover {
+      transition: all 0.1s linear;
+    }
+
+    &--show {
+      display: flex;
+    }
+  }
+
+  .aus-icon {
+    color: $neutral-250;
+    cursor: pointer;
+
+    &.is-disabled {
+      color: $neutral-100;
+      cursor: not-allowed;
+      background-color: initial;
+    }
+  }
+}

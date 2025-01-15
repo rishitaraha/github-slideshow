@@ -1,0 +1,28 @@
+.swipe-map-spot-measurement-info-box {
+  @include flex-col;
+  position: absolute;
+  top: 5rem;
+  left: 0;
+  width: 27.5rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.4rem;
+  font-size: $body-txt-3;
+  color: $white;
+  background-color: rgba($color: $black, $alpha: 0.7);
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .aus-spinner {
+    &,
+    &-container {
+      height: 1.7rem;
+      width: 1.7rem;
+      padding: 0;
+      border-width: 0.2rem;
+      border-color: $white;
+    }
+  }
+}

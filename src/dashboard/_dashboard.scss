@@ -1,0 +1,11 @@
+.dashboard {
+  &__action-toolbar {
+    @include flex-center-y;
+    margin-top: 2.4rem;
+  }
+}
+
+@import './components/dashboard-map/dashboard-map';
+@import './components/kpi/key-performance-indicators';
+@import './components/dashboard-card/dashboard-card';
+@import './components/upload-kpi-modal/upload-kpi-modal';

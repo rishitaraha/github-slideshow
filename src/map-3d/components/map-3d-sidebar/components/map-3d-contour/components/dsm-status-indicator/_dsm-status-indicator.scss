@@ -1,0 +1,21 @@
+.dsm-status-indicator {
+  @include flex-center-rev;
+  height: 100%;
+  color: $neutral-250;
+  font-size: $body-txt-3;
+  line-height: 1.91rem;
+
+  &__icon {
+    opacity: 0.2;
+  }
+
+  &__title {
+    font-weight: $bold-txt-2;
+    margin: 0.8rem 0 0.4rem 0;
+  }
+
+  &__description {
+    text-align: center;
+    margin: 0;
+  }
+}

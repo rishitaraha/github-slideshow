@@ -1,0 +1,114 @@
+.login {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(../images/login/background.svg);
+  background-size: cover;
+
+  @include response(phone) {
+    @include flex-center;
+    width: 100%;
+    height: 100%;
+    background: unset;
+  }
+
+  &-card {
+    width: 40rem;
+    border-radius: 10px;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    @include response(phone) {
+      width: 33.1rem;
+    }
+
+    &__content {
+      @include flex-center-rev-x;
+      padding: 3.2rem 3.2rem;
+      width: 100%;
+      height: 100%;
+    }
+
+    &__logo {
+      width: 15.6rem;
+    }
+
+    &__title {
+      margin: 2rem 0;
+    }
+
+    &__form {
+      @include flex-center-rev;
+      width: 100%;
+      height: 100%;
+
+      @include response(phone) {
+        width: 100%;
+      }
+    }
+
+    &__input {
+      display: flex;
+      justify-content: stretch;
+      // margin-top: 1rem;
+      padding: 1rem 0;
+
+      label {
+        color: black;
+        margin-right: auto;
+        @include response(phone) {
+          font-size: $body-txt-3;
+        }
+      }
+      input {
+        @include response(phone) {
+          position: initial;
+          box-shadow: none;
+        }
+      }
+    }
+
+    &__forgot-password {
+      font-family: Nunito;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 16px;
+      color: #3183c8;
+      text-decoration: none;
+    }
+
+    &__btn {
+      height: 3.4rem;
+      width: 100%;
+      margin-top: 2rem;
+      @include response(phone) {
+        font-size: $body-txt-3;
+      }
+    }
+
+    &__error {
+      width: 100%;
+      color: $error;
+      font-size: $body-txt-3;
+      margin-top: 1rem;
+      text-align: left;
+      background-color: $red-100;
+      border-radius: 4px;
+      padding: 0.4rem 0.8rem;
+    }
+
+    &__warning {
+      width: 100%;
+      color: $accent-warning-500;
+      font-size: $body-txt-3;
+      margin-top: 1rem;
+      text-align: left;
+      background-color: $accent-warning-200;
+      border-radius: 4px;
+      padding: 0.4rem 0.8rem;
+    }
+  }
+}

@@ -1,0 +1,41 @@
+.input-data-card {
+  @include flex-center-y;
+  width: 100%;
+  border-radius: 8px;
+  padding: 0.8rem 0.4rem;
+  padding-left: 1rem;
+  border: 1px solid $neutral-200;
+
+  .aus-pill {
+    height: 2.4rem;
+  }
+
+  &__details {
+    @include flex-row-start-x;
+    gap: 1.5rem;
+    margin-left: 1rem;
+  }
+
+  &__header {
+    color: $neutral-300;
+    font-size: $body-txt-2;
+    font-variant-caps: all-small-caps;
+    font-weight: $bold-txt-2;
+    font-stretch: expanded;
+  }
+
+  &__images-info {
+    .aus-pill {
+      &__label {
+        color: $primary-500;
+      }
+      &.oval {
+        background-color: $neutral-25;
+      }
+    }
+  }
+
+  &__actions {
+    margin-left: auto;
+  }
+}

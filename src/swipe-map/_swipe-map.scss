@@ -1,0 +1,122 @@
+.swipe-map {
+  font-size: $body-txt-3;
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  &__header {
+    @include flex-row-center-xy;
+    position: absolute;
+    height: 5.5rem;
+    width: 100%;
+    gap: 6rem;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: $z-index-2;
+
+    .aus-input {
+      @include text-ellipses;
+      overflow: visible;
+      width: 100%;
+      max-width: 28rem;
+    }
+
+    &__input {
+      width: 100%;
+      .aus-select__control {
+        background-color: transparent;
+      }
+      .aus-select__placeholder {
+        color: $neutral-200 !important;
+      }
+      .aus-select__indicator {
+        svg {
+          color: $neutral-200 !important;
+        }
+      }
+      .aus-select__single-value {
+        color: $white !important;
+      }
+    }
+  }
+
+  &__ol-map {
+    width: 100%;
+    height: 100%;
+    .ol-zoom,
+    .ol-rotate {
+      display: none;
+    }
+    &__swipe-bar {
+      position: absolute;
+      bottom: 0;
+      width: 0.3rem;
+      height: 100%;
+      cursor: ew-resize;
+      background-color: $white;
+      z-index: $z-index-1;
+
+      &__icon {
+        @include position-center;
+        background-color: $white;
+        color: $neutral-300;
+        border-radius: 50%;
+      }
+      &__input {
+        display: none;
+      }
+    }
+  }
+  &__controls {
+    position: absolute;
+    right: 2rem;
+    bottom: 2rem;
+
+    &.expanded {
+      right: 37rem;
+    }
+
+    .aus-icon-btn {
+      border-radius: 0;
+      color: $neutral-400;
+      background-color: $white;
+      width: 3.4rem;
+      height: 3.4rem;
+      padding: 1rem;
+      &[disabled] {
+        opacity: 1;
+      }
+
+      &:first-child {
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+      }
+      &:last-child {
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+      }
+      &:hover {
+        background-color: $neutral-100;
+        &[disabled] {
+          background-color: $white;
+        }
+      }
+
+      @include response(tab-port) {
+        border-radius: 4px;
+        &:first-child,
+        &:last-child {
+          display: none;
+        }
+      }
+    }
+  }
+  .aus-icon-btn {
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}
+
+@import './components/swipe-map-layers/swipe-map-layers';
+@import './components/swipe-map-tools/swipe-map-tools';
+@import './components/swipe-map-base-layers/swipe-map-base-layers';

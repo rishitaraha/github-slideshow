@@ -1,0 +1,25 @@
+.feature-details {
+  &-container {
+    @include flex-col;
+    height: 100%;
+  }
+
+  &__form {
+    @include flex-col;
+    gap: $form-gap;
+    padding: $sidecard-padding;
+
+    &__button-group {
+      @include flex-end-x;
+      margin-top: auto;
+      flex-direction: row;
+      padding: 1.2rem 1.6rem;
+      border-top: 1px solid $neutral-100;
+
+      .aus-btn {
+        width: fit-content;
+        margin-left: 0.8rem;
+      }
+    }
+  }
+}

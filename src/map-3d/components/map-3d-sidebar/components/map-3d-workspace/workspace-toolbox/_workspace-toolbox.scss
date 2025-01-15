@@ -1,0 +1,101 @@
+.workspace-toolbox {
+  @include flex-space-between-x;
+  position: absolute;
+  bottom: calc($footer-height + 0.6rem);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: $z-index-11;
+  align-items: center;
+  border-radius: 12px;
+  background-color: $black-translucent-bg;
+  backdrop-filter: blur(10px);
+
+  &__feature-actions,
+  &__drawing-tools {
+    border-right: 1px solid $neutral-400;
+
+    .aus-icon-btn {
+      margin: 0 0.3rem;
+      padding: 0.5rem 0.8rem;
+      height: fit-content;
+      width: fit-content;
+      border-radius: 8px;
+      color: transparent;
+      transition: 150ms ease-in background;
+
+      &.btn-primary {
+        background: transparent;
+
+        &:focus {
+          box-shadow: none;
+        }
+
+        &:disabled {
+          color: $neutral-200;
+          box-shadow: none;
+        }
+      }
+    }
+
+    .delete-btn {
+      @include highlight-btn($accent-error-500);
+    }
+
+    .selection-btn {
+      @include highlight-btn($color-bar-4);
+    }
+
+    .point-tool-btn {
+      @include highlight-btn($color-bar-1);
+    }
+
+    .line-tool-btn {
+      @include highlight-btn($color-bar-2);
+    }
+
+    .polygon-tool-btn {
+      @include highlight-btn($color-bar-8);
+    }
+
+    .textbox-tool-btn {
+      @include highlight-btn($color-bar-12);
+    }
+  }
+
+  &__layer-actions {
+    .aus-btn {
+      padding: 0.4rem 0.8rem;
+      height: 2.4rem;
+      color: $white;
+      gap: 0.4rem;
+      opacity: 0.8;
+      transition: 100ms ease opacity;
+      box-shadow: none;
+
+      &:hover {
+        opacity: 1;
+        color: $white;
+      }
+
+      &:disabled {
+        opacity: 0.4;
+        background-color: transparent;
+      }
+
+      &:active {
+        box-shadow: none;
+        color: $primary-500;
+      }
+    }
+  }
+
+  &__feature-actions,
+  &__drawing-tools,
+  &__layer-actions {
+    @include flex-center;
+    margin: 0.6rem 0;
+    padding: 0 0.3rem;
+  }
+}
+
+@import '../modals/modals';

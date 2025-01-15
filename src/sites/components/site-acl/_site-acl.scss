@@ -1,0 +1,51 @@
+.site-acl {
+  &__span {
+    @include flex-row-center-xy;
+    height: calc(100vh - 35rem);
+  }
+  &__search {
+    .aus-input__search {
+      width: 100%;
+    }
+  }
+
+  &__user-group-list {
+    &-header {
+      @include flex-row-start-x;
+      justify-content: space-between;
+      padding: 1.4rem 0rem 0.6rem;
+      color: $neutral-400;
+      &__item-1 {
+        font-weight: $bold-txt-2;
+      }
+
+      &__item-2 {
+        font-weight: $bold-txt-2;
+      }
+    }
+    &-body {
+      overflow: auto;
+      height: calc(100vh - 30rem);
+
+      .accordion-body {
+        padding-top: 0;
+      }
+      .switch-card {
+        border: none;
+        border-radius: 0;
+        width: 100%;
+        padding: 0;
+        height: 3rem;
+        &.primary {
+          &.active {
+            background-color: $white;
+          }
+        }
+      }
+
+      .accordion-button {
+        padding: 1rem 0rem;
+      }
+    }
+  }
+}

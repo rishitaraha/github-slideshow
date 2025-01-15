@@ -1,0 +1,48 @@
+.user-sidecard {
+  &-form {
+    @include flex-col;
+    gap: $form-gap;
+    height: 100%;
+
+    &__name-container {
+      display: flex;
+      gap: $form-gap;
+    }
+
+    &__is-admin-toggle {
+      flex-direction: row;
+    }
+
+    &__admin-privileges-switch-card {
+      width: 100%;
+    }
+
+    &__deactivate-user-switch-card {
+      width: 100%;
+      margin-top: auto;
+    }
+  }
+
+  &__change-password {
+    @include flex-col;
+    gap: $form-gap;
+
+    &__btn-container {
+      @include flex-end-x;
+    }
+
+    &__cancel-btn {
+      &.btn-link {
+        color: $red-500;
+
+        &:hover {
+          color: $red-600;
+        }
+      }
+    }
+
+    .active {
+      color: $neutral-300;
+    }
+  }
+}

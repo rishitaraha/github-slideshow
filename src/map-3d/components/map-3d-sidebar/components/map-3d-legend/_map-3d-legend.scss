@@ -1,0 +1,10 @@
+.map-3d-legend {
+  &-container {
+    height: calc(100% - 3.5rem);
+    @include flex-row-center-xy;
+  }
+  &__img {
+    height: calc(100% - 3.5rem);
+    width: 33rem;
+  }
+}

@@ -1,0 +1,172 @@
+.create-task-card {
+  justify-content: space-between;
+  width: 100%;
+  margin: 0.5rem 0;
+  border: 1px solid $neutral-100;
+  border-left: 5px solid $accent-purple-500;
+  border-radius: 6px;
+  font-size: $body-txt-3;
+  margin-top: 1.6rem;
+
+  .aus-tooltip-text {
+    @include flex-row-center-xy;
+    height: 2.1rem;
+    width: 6.7rem;
+    z-index: 1;
+  }
+
+  &__header {
+    box-shadow: 0 2px 4px 0 $neutral-150;
+
+    height: 4.4rem;
+    span {
+      margin-left: 1rem;
+    }
+    padding: 1rem;
+  }
+
+  &__content {
+    height: calc(100% - 4.4rem);
+    padding: 1.9rem 0;
+
+    @include response(phone) {
+      padding: 1.9rem 1.8rem;
+    }
+
+    .aus-input-group {
+      padding: 1rem 2.6rem;
+      @include response(phone) {
+        width: 36.2rem;
+      }
+    }
+    .aus-input {
+      width: 30rem;
+
+      &__error {
+        font-size: $body-txt-5;
+      }
+    }
+    .create-task-card {
+      &__task-name {
+        width: 25.5rem;
+      }
+
+      &__task-options {
+        width: 18.9rem;
+      }
+    }
+    .aus-select {
+      width: 30rem;
+      &__option {
+        .tasks-dropdown {
+          max-width: 30ch;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+        }
+      }
+      &__single-value {
+        width: 100%;
+      }
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      width: 90%;
+      .create-task-card__form-input {
+        display: flex;
+        flex-wrap: wrap;
+      }
+    }
+  }
+  &__btn-box {
+    display: flex;
+    margin-top: 3.2rem;
+    margin-left: 2.6rem;
+
+    button[type='submit'] {
+      margin-right: 2rem;
+    }
+  }
+  &__task-detail {
+    .aus-tooltip-text {
+      width: 2.2rem;
+    }
+
+    &__options-dropdown {
+      @include flex-center-y;
+    }
+    &__task-info {
+      @include flex-center-y;
+      margin: 0 0.5rem;
+    }
+    &-row {
+      @include flex-row-start-x;
+      @include response(phone) {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      gap: 1rem;
+    }
+
+    &-task-input {
+      margin-right: 4.2rem;
+      margin-top: 1rem;
+    }
+    &__switch-card {
+      @include flex-row-start-x;
+      place-items: center;
+    }
+
+    &__edit-btn {
+      color: $primary-500;
+      margin: auto;
+      padding: 0 0.8rem;
+      cursor: pointer;
+    }
+  }
+  &__error {
+    width: 56%;
+    color: $error;
+    font-size: $body-txt-2;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    margin-left: 2.5rem;
+    text-align: left;
+    background-color: $red-100;
+    border-radius: 2px;
+    padding: 0.2rem 0.4rem;
+  }
+  .aus-pill {
+    @include flex-row-center-xy;
+    white-space: nowrap;
+    gap: 0.4rem;
+    height: 2.1rem;
+    width: 6.7rem;
+  }
+
+  &__continued-from-task-options {
+    padding-top: 0rem !important;
+
+    &__select {
+      margin-right: 4.2rem;
+    }
+  }
+}
+
+.processing-stage-dropdown {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tasks-dropdown {
+  max-width: 25ch;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+@import '../task-options-edit-modal/task-options-edit-modal';
+@import '../task-options-view-modal/task-options-view-modal';

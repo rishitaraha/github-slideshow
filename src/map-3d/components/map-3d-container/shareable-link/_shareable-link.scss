@@ -1,0 +1,17 @@
+.shareable-link {
+  &__btn {
+    height: 3.4rem;
+    width: 3.4rem;
+    border-radius: 6px;
+  }
+
+  &__tooltip {
+    position: absolute;
+    z-index: $z-index-base;
+
+    .aus-icon-btn.btn-primary {
+      background-color: white;
+      color: $neutral-150;
+    }
+  }
+}

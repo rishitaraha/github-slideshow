@@ -1,0 +1,52 @@
+.add-user-group {
+  &__container {
+    width: 100%;
+    padding: $sidecard-padding-top-bottom;
+
+    .aus-input-group {
+      padding: $sidecard-padding-left-right;
+    }
+  }
+
+  &__btn-container {
+    display: flex;
+    margin-left: auto;
+    &__cancel-btn {
+      margin-right: 0.8rem;
+    }
+  }
+
+  .offcanvas-body {
+    padding: 0;
+    overflow: hidden;
+  }
+
+  &__name-container {
+    display: flex;
+  }
+
+  &__input-label__for-users {
+    @include flex-space-between-x;
+    margin-top: 1.4rem;
+    font-weight: $bold-txt-2;
+    color: $neutral-200;
+    padding: 0 2.4rem;
+  }
+
+  &__list {
+    height: calc(100vh - 41rem);
+    margin-bottom: 1rem;
+  }
+  &__checkbox-container {
+    .checkbox {
+      &__txt-box {
+        @include checkbox-border-bottom;
+      }
+    }
+  }
+
+  .br-line {
+    margin: 1.4rem 0;
+    background-color: $neutral-250;
+  }
+}

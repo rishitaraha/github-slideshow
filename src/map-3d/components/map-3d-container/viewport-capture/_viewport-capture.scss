@@ -1,0 +1,14 @@
+.viewport-capture {
+  &__tooltip {
+    position: absolute;
+    z-index: $z-index-base;
+  }
+}
+
+@media print {
+  .viewport-capture {
+    &__tooltip {
+      display: none;
+    }
+  }
+}

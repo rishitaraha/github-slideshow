@@ -1,0 +1,41 @@
+.gcp-edit-modal {
+  &__container {
+    .input-group {
+      align-items: unset;
+    }
+    backdrop-filter: brightness(0.5);
+    .modal-footer {
+      padding: 1.2rem 1.6rem;
+    }
+  }
+
+  &__content {
+    width: 50rem;
+  }
+
+  &__input {
+    &-container {
+      @include flex-col;
+      gap: 1rem;
+    }
+
+    &-group {
+      @include flex-col-start-x;
+    }
+
+    &-coordinates {
+      @include flex-row-center-x;
+      flex-wrap: unset;
+      gap: 1rem;
+    }
+
+    &-btns {
+      @include flex-end-y-end-x;
+      gap: 1rem;
+
+      .aus-btn {
+        border-radius: 6px !important;
+      }
+    }
+  }
+}

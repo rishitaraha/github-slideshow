@@ -1,0 +1,22 @@
+.filter-options-overlay {
+  background-color: white;
+  border-radius: 4px;
+  padding: 1rem 1.2rem;
+  position: absolute;
+  top: 11rem;
+  left: 25.2rem;
+  z-index: 10000;
+
+  &__option-container {
+    @include flex-center-y;
+    height: 2.5rem;
+    gap: 1rem;
+    span {
+      font-size: $body-txt-2;
+    }
+  }
+
+  &__option-container:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+}

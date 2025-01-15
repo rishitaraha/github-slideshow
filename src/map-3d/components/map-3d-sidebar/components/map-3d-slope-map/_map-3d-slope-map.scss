@@ -1,0 +1,8 @@
+.map-3d-slope-map {
+  height: calc(100% - 3rem);
+
+  form {
+    @include flex-col;
+    gap: 1rem;
+  }
+}

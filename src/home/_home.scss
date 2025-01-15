@@ -1,0 +1,27 @@
+.home {
+  @include flex-col;
+  height: 100vh;
+  overflow-y: auto;
+  .screens-container {
+    @include flex-col;
+    height: calc(100% - 5rem);
+    flex-grow: 1;
+    width: 100%;
+    padding: 2.4rem 3rem 3rem 3rem;
+    &.full-frame {
+      padding: 0;
+    }
+  }
+
+  .screen {
+    @include flex-col-grow;
+    position: relative;
+    height: calc(
+      100% - 3.8rem - 3rem
+    ); // 100% - height(header-title) - height(screens-container: padding-bottom)
+  }
+}
+
+@import './components/header/header';
+@import './components/header-title/header-title';
+@import './components/accordion-sidenav/accordion-sidenav';

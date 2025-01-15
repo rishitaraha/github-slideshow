@@ -1,0 +1,16 @@
+.rename-modal {
+  .modal-content {
+    border-radius: 4px;
+    min-width: 50rem;
+    @include response(phone) {
+      min-width: 38rem;
+    }
+  }
+  &__buttons {
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+}

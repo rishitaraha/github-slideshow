@@ -1,0 +1,32 @@
+.crs-options-overlay {
+  background-color: white;
+  border-radius: 4px;
+  min-width: 34rem;
+  padding: 0.8rem 1.6rem;
+  position: absolute;
+  left: 1.5rem;
+  top: 11rem;
+  z-index: $z-index-100;
+
+  .input-crs-header {
+    color: $neutral-200;
+    font-weight: $body-txt-2;
+    font-size: $body-txt-2;
+    padding: 1.1rem 0 1.4rem 0;
+    font-family: Nunito;
+    line-height: 2.2rem;
+    letter-spacing: 0.05em;
+  }
+
+  .aus-input-group {
+    color: $gray-500;
+    font-weight: $bold-txt-1;
+  }
+
+  .crs-overlay-footer {
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 1.4rem 0rem 1rem 0;
+    gap: 0.4rem;
+  }
+}

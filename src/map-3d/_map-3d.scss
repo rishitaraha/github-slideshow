@@ -1,0 +1,15 @@
+@import './components/map-3d-container/map-3d-container';
+@import './components/map-3d-sidebar/map-3d-sidebar';
+
+.map-3d {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+  .cesium-performanceDisplay-defaultContainer {
+    position: absolute;
+    right: 6vw;
+    width: 8rem;
+    top: 3.5vh;
+    height: 10rem;
+  }
+}

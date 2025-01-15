@@ -1,0 +1,139 @@
+.swipe-map-layers {
+  &__action-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2.2rem;
+    height: 5.1rem;
+    padding: 0;
+    border: 1px solid $white;
+
+    &.left {
+      left: 0;
+      border-radius: 0 4px 4px 0;
+      border-left: none;
+      &:hover,
+      &:focus {
+        border: 1px solid $white;
+        border-left: none;
+      }
+    }
+    &.right {
+      right: 0;
+      border-radius: 4px 0 0 4px;
+      border-right: none;
+      &:hover,
+      &:focus {
+        border-radius: 4px 0 0 4px;
+        border-right: none;
+      }
+    }
+    &:hover,
+    &:focus {
+      border: 1px solid $white;
+    }
+  }
+
+  &__sidecard {
+    width: 35rem;
+    .aus-spinner {
+      position: absolute;
+      top: 50%;
+    }
+
+    .sidecard__header .offcanvas-title span {
+      max-width: 100%;
+    }
+
+    .offcanvas-header {
+      height: 5.5rem;
+    }
+
+    .offcanvas-body {
+      @include flex-col;
+      overflow: hidden;
+      padding: 1rem;
+      height: calc(100% - 5.5rem);
+    }
+
+    .aus-select {
+      width: 100%;
+    }
+
+    &__base-layer {
+      @include flex-col;
+      gap: 1rem;
+      height: min-content;
+      margin-bottom: 1rem;
+    }
+
+    &__layer {
+      @include flex-col;
+      margin-bottom: 1rem;
+
+      &-container {
+        @include flex-col;
+        margin-top: 1rem;
+        overflow: auto;
+        padding: 1rem 1rem 0 0;
+      }
+
+      &__title {
+        font-weight: $bold-txt-2;
+        color: $primary-600;
+        font-size: 1.4rem;
+      }
+      &__list {
+        @include flex-col;
+        overflow-y: auto;
+        gap: 1rem;
+
+        &__empty-list {
+          height: 100%;
+          font-size: $body-txt-3;
+          color: $neutral-250;
+          line-height: 1.9rem;
+          margin-bottom: 1rem;
+        }
+
+        .checkbox-card {
+          margin-bottom: 0.7rem;
+        }
+      }
+    }
+
+    &__action-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 2.2rem;
+      height: 5.1rem;
+      padding: 0;
+      border: 1px solid $white;
+
+      &.left {
+        border-radius: 0 4px 4px 0;
+        border-left: none;
+        right: -2.2rem;
+        &:hover,
+        &:focus {
+          border-left: none;
+        }
+      }
+      &.right {
+        border-radius: 4px 0 0 4px;
+        border-right: none;
+        left: -2.2rem;
+        &:hover,
+        &:focus {
+          border-right: none;
+        }
+      }
+
+      &:hover,
+      &:focus {
+        border: 1px solid $white;
+      }
+    }
+  }
+}

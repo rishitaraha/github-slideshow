@@ -1,0 +1,40 @@
+.org-settings__existing-connection {
+  &_spinner-container {
+    margin-top: 2rem;
+  }
+  .aus-btn {
+    margin-top: 1.6rem;
+    width: 100%;
+  }
+
+  &__disconnect-btn-container {
+    @include flex-center-y;
+    gap: 0.8rem;
+    margin-top: 1.6rem;
+
+    .form-message {
+      @include flex-center-y;
+      height: 3.4rem;
+      padding: 0.75rem 0.95rem;
+      @include text-ellipses;
+
+      span {
+        @include text-ellipses;
+        font-weight: $bold-txt-2;
+      }
+    }
+    .aus-btn {
+      margin: 0;
+      color: $red-500;
+      border-color: $red-500;
+      min-width: 9.4rem;
+      max-width: fit-content;
+      &.btn-outline:hover {
+        color: $red-500;
+      }
+      :hover {
+        color: $red-500;
+      }
+    }
+  }
+}
