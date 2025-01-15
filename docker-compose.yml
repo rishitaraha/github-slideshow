@@ -1,0 +1,24 @@
+version: '3.9'
+
+services:
+  app:
+    container_name: rainbow-ui
+    image: rainbow-ui-image
+    build: ./
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    ports:
+      - 3000:3000
+    command: 'npm run dev'
+
+  storybook:
+    container_name: rainbow-storybook
+    image: rainbow-storybook-image
+    build: ./
+    volumes:
+      - ./src:/app/src
+      - /app/node_modules
+    command: 'npm run storybook'
+    ports:
+      - 6006:6006
