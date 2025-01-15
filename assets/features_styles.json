@@ -1,0 +1,23 @@
+{
+  "point": {
+    "label": "",
+    "color": "#F9CC34"
+  },
+  "line": {
+    "label": "",
+    "strokeColor": "#F9CC34",
+    "strokeThickness": 3
+  },
+  "polygon": {
+    "label": "",
+    "fillColor": "#F9CC34",
+    "fillOpacity": 0.0,
+    "strokeColor": "#F9CC34",
+    "strokeThickness": 3
+  },
+  "textbox": {
+    "fontColor": "#000000",
+    "fontSize": 16,
+    "backgroundColor": "#FFCC33"
+  }
+}
